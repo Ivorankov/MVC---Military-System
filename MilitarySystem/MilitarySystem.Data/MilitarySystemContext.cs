@@ -34,7 +34,7 @@
 
         public IDbSet<Weapon> Weapons { get; set; }
 
-        public MilitarySystemContext Create()
+        public static MilitarySystemContext Create()
         {
             return new MilitarySystemContext();
         }
