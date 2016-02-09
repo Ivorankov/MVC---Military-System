@@ -29,7 +29,7 @@ Has a collection of objects (weapons + gear)
 + Collection of Weapons
 + Collection of Gear
 + Enrollment date
-+ Missions count
++ Collection of Missions
 + Wage(decimal)
 
 ### Vehicles - Will be the last model in if I have time
