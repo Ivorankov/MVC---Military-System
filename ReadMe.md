@@ -10,7 +10,8 @@ Has a collection of objects (weapons + gear)
 1. Air
 2. Ground
 3. Water
- 
+
+### Message 
 ### Weapons
 
 ### Gear
@@ -39,6 +40,10 @@ Has a collection of objects (weapons + gear)
 + Type(enum) - Attack/Defend/Resupply/Search&Rescue
 + Succeeded - true/false
 + Squad - the squad that is assigned to the mission
+
+### Message
++ User - from user
++ Content
 
 ### Squad
 + 1 user as squad leader
