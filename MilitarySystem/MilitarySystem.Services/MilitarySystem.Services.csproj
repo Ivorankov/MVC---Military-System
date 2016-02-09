@@ -64,7 +64,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Army\IPlatoonsService.cs" />
+    <Compile Include="Contracts\Army\ISquadsServices.cs" />
+    <Compile Include="Contracts\Army\IUsersServices.cs" />
+    <Compile Include="Contracts\Equipment\IGearServices.cs" />
+    <Compile Include="Contracts\Equipment\IVehiclesService.cs" />
+    <Compile Include="Contracts\Equipment\IWeaponsService.cs" />
+    <Compile Include="Contracts\Misc\IManufacturesService.cs" />
+    <Compile Include="Contracts\Misc\IMessagesService.cs" />
+    <Compile Include="Contracts\Misc\IMissionsService.cs" />
+    <Compile Include="Army\PlatoonsService.cs" />
+    <Compile Include="Equipment\GearService.cs" />
+    <Compile Include="Misc\ManufacturersService.cs" />
+    <Compile Include="Misc\MessagesService.cs" />
+    <Compile Include="Misc\MissionsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Army\SquadsService.cs" />
+    <Compile Include="Army\UsersService.cs" />
+    <Compile Include="Equipment\VehiclesService.cs" />
+    <Compile Include="Equipment\WeaponsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MilitartySystem.Models\MilitartySystem.Models.csproj">
@@ -79,6 +97,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
