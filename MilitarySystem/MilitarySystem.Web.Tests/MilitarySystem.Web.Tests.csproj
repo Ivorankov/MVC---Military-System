@@ -88,6 +88,15 @@
   <ItemGroup>
     <Content Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MilitarySystem.Web\MilitarySystem.Web.csproj">
+      <Project>{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}</Project>
+      <Name>MilitarySystem.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

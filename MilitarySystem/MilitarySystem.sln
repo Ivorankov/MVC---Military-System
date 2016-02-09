@@ -3,7 +3,49 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitartySystem.Models", "MilitartySystem.Models\MilitartySystem.Models.csproj", "{A8D1EAE6-823D-43A6-8810-30629F98D67B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Data", "MilitarySystem.Data\MilitarySystem.Data.csproj", "{8D7FED53-254B-45F8-A64A-4DA91C092301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Common", "MilitarySystem.Common\MilitarySystem.Common.csproj", "{51033FEE-854D-470F-B18A-583F07D6858E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Services", "MilitarySystem.Services\MilitarySystem.Services.csproj", "{89418C35-258C-4004-A872-F8B8E70954E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Web", "MilitarySystem.Web\MilitarySystem.Web.csproj", "{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Web.Tests", "MilitarySystem.Web.Tests\MilitarySystem.Web.Tests.csproj", "{BADA04A7-9E67-4981-BE75-B491D38775B8}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8D1EAE6-823D-43A6-8810-30629F98D67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D1EAE6-823D-43A6-8810-30629F98D67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D1EAE6-823D-43A6-8810-30629F98D67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D1EAE6-823D-43A6-8810-30629F98D67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7FED53-254B-45F8-A64A-4DA91C092301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7FED53-254B-45F8-A64A-4DA91C092301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7FED53-254B-45F8-A64A-4DA91C092301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7FED53-254B-45F8-A64A-4DA91C092301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51033FEE-854D-470F-B18A-583F07D6858E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51033FEE-854D-470F-B18A-583F07D6858E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51033FEE-854D-470F-B18A-583F07D6858E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51033FEE-854D-470F-B18A-583F07D6858E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89418C35-258C-4004-A872-F8B8E70954E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89418C35-258C-4004-A872-F8B8E70954E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89418C35-258C-4004-A872-F8B8E70954E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89418C35-258C-4004-A872-F8B8E70954E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA536DD-FA20-4048-A4FC-BA8BAC47501E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

@@ -246,6 +246,24 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MilitartySystem.Models\MilitartySystem.Models.csproj">
+      <Project>{a8d1eae6-823d-43a6-8810-30629f98d67b}</Project>
+      <Name>MilitartySystem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilitarySystem.Common\MilitarySystem.Common.csproj">
+      <Project>{51033fee-854d-470f-b18a-583f07d6858e}</Project>
+      <Name>MilitarySystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilitarySystem.Data\MilitarySystem.Data.csproj">
+      <Project>{8d7fed53-254b-45f8-a64a-4da91c092301}</Project>
+      <Name>MilitarySystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilitarySystem.Services\MilitarySystem.Services.csproj">
+      <Project>{89418c35-258c-4004-a872-f8b8e70954e1}</Project>
+      <Name>MilitarySystem.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
