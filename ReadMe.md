@@ -48,6 +48,7 @@ Has a collection of objects (weapons + gear)
 ### Squad
 + 1 user as squad leader
 + Collection of soldiers
++ Squad name
 + Current GPS coordinates
 + Collection of vehicles
 + Collection of messages from soldiers
@@ -55,6 +56,7 @@ Has a collection of objects (weapons + gear)
 
 ### Platoon
 + 1 user as platoon leader
++ Platoon name
 + Collection of squads
 + Collection of messages from squad leaders
 
