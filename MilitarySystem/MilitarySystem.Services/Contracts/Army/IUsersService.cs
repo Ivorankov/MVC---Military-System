@@ -2,9 +2,9 @@
 {
     using System.Linq;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
 
-    public interface IUsersServices
+    public interface IUsersService
     {
         IQueryable GetAll();
 
