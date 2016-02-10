@@ -7,8 +7,8 @@
     <ProjectGuid>{A8D1EAE6-823D-43A6-8810-30629F98D67B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MilitartySystem.Models</RootNamespace>
-    <AssemblyName>MilitartySystem.Models</AssemblyName>
+    <RootNamespace>MilitarySystem.Models</RootNamespace>
+    <AssemblyName>MilitarySystem.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

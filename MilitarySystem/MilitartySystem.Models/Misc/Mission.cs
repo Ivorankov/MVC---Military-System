@@ -1,4 +1,4 @@
-﻿namespace MilitartySystem.Models
+﻿namespace MilitarySystem.Models
 {
     public class Mission
     {
@@ -6,7 +6,9 @@
 
         public string Info { get; set; }
 
-        public Location TargetLocation { get; set; }
+        public int TargetLocationId { get; set; }
+
+        public virtual Location TargetLocation { get; set; }
 
         public int SquadId { get; set; }
 

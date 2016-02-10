@@ -1,4 +1,4 @@
-﻿namespace MilitartySystem.Models
+﻿namespace MilitarySystem.Models
 {
    public class Gear : BaseEquipment
     {

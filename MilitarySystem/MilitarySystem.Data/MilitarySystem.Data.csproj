@@ -60,9 +60,9 @@
     <Compile Include="Repositories\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MilitartySystem.Models\MilitartySystem.Models.csproj">
+    <ProjectReference Include="..\MilitartySystem.Models\MilitarySystem.Models.csproj">
       <Project>{a8d1eae6-823d-43a6-8810-30629f98d67b}</Project>
-      <Name>MilitartySystem.Models</Name>
+      <Name>MilitarySystem.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

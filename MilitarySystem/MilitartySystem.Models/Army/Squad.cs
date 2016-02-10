@@ -1,4 +1,4 @@
-﻿namespace MilitartySystem.Models
+﻿namespace MilitarySystem.Models
 {
     using System.Collections.Generic;
 
@@ -28,7 +28,13 @@
 
         public virtual User SquadLeader { get; set; }
 
-        public Location CurrentLocation { get; set; }
+        public int CurrentLocationId { get; set; }
+
+        public virtual Location CurrentLocation { get; set; }
+
+        public int PlatoonId { get; set; }
+
+        public virtual Platoon Platton { get; set; }
 
         public ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 

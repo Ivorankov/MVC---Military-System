@@ -85,9 +85,9 @@
     <Compile Include="Equipment\WeaponsService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MilitartySystem.Models\MilitartySystem.Models.csproj">
+    <ProjectReference Include="..\MilitartySystem.Models\MilitarySystem.Models.csproj">
       <Project>{a8d1eae6-823d-43a6-8810-30629f98d67b}</Project>
-      <Name>MilitartySystem.Models</Name>
+      <Name>MilitarySystem.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\MilitarySystem.Data\MilitarySystem.Data.csproj">
       <Project>{8d7fed53-254b-45f8-a64a-4da91c092301}</Project>
