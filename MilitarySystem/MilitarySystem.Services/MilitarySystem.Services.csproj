@@ -65,12 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\Army\IPlatoonsService.cs" />
-    <Compile Include="Contracts\Army\ISquadsServices.cs" />
-    <Compile Include="Contracts\Army\IUsersServices.cs" />
-    <Compile Include="Contracts\Equipment\IGearServices.cs" />
+    <Compile Include="Contracts\Army\ISquadsService.cs" />
+    <Compile Include="Contracts\Army\IUsersService.cs" />
+    <Compile Include="Contracts\Equipment\IGearService.cs" />
     <Compile Include="Contracts\Equipment\IVehiclesService.cs" />
     <Compile Include="Contracts\Equipment\IWeaponsService.cs" />
-    <Compile Include="Contracts\Misc\IManufacturesService.cs" />
+    <Compile Include="Contracts\Misc\IManufacturersService.cs" />
     <Compile Include="Contracts\Misc\IMessagesService.cs" />
     <Compile Include="Contracts\Misc\IMissionsService.cs" />
     <Compile Include="Army\PlatoonsService.cs" />
