@@ -258,6 +258,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\" />
+    <Folder Include="Areas\Platoon\Controllers\" />
+    <Folder Include="Areas\Platoon\Models\" />
+    <Folder Include="Areas\Platoon\Views\" />
+    <Folder Include="Areas\Squad\Controllers\" />
+    <Folder Include="Areas\Squad\Models\" />
+    <Folder Include="Areas\Squad\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
