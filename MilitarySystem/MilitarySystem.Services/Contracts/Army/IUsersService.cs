@@ -6,15 +6,13 @@
 
     public interface IUsersService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
-        User GetById();
-
-        User GetByUserName();
+        User GetById(string id);
 
         int Add(User user);
 
-        int Delete(int id);
+        int Delete(string id);
 
         int Update(User user);
     }

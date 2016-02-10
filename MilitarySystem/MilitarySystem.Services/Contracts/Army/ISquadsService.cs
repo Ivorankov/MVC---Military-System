@@ -6,7 +6,7 @@
 
     public interface ISquadsService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Squad GetById(int id);
 

@@ -6,7 +6,7 @@
 
     public interface IPlatoonsService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Platoon GetById(int id);
 

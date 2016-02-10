@@ -3,33 +3,51 @@
     using System;
     using System.Linq;
     using Models;
+
     using MilitarySystem.Services.Contracts;
+    using Data.Contracts;
 
     public class SquadsService : ISquadsService
     {
+        private readonly IRepository<Squad> squads;
+
+        public SquadsService(IRepository<Squad> squads)
+        {
+            this.squads = squads;
+        }
+
         public int Add(Squad squad)
         {
-            throw new NotImplementedException();
+            this.squads.Add(squad);
+
+            return this.squads.SaveChanges();
         }
 
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            this.squads.Delete(id);
+
+            return this.squads.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable GetAll(int skip, int take)
         {
-            throw new NotImplementedException();
+            return this.squads
+                .All()
+                .Skip(skip)
+                .Take(take);
         }
 
         public Squad GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.squads.GetById(id);
         }
 
         public int Update(Squad squad)
         {
-            throw new NotImplementedException();
+            this.squads.Update(squad);
+
+            return this.squads.SaveChanges();
         }
     }
 }
