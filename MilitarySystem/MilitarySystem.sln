@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitartySystem.Models", "MilitartySystem.Models\MilitartySystem.Models.csproj", "{A8D1EAE6-823D-43A6-8810-30629F98D67B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Models", "MilitartySystem.Models\MilitarySystem.Models.csproj", "{A8D1EAE6-823D-43A6-8810-30629F98D67B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Data", "MilitarySystem.Data\MilitarySystem.Data.csproj", "{8D7FED53-254B-45F8-A64A-4DA91C092301}"
 EndProject

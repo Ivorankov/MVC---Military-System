@@ -1,4 +1,4 @@
-﻿namespace MilitartySystem.Models
+﻿namespace MilitarySystem.Models
 {
     using System;
     using System.Collections.Generic;
