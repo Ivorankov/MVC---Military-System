@@ -6,7 +6,7 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
     using MilitarySystem.Data.Contracts;
 
 

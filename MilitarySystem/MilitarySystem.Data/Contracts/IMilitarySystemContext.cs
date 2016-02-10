@@ -3,7 +3,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
 
     public interface IMilitarySystemContext
     {

@@ -1,6 +1,13 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("background1.jpg");
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration : none !important;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +28,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.main-content{
+    margin: 10px;
+}
+
+.brand-logo{
+    margin-top:-17px;
+}
+
+#nav-bar>ul>li>a{
+    font-size: 20px;
 }
