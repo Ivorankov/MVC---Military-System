@@ -5,9 +5,17 @@
 
     using Models;
     using MilitarySystem.Services.Contracts;
+    using Data.Contracts;
 
     public class MessagesService : IMessagesService
     {
+        private readonly IRepository<Message> messages;
+
+        public MessagesService(IRepository<Message> messages)
+        {
+            this.messages = messages;
+        }
+
         public int Add(Message message)
         {
             throw new NotImplementedException();

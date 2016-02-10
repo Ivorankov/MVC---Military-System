@@ -5,32 +5,49 @@
 
     using Models;
     using MilitarySystem.Services.Contracts;
+    using Data.Contracts;
 
     public class MissionsService : IMissionsService
     {
+        private readonly IRepository<Mission> missions;
+
+        public MissionsService(IRepository<Mission> missions)
+        {
+            this.missions = missions;
+        }
+
         public int Add(Mission mission)
         {
-            throw new NotImplementedException();
+            this.missions.Add(mission);
+
+            return this.missions.SaveChanges();
         }
 
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            this.missions.Delete(id);
+
+            return this.missions.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable GetAll(int skip, int take)
         {
-            throw new NotImplementedException();
+            return this.missions
+                .All()
+                .Skip(skip)
+                .Take(take);
         }
 
         public Mission GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.missions.GetById(id);
         }
 
         public int Update(Mission mission)
         {
-            throw new NotImplementedException();
+            this.missions.Update(mission);
+
+            return this.missions.SaveChanges();
         }
     }
 }

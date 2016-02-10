@@ -6,7 +6,7 @@
 
     public interface IGearService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Gear GetById(int id);
 

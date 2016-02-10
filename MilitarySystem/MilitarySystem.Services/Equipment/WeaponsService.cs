@@ -2,34 +2,52 @@
 {
     using System;
     using System.Linq;
+
     using Models;
     using MilitarySystem.Services.Contracts;
+    using Data.Contracts;
 
     public class WeaponsService : IWeaponsService
     {
+        private readonly IRepository<Weapon> weapons;
+
+        public WeaponsService(IRepository<Weapon> weapons)
+        {
+            this.weapons = weapons;
+        }
+
         public int Add(Weapon weapon)
         {
-            throw new NotImplementedException();
+            this.weapons.Add(weapon);
+
+            return this.weapons.SaveChanges();
         }
 
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            this.weapons.Delete(id);
+
+            return this.weapons.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable GetAll(int skip, int take)
         {
-            throw new NotImplementedException();
+            return this.weapons
+                .All()
+                .Skip(skip)
+                .Take(take);
         }
 
         public Weapon GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.weapons.GetById(id);
         }
 
         public int Update(Weapon weapon)
         {
-            throw new NotImplementedException();
+            this.weapons.Update(weapon);
+
+            return this.weapons.SaveChanges();
         }
     }
 }

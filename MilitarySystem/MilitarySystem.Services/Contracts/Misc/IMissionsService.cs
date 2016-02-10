@@ -6,7 +6,7 @@
 
     public interface IMissionsService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Mission GetById(int id);
 

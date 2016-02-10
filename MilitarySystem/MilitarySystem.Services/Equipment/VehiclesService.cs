@@ -2,34 +2,52 @@
 {
     using System;
     using System.Linq;
+
     using Models;
     using MilitarySystem.Services.Contracts;
+    using Data.Contracts;
 
     public class VehiclesService : IVehiclesService
     {
+        private readonly IRepository<Vehicle> vehicles;
+
+        public VehiclesService(IRepository<Vehicle> vehicles)
+        {
+            this.vehicles = vehicles;
+        }
+
         public int Add(Vehicle vehicles)
         {
-            throw new NotImplementedException();
+            this.vehicles.Add(vehicles);
+
+            return this.vehicles.SaveChanges();
         }
 
         public int Delete(int id)
         {
-            throw new NotImplementedException();
+            this.vehicles.Delete(id);
+
+            return this.vehicles.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable GetAll(int skip, int take)
         {
-            throw new NotImplementedException();
+            return this.vehicles
+                .All()
+                .Skip(skip)
+                .Take(take);
         }
 
         public Vehicle GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.vehicles.GetById(id);
         }
 
         public int Update(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            this.vehicles.Update(vehicle);
+
+            return this.vehicles.SaveChanges();
         }
     }
 }
