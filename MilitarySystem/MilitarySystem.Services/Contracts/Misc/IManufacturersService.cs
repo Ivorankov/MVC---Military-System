@@ -2,11 +2,11 @@
 {
     using System.Linq;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
 
-    public interface IManufacturesService
+    public interface IManufacturersService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Manufacturer GetById(int id);
 

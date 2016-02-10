@@ -4,16 +4,16 @@
 
     using MilitarySystem.Models;
 
-    public interface IPlatoonsService
+    public interface IUsersService
     {
         IQueryable GetAll(int skip, int take);
 
-        Platoon GetById(int id);
+        User GetById(string id);
 
-        int Add(Platoon platoon);
+        int Add(User user);
 
-        int Delete(int id);
+        int Delete(string id);
 
-        int Update(Platoon platoon);
+        int Update(User user);
     }
 }

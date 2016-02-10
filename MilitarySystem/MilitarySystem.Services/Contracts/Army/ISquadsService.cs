@@ -2,11 +2,11 @@
 {
     using System.Linq;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
 
-    public interface ISquadsServices
+    public interface ISquadsService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Squad GetById(int id);
 

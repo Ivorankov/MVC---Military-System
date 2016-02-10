@@ -2,11 +2,11 @@
 {
     using System.Linq;
 
-    using MilitartySystem.Models;
+    using MilitarySystem.Models;
 
-    public interface IGearServices
+    public interface IGearService
     {
-        IQueryable GetAll();
+        IQueryable GetAll(int skip, int take);
 
         Gear GetById(int id);
 
