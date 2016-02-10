@@ -72,12 +72,10 @@ namespace MilitarySystem.Web.App_Start
             .InRequestScope();
 
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
-            //kernel.Bind(x =>
-            //{
-            //    x.From(System.Configuration.Assemblies.)
-            //     .SelectAllClasses()
-            //     .BindSingleInterface();
-            //});
+            kernel.Bind(x => x.From("MilitarySystem.Services")
+                              .SelectAllClasses()
+                              .BindDefaultInterface()
+            );
         }
     }
 }

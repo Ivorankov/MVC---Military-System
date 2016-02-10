@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MilitarySystem.Web.Models;
+using MilitarySystem.Services.Contracts;
+using Ninject;
 
 namespace MilitarySystem.Web.Controllers
 {
@@ -16,14 +18,17 @@ namespace MilitarySystem.Web.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        public IUsersService users;
+
         public ManageController()
         {
         }
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IUsersService users)
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            this.users = users;
         }
 
         public ApplicationSignInManager SignInManager
@@ -64,13 +69,12 @@ namespace MilitarySystem.Web.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = this.users.GetById(userId);
             var model = new IndexViewModel
             {
-                HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                EnrollmentDate = user.EnrollmentDate,
+                FullName = user.FirstName + " " + user.LastName,
+                Rank = user.Rank
             };
             return View(model);
         }

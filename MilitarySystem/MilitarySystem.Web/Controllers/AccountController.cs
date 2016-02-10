@@ -11,6 +11,7 @@
 
     using MilitarySystem.Web.Models;
     using MilitarySystem.Models;
+    using System;
 
     [Authorize]
     public class AccountController : Controller
@@ -152,6 +153,7 @@
             if (ModelState.IsValid)
             {
                 var user = new User { UserName = model.Email, Email = model.Email };
+                user.EnrollmentDate = DateTime.Now;
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

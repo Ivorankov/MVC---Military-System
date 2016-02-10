@@ -9,6 +9,10 @@ a{
     text-decoration : none !important;
 
 }
+.test{
+        overflow-x:auto;
+    overflow-y:auto;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -31,7 +35,7 @@ textarea {
 }
 
 .main-content{
-    margin: 10px;
+    margin: 20px;
 }
 
 .brand-logo{
