@@ -12,6 +12,7 @@ using Microsoft.Owin.Security;
 
 using MilitarySystem.Web.Models;
 using MilitarySystem.Services.Contracts;
+
     [Authorize]
     public class ManageController : BaseController
     {

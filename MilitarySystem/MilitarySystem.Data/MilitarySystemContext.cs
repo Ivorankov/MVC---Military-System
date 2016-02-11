@@ -9,7 +9,6 @@
     using MilitarySystem.Models;
     using MilitarySystem.Data.Contracts;
 
-
     public class MilitarySystemContext : IdentityDbContext<User>, IMilitarySystemContext
     {
         public MilitarySystemContext()
@@ -33,6 +32,8 @@
         public IDbSet<Vehicle> Vehicles { get; set; }
 
         public IDbSet<Weapon> Weapons { get; set; }
+
+        public IDbSet<Image> Images { get; set; }
 
         public static MilitarySystemContext Create()
         {

@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Base\BaseEquipment.cs" />
     <Compile Include="Equipment\Gear.cs" />
+    <Compile Include="Misc\Image.cs" />
     <Compile Include="Misc\Location.cs" />
     <Compile Include="Misc\Manufacturer.cs" />
     <Compile Include="Misc\Message.cs" />

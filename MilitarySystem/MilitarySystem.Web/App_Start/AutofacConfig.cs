@@ -58,10 +58,10 @@
                 .As(typeof(IRepository<>))
                 .InstancePerRequest();
 
-            builder.RegisterType<UserStore<User>>().As<IUserStore<User>>().InstancePerLifetimeScope();
-            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerLifetimeScope();
-            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerLifetimeScope();
-            builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication);
+            //builder.RegisterType<UserStore<User>>().As<IUserStore<User>>().InstancePerLifetimeScope();
+            //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerLifetimeScope();
+            //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerLifetimeScope();
+            //builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication);
 
             //var servicesAssembly = Assembly.GetAssembly(typeof(IUsersService));
             //builder.RegisterType<UsersService>().As<IUsersService>();
