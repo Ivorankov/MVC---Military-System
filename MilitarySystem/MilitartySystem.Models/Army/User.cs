@@ -7,6 +7,7 @@
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Misc;
 
     public class User : IdentityUser
     {
@@ -32,6 +33,10 @@
         public decimal Wage { get; set; }
 
         public int Rank { get; set; }
+
+        public int ImageId { get; set; }
+
+        public Image Image { get; set; }
 
         public ICollection<Weapon> Weapons { get { return this.weapons; } set { this.weapons = value; } }
 
