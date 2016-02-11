@@ -1,4 +1,4 @@
-﻿namespace MilitarySystem.Web.App_Start
+﻿namespace MilitarySystem.Web
 {
     using System.Data.Entity;
 

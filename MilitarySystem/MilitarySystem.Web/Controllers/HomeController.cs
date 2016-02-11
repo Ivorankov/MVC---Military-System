@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MilitarySystem.Services.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,8 +7,14 @@ using System.Web.Mvc;
 
 namespace MilitarySystem.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+
+        public HomeController(IUsersService users)
+            :base(users)
+        {
+      
+        }
         public ActionResult Index()
         {
             return View();
@@ -15,8 +22,6 @@ namespace MilitarySystem.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

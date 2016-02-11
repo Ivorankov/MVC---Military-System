@@ -1,34 +1,29 @@
-﻿using System;
+﻿namespace MilitarySystem.Web.Controllers
+{
+    
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+
 using MilitarySystem.Web.Models;
 using MilitarySystem.Services.Contracts;
-using Ninject;
-
-namespace MilitarySystem.Web.Controllers
-{
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
+
         private ApplicationUserManager _userManager;
 
-        public IUsersService users;
-
-        public ManageController()
-        {
-        }
-
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IUsersService users)
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IUsersService users) :base(users)
         {
             UserManager = userManager;
             SignInManager = signInManager;
-            this.users = users;
+
         }
 
         public ApplicationSignInManager SignInManager
@@ -69,7 +64,7 @@ namespace MilitarySystem.Web.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var user = this.users.GetById(userId);
+            var user = this.Users.GetById(userId);
             var model = new IndexViewModel
             {
                 EnrollmentDate = user.EnrollmentDate,
