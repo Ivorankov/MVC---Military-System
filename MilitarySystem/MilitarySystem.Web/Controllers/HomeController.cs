@@ -1,34 +1,33 @@
-﻿using MilitarySystem.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MilitarySystem.Web.Controllers
+﻿namespace MilitarySystem.Web.Controllers
 {
+    using Microsoft.AspNet.Identity;
+    using MilitarySystem.Services.Contracts;
+    using Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+
     public class HomeController : BaseController
     {
 
         public HomeController(IUsersService users)
-            :base(users)
+            : base(users)
         {
-      
+
         }
         public ActionResult Index()
         {
-            return View();
-        }
+            var userId = User.Identity.GetUserId();
 
-        public ActionResult About()
-        {
-            return View();
-        }
+            var model = this.Users.GetById(userId);
+            if (userId != null)
+            {
+                var result = this.Mapper.Map<UserDetailsViewModel>(model);
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+                return View(result);
+            }
             return View();
         }
     }

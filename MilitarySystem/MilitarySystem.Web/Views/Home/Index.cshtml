@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model MilitarySystem.Web.Models.UserDetailsViewModel
+@{
+
 }
 
 <div class="row">
@@ -19,3 +20,13 @@
         </div>
     </div>
 </div>
+@if (Request.IsAuthenticated)
+{
+    @Html.Partial("_UserDetails", Model)
+
+@section Scripts{
+    <script>
+        $("#soldier-details-box").draggable();
+    </script>
+}
+}

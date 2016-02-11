@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Web", "Milit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Web.Tests", "MilitarySystem.Web.Tests\MilitarySystem.Web.Tests.csproj", "{BADA04A7-9E67-4981-BE75-B491D38775B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilitarySystem.Web.Infrastructure", "MilitarySystem.Web.Infrastructure\MilitarySystem.Web.Infrastructure.csproj", "{3BBAF601-971A-451B-BC63-1A0FF1A8817C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BADA04A7-9E67-4981-BE75-B491D38775B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBAF601-971A-451B-BC63-1A0FF1A8817C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBAF601-971A-451B-BC63-1A0FF1A8817C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBAF601-971A-451B-BC63-1A0FF1A8817C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBAF601-971A-451B-BC63-1A0FF1A8817C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -59,8 +59,8 @@
                 .InstancePerRequest();
 
             //builder.RegisterType<UserStore<User>>().As<IUserStore<User>>().InstancePerLifetimeScope();
-            //builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerLifetimeScope();
-            //builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerLifetimeScope();
+            //builder.RegisterType<ApplicationUserManager>().InstancePerLifetimeScope();
+            //builder.RegisterType<ApplicationSignInManager>().InstancePerLifetimeScope();
             //builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication);
 
             //var servicesAssembly = Assembly.GetAssembly(typeof(IUsersService));

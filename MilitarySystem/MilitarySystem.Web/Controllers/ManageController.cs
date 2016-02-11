@@ -14,17 +14,20 @@ using MilitarySystem.Web.Models;
 using MilitarySystem.Services.Contracts;
 
     [Authorize]
-    public class ManageController : BaseController
+    public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
 
         private ApplicationUserManager _userManager;
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IUsersService users) :base(users)
+        private IUsersService users;
+
+        public ManageController() { }
+
+        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
-
         }
 
         public ApplicationSignInManager SignInManager
@@ -65,7 +68,7 @@ using MilitarySystem.Services.Contracts;
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var user = this.Users.GetById(userId);
+            var user = this.users.GetById(userId);
             var model = new IndexViewModel
             {
                 EnrollmentDate = user.EnrollmentDate,

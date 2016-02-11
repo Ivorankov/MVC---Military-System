@@ -1,0 +1,21 @@
+﻿@model MilitarySystem.Web.Models.UserDetailsViewModel
+
+<div class="row ui-widget-content" id="soldier-details-box">
+    <div class="col s12 m6">
+        <div class="card grey lighten-4">
+            <div class="card-image">
+                <img src="http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png">
+                <span class="card-title">@Model.FullName</span>
+            </div>
+            <div class="card-content black-text">
+                <span class="card-title">Personal Info</span>
+                <p>@Model.FullName</p>
+                <p>@Model.EnrollmentDate</p>
+                <p>@Model.Rank</p>
+            </div>
+            <div class="card-action">
+                <a href="#">@Html.ActionLink("Change your password", "ChangePassword", "Manage")</a>
+            </div>
+        </div>
+    </div>
+</div>

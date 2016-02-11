@@ -28,11 +28,11 @@
 
         public virtual User SquadLeader { get; set; }
 
-        public int CurrentLocationId { get; set; }
+        public int? CurrentLocationId { get; set; }
 
         public virtual Location CurrentLocation { get; set; }
 
-        public int PlatoonId { get; set; }
+        public int? PlatoonId { get; set; }
 
         public virtual Platoon Platton { get; set; }
 
