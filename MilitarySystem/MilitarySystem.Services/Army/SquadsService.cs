@@ -30,12 +30,10 @@
             return this.squads.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable GetAll()
         {
             return this.squads
-                .All()
-                .Skip(skip)
-                .Take(take);
+                .All();
         }
 
         public Squad GetById(int id)

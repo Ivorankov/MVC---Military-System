@@ -2,7 +2,6 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-image: url("background1.jpg");
-    background-repeat: no-repeat;
 }
 
 a{
@@ -48,4 +47,16 @@ textarea {
 
 .nav-text>li>a{
     font-size:20px;
+}
+
+.human-text{
+    font-size: 18px;
+}
+
+.wage-text{
+    color:forestgreen;
+}
+
+.white-background{
+    background-color: white;
 }

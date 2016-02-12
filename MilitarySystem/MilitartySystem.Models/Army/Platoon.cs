@@ -22,9 +22,9 @@
 
         public virtual User PlatoonCommander { get; set; }
 
-        public ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
+        public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 
-        public ICollection<Squad> Squads { get {return this.squads; } set {this.squads = value; } }
+        public virtual ICollection<Squad> Squads { get {return this.squads; } set {this.squads = value; } }
 
     }
 }

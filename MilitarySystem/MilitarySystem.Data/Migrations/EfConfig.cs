@@ -20,111 +20,185 @@
 
         protected override void Seed(MilitarySystemContext context)
         {
-            //var store = new RoleStore<IdentityRole>(context);
-            //var manager = new RoleManager<IdentityRole>(store);
+            //Kill if these been a seed
+            if (context.Users.Any())
+            {
+                return;
+            }
 
-            ////Seed roles TODO split Admin into 3 sub roles - Users/ Communication / Weapons/Gear/Vehciles
-            //if (!context.Roles.Any(r => r.Name == "SquadLeader"))
-            //{
-            //    var roleAdmin = new IdentityRole
-            //    {
-            //        Name = "SquadLeader"
-            //    };
+            var store = new RoleStore<IdentityRole>(context);
+            var manager = new RoleManager<IdentityRole>(store);
 
-            //    manager.Create(roleAdmin);
-            //}
+            //Seed roles TODO split Admin into 3 sub roles - Users/ Communication / Weapons/Gear/Vehciles
+            if (!context.Roles.Any(r => r.Name == "SquadLeader"))
+            {
+                var roleAdmin = new IdentityRole
+                {
+                    Name = "SquadLeader"
+                };
 
-            //if (!context.Roles.Any(r => r.Name == "PlatoonLeader"))
-            //{
-            //    var roleAdmin = new IdentityRole
-            //    {
-            //        Name = "PlatoonLeader"
-            //    };
+                manager.Create(roleAdmin);
+            }
 
-            //    manager.Create(roleAdmin);
-            //}
+            if (!context.Roles.Any(r => r.Name == "PlatoonLeader"))
+            {
+                var roleAdmin = new IdentityRole
+                {
+                    Name = "PlatoonLeader"
+                };
 
-            //if (!context.Roles.Any(r => r.Name == "Admin"))
-            //{
-            //    var roleAdmin = new IdentityRole
-            //    {
-            //        Name = "Admin"
-            //    };
+                manager.Create(roleAdmin);
+            }
 
-            //    manager.Create(roleAdmin);
-            //}
+            if (!context.Roles.Any(r => r.Name == "Admin"))
+            {
+                var roleAdmin = new IdentityRole
+                {
+                    Name = "Admin"
+                };
 
-            //var userStore = new UserStore<User>(context);
-            //var userManager = new UserManager<User>(userStore);
+                manager.Create(roleAdmin);
+            }
 
-            //userManager.PasswordValidator = new MinimumLengthValidator(5);
+            var userStore = new UserStore<User>(context);
+            var userManager = new UserManager<User>(userStore);
 
-            ////SEED ADMIN USERS
-            //var adminUser = new User()
-            //{
-            //    UserName = "Admin",
-            //    Email = "Admin@site.com",
-            //    EnrollmentDate = DateTime.UtcNow
-            //};
+            userManager.PasswordValidator = new MinimumLengthValidator(5);
 
-            //if (!context.Users.Any(u => u.UserName == "Admin"))
-            //{
-            //    userManager.Create(adminUser, "2admin1");
-            //    userManager.AddToRole(adminUser.Id, "Admin");
-            //}
+            //SEED ADMIN USERS
 
-            ////SEED SQUADS WITH TEAM MEMEBERS
-            //var squadLeader = new User()
-            //{
-            //    UserName = "Robin",
-            //    Email = "Robin@mail.bg",
-            //    EnrollmentDate = DateTime.UtcNow
-            //};
+            var adminUser = new User()
+            {
+                UserName = "Admin",
+                Email = "Admin@system.death",
+                EnrollmentDate = DateTime.UtcNow
+            };
 
-            //if (!context.Users.Any(u => u.UserName == "Robin"))
-            //{
-            //    userManager.Create(squadLeader, "asdasd");
-            //}
+            if (!context.Users.Any(u => u.UserName == "Admin"))
+            {
+                userManager.Create(adminUser, "2admin1");
+                userManager.AddToRole(adminUser.Id, "Admin");
+            }
 
-            //var squadMemeber1 = new User()
-            //{
-            //    UserName = "Derrik",
-            //    Email = "Derrik@mail.bg",
-            //    EnrollmentDate = DateTime.UtcNow
-            //};
+            //SEED SQUADS WITH TEAM MEMEBERS
 
-            //if (!context.Users.Any(u => u.UserName == "Derrik"))
-            //{
-            //    userManager.Create(squadMemeber1, "asdasd");
-            //}
+            var manufacturer = new Manufacturer() { Name = "D&D" };
 
-            //var squad = new Squad()
-            //{
-            //    Name = "Alpha",
-            //};
+            var veh = new Vehicle() { Manufacturer = manufacturer, Model = "Raptor", Price = 89000.564M };
+            context.SaveChanges();
 
-            //squad.Soldiers.Add(squadMemeber1);
-            //context.Squads.AddOrUpdate(squad);
+            var squad = new Squad()
+            {
+                Name = "Alpha",
+            };
 
-            //var plattonLeader = new User()
-            //{
-            //    UserName = "John",
-            //    Email = "John@site.com",
-            //    EnrollmentDate = DateTime.UtcNow
-            //};
+            squad.Vehicles.Add(veh);
 
-            //if (!context.Users.Any(u => u.UserName == "John"))
-            //{
-            //    userManager.Create(plattonLeader, "asdasd");
-            //}
+            var squadLeader = new User()
+            {
+                UserName = "Robin",
+                FirstName = "Robin",
+                LastName = "Tillson",
+                Email = "Robin@system.death",
+                SquadId = 1,
+                EnrollmentDate = DateTime.UtcNow
+            };
 
-            //var platoon = new Platoon()
-            //{
-            //    Name = "1st Brigade"
-            //};
+            if (!context.Users.Any(u => u.UserName == "Robin"))
+            {
+                userManager.Create(squadLeader, "asdasd");
+            }
 
-            ////platoon.Squads.Add(squad);
-            //context.Platoons.AddOrUpdate(platoon);
+            var squadMemeber1 = new User()
+            {
+                UserName = "Derrik",
+                Email = "Derrik@system.death",
+                FirstName = "Derrik",
+                LastName = "Johnson",
+                SquadId = 1,
+                EnrollmentDate = DateTime.UtcNow
+            };
+
+            if (!context.Users.Any(u => u.UserName == "Derrik"))
+            {
+                userManager.Create(squadMemeber1, "asdasd");
+            }
+
+            var squadMemeber2 = new User()
+            {
+                UserName = "Tommy",
+                Email = "Tommy@system.death",
+                FirstName = "Tommy",
+                LastName = "Williams",
+                SquadId = 1,
+                EnrollmentDate = DateTime.UtcNow
+            };
+
+            if (!context.Users.Any(u => u.UserName == "Tommy"))
+            {
+                userManager.Create(squadMemeber2, "asdasd");
+            }
+
+            var squadMemeber3 = new User()
+            {
+                UserName = "Alfred",
+                Email = "Alfred@system.death",
+                FirstName = "Alfred",
+                LastName = "Garrison",
+                SquadId = 1,
+                EnrollmentDate = DateTime.UtcNow
+            };
+
+            if (!context.Users.Any(u => u.UserName == "Alfred"))
+            {
+                userManager.Create(squadMemeber3, "asdasd");
+            }
+
+            var squadMemeber4 = new User()
+            {
+                UserName = "Paul",
+                Email = "Paul@system.death",
+                FirstName = "Paul",
+                LastName = "Gladstone",
+                SquadId = 1,
+                EnrollmentDate = DateTime.UtcNow
+            };
+
+            if (!context.Users.Any(u => u.UserName == "Paul"))
+            {
+                userManager.Create(squadMemeber4, "asdasd");
+            }
+            squad.SquadLeader = squadLeader;
+            squad.Soldiers.Add(squadMemeber1);
+            squad.Soldiers.Add(squadMemeber2);
+            squad.Soldiers.Add(squadMemeber3);
+            squad.Soldiers.Add(squadMemeber4);
+            context.Squads.Add(squad);
+
+
+
+            // SEED PLATOONS WITH PLATOON LEADERS
+            var plattonLeader = new User()
+            {
+                UserName = "John",
+                Email = "John@site.com",
+                EnrollmentDate = DateTime.UtcNow
+            };
+
+            if (!context.Users.Any(u => u.UserName == "John"))
+            {
+                userManager.Create(plattonLeader, "asdasd");
+            }
+
+            var platoon = new Platoon()
+            {
+                Name = "1st Brigade"
+            };
+
+            platoon.Squads.Add(squad);
+            context.Platoons.AddOrUpdate(platoon);
+
+            context.SaveChanges();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model MilitarySystem.Web.Models.UserDetailsViewModel
+﻿@model MilitarySystem.Web.Models.IndexViewModel
 @{
 
 }
@@ -22,11 +22,15 @@
 </div>
 @if (Request.IsAuthenticated)
 {
-    @Html.Partial("_UserDetails", Model)
+    @Html.Partial("_UserDetails", Model.User)
+    @Html.Partial("_SquadDetails", Model.Squad)
 
 @section Scripts{
     <script>
         $("#soldier-details-box").draggable();
     </script>
+<script>
+        $("#squads-details-box").draggable();
+</script>
 }
 }

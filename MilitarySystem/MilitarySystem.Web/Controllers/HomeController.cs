@@ -11,22 +11,28 @@
 
     public class HomeController : BaseController
     {
+        private ISquadsService squads;
 
-        public HomeController(IUsersService users)
+        public HomeController(IUsersService users, ISquadsService squads)
             : base(users)
         {
-
+            this.squads = squads;
         }
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-
-            var model = this.Users.GetById(userId);
             if (userId != null)
             {
-                var result = this.Mapper.Map<UserDetailsViewModel>(model);
+                var user = this.Users.GetById(userId);
 
-                return View(result);
+                var squad = this.squads.GetById(user.SquadId.GetValueOrDefault());
+
+                var userModel = this.Mapper.Map<UserDetailsViewModel>(user);
+                var squadModel = this.Mapper.Map<SquadDetailsViewModel>(squad);
+
+                var indexViewModel = new IndexViewModel() { User = userModel, Squad = squadModel };
+
+                return View(indexViewModel);
             }
             return View();
         }

@@ -6,15 +6,6 @@ using System;
 
 namespace MilitarySystem.Web.Models
 {
-    public class IndexViewModel
-    {
-        public string FullName { get; set; }
-
-        public DateTime EnrollmentDate { get; set; }
-
-        public int Rank { get; set; }
-    }
-
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }

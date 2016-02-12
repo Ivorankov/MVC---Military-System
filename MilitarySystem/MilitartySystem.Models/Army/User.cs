@@ -10,11 +10,11 @@
 
     public class User : IdentityUser
     {
-        ICollection<Weapon> weapons;
+        private ICollection<Weapon> weapons;
 
-        ICollection<Gear> gear;
+        private ICollection<Gear> gear;
 
-        ICollection<Mission> missions;
+        private ICollection<Mission> missions;
 
         public User()
         {
@@ -33,15 +33,19 @@
 
         public int Rank { get; set; }
 
+        public int? SquadId { get; set; }
+
+        public virtual Squad Squad { get; }
+
         public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }
 
-        public ICollection<Weapon> Weapons { get { return this.weapons; } set { this.weapons = value; } }
+        public virtual ICollection<Weapon> Weapons { get { return this.weapons; } set { this.weapons = value; } }
 
-        public ICollection<Gear> Gear { get { return this.gear; } set { this.gear = value; } }
+        public virtual ICollection<Gear> Gear { get { return this.gear; } set { this.gear = value; } }
 
-        public ICollection<Mission> Missions { get { return this.missions; } set { this.missions = value; } }
+        public virtual ICollection<Mission> Missions { get { return this.missions; } set { this.missions = value; } }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

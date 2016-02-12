@@ -68,14 +68,7 @@ using MilitarySystem.Services.Contracts;
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var user = this.users.GetById(userId);
-            var model = new IndexViewModel
-            {
-                EnrollmentDate = user.EnrollmentDate,
-                FullName = user.FirstName + " " + user.LastName,
-                Rank = user.Rank
-            };
-            return View(model);
+            return View();
         }
 
         //

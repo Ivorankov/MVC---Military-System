@@ -36,12 +36,12 @@
 
         public virtual Platoon Platton { get; set; }
 
-        public ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
+        public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 
-        public ICollection<User> Soldiers { get { return this.soldiers; } set { this.soldiers = value; } }
+        public virtual ICollection<User> Soldiers { get { return this.soldiers; } set { this.soldiers = value; } }
 
-        public ICollection<Mission> Missions { get { return this.missions; } set { this.missions = value; } }
+        public virtual ICollection<Mission> Missions { get { return this.missions; } set { this.missions = value; } }
 
-        public ICollection<Vehicle> Vehicles { get { return this.vehicles; } set { this.vehicles = value; } }
+        public virtual ICollection<Vehicle> Vehicles { get { return this.vehicles; } set { this.vehicles = value; } }
     }
 }

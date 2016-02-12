@@ -1,20 +1,26 @@
-﻿@model MilitarySystem.Web.Models.SquadDetailsModel
+﻿@model MilitarySystem.Web.Models.SquadDetailsViewModel
 
-<div class="row ui-widget-content" id="soldier-details-box">
+<div class="row ui-widget-content" id="squads-details-box">
     <div class="col s12 m6">
-        <div class="card grey lighten-4">
+        <div class="card grey lighten-3">
             <div class="card-image">
-                <img src="http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png">
-                <span class="card-title">@Model.Name</span>
+                <img src="http://emblemsbf.com/img/30268.jpg" height="300">
+                <span class="card-title white-background black-text">@Model.Name</span>
             </div>
-            <div class="card-content black-text">
-                <span class="card-title">Personal Info</span>
-                <p>@Model.SquadLeaderName</p>
-                <p>@Model.AmaountOfPeople</p>
-                <p>@Model.Name</p>
-            </div>
-            <div class="card-action">
-                <a href="#">@Html.ActionLink("Change your password", "ChangePassword", "Manage")</a>
+            <div class="card-content black-text human-text">
+                <strong>Squad Leader </strong><strong class="blue-text">@Model.SquadLeaderName</strong>
+                <hr/>
+                <strong>Members</strong>
+                @foreach(var a in Model.Members)
+                {
+                    <p class="green-text">@a.FullName</p>
+                }
+                <hr/>
+                <strong>Vehicles</strong>
+                @foreach (var a in Model.Vehicles)
+                {
+                    <p class="red-text">@a.Manufacturer.Name - @a.Model</p>
+                }
             </div>
         </div>
     </div>
