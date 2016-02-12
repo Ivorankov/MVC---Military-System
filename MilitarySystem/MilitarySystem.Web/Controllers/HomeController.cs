@@ -35,10 +35,12 @@
                 var squadModel = this.Mapper.Map<SquadDetailsViewModel>(squad);
                 var missionModel = this.Mapper.Map<MissionDetailsViewModel>(missions);
 
-                var indexViewModel = new IndexViewModel() { User = userModel, Squad = squadModel, Mission = missionModel };
+                var indexViewModel = new IndexViewModel() { User = userModel, Squad = squadModel, Mission = missionModel, Message = new SendMessageViewModel() };
+                ViewBag.HeaderText = "Send Message To Platoon Leader";
 
                 return View(indexViewModel);
             }
+
             return View();
         }
     }
