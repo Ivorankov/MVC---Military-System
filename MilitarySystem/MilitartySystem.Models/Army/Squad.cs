@@ -36,6 +36,10 @@
 
         public virtual Platoon Platton { get; set; }
 
+        public int? ActiveMissionId { get; set; }
+
+        public virtual Mission ActiveMission { get; set; }
+
         public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 
         public virtual ICollection<User> Soldiers { get { return this.soldiers; } set { this.soldiers = value; } }

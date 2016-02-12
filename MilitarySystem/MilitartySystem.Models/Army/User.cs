@@ -37,6 +37,10 @@
 
         public virtual Squad Squad { get; }
 
+        public int? PlatoonId { get; set; }
+
+        public virtual Platoon Platoon { get; }
+
         public int? ImageId { get; set; }
 
         public virtual Image Image { get; set; }

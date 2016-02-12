@@ -1,0 +1,32 @@
+﻿@model MilitarySystem.Web.Models.PlatoonDetailsViewModel
+
+<div class="row ui-widget-content" id="squads-details-box">
+    <div class="col s12 m12">
+        <div class="card grey lighten-3">
+            <div class="card-image">
+                <img src="http://emblemsbf.com/img/30268.jpg" height="300">
+                <span class="card-title white-background black-text">@Model.Name</span>
+            </div>
+            <div class="card-content black-text human-text">
+                <strong>Platoon Leader </strong><strong class="blue-text">@Model.PlatoonCommanderName</strong>
+                <hr />
+
+                <hr />
+                <strong>Squads</strong>
+                @foreach (var a in Model.Squads)
+                {
+                    <p class="red-text">@a.Name</p>
+                    if(@a.ActiveMission != null)
+                    {
+                        <button class="btn">Assign Mission</button>
+                    }
+                    else
+                    {
+
+                    }
+                    <hr/>
+                }
+            </div>
+        </div>
+    </div>
+</div>

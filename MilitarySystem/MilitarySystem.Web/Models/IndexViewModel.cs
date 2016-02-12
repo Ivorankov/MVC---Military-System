@@ -9,5 +9,7 @@
         public MissionDetailsViewModel Mission {get;set;}
 
         public SendMessageViewModel Message { get; set; }
+
+        public PlatoonDetailsViewModel Platoon { get; set; }
     }
 }
