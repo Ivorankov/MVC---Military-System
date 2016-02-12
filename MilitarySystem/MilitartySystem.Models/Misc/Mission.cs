@@ -14,7 +14,7 @@
 
         public virtual Squad Squad { get; set; }
 
-        public bool HasSucceeded { get; set; }
+        public bool IsActive { get; set; }
 
         //Type enum TODO maybe
     }

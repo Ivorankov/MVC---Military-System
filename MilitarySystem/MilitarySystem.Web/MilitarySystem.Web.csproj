@@ -198,6 +198,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IndexViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MissionDetailsViewModel.cs" />
+    <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Models\SoldierInListModel.cs" />
     <Compile Include="Models\SquadDetailsViewModel.cs" />
     <Compile Include="Models\UserDetailsViewModel.cs" />
@@ -302,6 +304,8 @@
     <Content Include="Views\Shared\_BaseNavigation.cshtml" />
     <Content Include="Views\Shared\_PlattonNavigation.cshtml" />
     <Content Include="Views\Shared\_SquadDetails.cshtml" />
+    <Content Include="Views\Shared\_MissionDetails.cshtml" />
+    <Content Include="Views\Shared\_SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +318,7 @@
     <Folder Include="Areas\Squad\Controllers\" />
     <Folder Include="Areas\Squad\Models\" />
     <Folder Include="Areas\Squad\Views\" />
+    <Folder Include="Views\Shared\MilitaryTroopSystem\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

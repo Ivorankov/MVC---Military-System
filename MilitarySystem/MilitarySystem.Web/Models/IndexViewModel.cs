@@ -4,6 +4,8 @@
     {
         public SquadDetailsViewModel Squad { get; set; }
 
-        public UserDetailsViewModel User {get;set;}
+        public UserDetailsViewModel User { get; set; }
+
+        public MissionDetailsViewModel Mission {get;set;}
     }
 }
