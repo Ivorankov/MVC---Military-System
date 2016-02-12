@@ -86,13 +86,16 @@
 
             var veh = new Vehicle() { Manufacturer = manufacturer, Model = "Raptor", Price = 89000.564M };
             context.SaveChanges();
-
+            var location = new Location() { Lat=-34.397M, Lgn= 150.6442M };
+            
             var squad = new Squad()
             {
                 Name = "Alpha",
             };
 
             squad.Vehicles.Add(veh);
+
+            var mission = new Mission() { Info = "Assult on OMAN", TargetLocation = location, SquadId = 1 };
 
             var squadLeader = new User()
             {
@@ -173,6 +176,7 @@
             squad.Soldiers.Add(squadMemeber2);
             squad.Soldiers.Add(squadMemeber3);
             squad.Soldiers.Add(squadMemeber4);
+            squad.Missions.Add(mission);
             context.Squads.Add(squad);
 
 
