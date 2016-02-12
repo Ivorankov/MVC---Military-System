@@ -25,6 +25,7 @@
     @Html.Partial("_UserDetails", Model.User)
     @Html.Partial("_SquadDetails", Model.Squad)
     @Html.Partial("_MissionDetails", Model.Mission)
+    @Html.Partial("_SendMessage", Model.Message)
 
 @section Scripts{
     <script>
@@ -36,6 +37,9 @@
 <script>
         $("#mission-details-box").draggable();
 </script>
+    <script>
+        $("#message-details-box").draggable();
+    </script>
 <script type="text/javascript">
     function initialize() {
         var lat = $("#Lat").attr("data-lat");

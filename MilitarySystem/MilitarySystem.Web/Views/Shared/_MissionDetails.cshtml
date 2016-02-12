@@ -3,8 +3,7 @@
 <div class="row ui-widget-content" id="mission-details-box">
     <div class="col s12 m6">
         <div class="card grey lighten-5">
-@if (@Model != null)
-{
+
             <div class="card-image">
                 <div id="map" style="height:380px;"></div>
                 <span class="card-title white-background black-text"></span>
@@ -16,13 +15,12 @@
                 <p id="Lat" data-lat="@Model.Lat">Lat: @Model.Lat</p>
                 <p id="Lgn" data-lgn="@Model.Lgn">Lgn: @Model.Lgn</p>
             </div>
-}
-else
-{
+
+
     <div class="card-content black-text human-text">
         <strong class="red-text">No Active missions</strong>
     </div>
-}
+
         </div>
     </div>
 </div>

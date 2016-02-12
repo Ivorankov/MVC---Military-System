@@ -60,3 +60,12 @@ textarea {
 .white-background{
     background-color: white;
 }
+
+input[type=text]{
+    font-size:18px;
+}
+
+
+label{
+  font-size:18px;
+}

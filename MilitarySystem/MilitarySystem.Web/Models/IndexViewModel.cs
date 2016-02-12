@@ -7,5 +7,7 @@
         public UserDetailsViewModel User { get; set; }
 
         public MissionDetailsViewModel Mission {get;set;}
+
+        public SendMessageViewModel Message { get; set; }
     }
 }
