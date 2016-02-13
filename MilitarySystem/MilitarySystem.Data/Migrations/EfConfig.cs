@@ -95,8 +95,6 @@
 
             squad.Vehicles.Add(veh);
 
-            var mission = new Mission() { Info = "Assult on OMAN", TargetLocation = location, SquadId = 1 };
-
             var squadLeader = new User()
             {
                 UserName = "Robin",
@@ -176,10 +174,14 @@
             squad.Soldiers.Add(squadMemeber2);
             squad.Soldiers.Add(squadMemeber3);
             squad.Soldiers.Add(squadMemeber4);
-            squad.Missions.Add(mission);
             context.Squads.Add(squad);
+            context.SaveChanges();
 
+            var mission = new Mission() { Info = "Traning in the mountains", TargetLocation = location, SquadId = 1 };
+            context.Missions.AddOrUpdate(mission);
+            squad.ActiveMission = mission;
 
+            context.SaveChanges();
 
             // SEED PLATOONS WITH PLATOON LEADERS
             var plattonLeader = new User()
@@ -199,7 +201,13 @@
                 Name = "1st Brigade"
             };
 
+            var messageToPlatoon = new Message() { Content = "Ellooooo", User = squadLeader };
+
+            context.SaveChanges();
+
             platoon.Squads.Add(squad);
+            platoon.Messages.Add(messageToPlatoon);
+            platoon.PlatoonCommander = plattonLeader;
             context.Platoons.AddOrUpdate(platoon);
 
             context.SaveChanges();
