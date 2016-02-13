@@ -4,9 +4,12 @@
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+
+    using Common;
 
     public class User : IdentityUser
     {
@@ -23,14 +26,19 @@
             this.missions = new HashSet<Mission>();
         }
 
+        [Required]
+        [MaxLength(ModelsConstraints.NameMaxLength)]
         public string FirstName { get; set; }
 
+        [Required]
+        [MaxLength(ModelsConstraints.NameMaxLength)]
         public string LastName { get; set; }
 
         public DateTime EnrollmentDate { get; set; }
 
         public decimal Wage { get; set; }
 
+        [Range(0,56)]
         public int Rank { get; set; }
 
         public int? SquadId { get; set; }

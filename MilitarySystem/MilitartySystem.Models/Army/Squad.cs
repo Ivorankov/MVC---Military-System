@@ -1,6 +1,9 @@
 ﻿namespace MilitarySystem.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using Common;
 
     public class Squad
     {
@@ -20,8 +23,11 @@
             this.vehicles = new HashSet<Vehicle>();
         }
 
+        [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(ModelsConstraints.NameMaxLength)]
         public string Name { get; set; }
 
         public string SquadLeaderId { get; set; }
