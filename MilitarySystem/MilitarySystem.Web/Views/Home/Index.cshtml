@@ -17,8 +17,40 @@
     @Html.Partial("_MissionDetails", Model.Mission)
     @Html.Partial("_SendMessage", Model.Message)
     @Html.Partial("_PlatoonDetails", Model.Platoon)
+    @Html.Partial("_ChatWindow")
 
     @section Scripts{
+        <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+        <script src="~/signalr/hubs" type="text/javascript"></script>
+<script>
+    var rooms = [];
+
+    $(document).ready(function () {
+
+        $.connection.hub.start();
+
+        var chat = $.connection.chat;
+
+        $('#send-message').click(function () {
+
+            var msg = $('#message').val();
+
+            chat.server.sendMessage(msg);
+        });
+
+        chat.client.addMessage = addMessage;
+        chat.client.joinRoom = joinRoom;
+    });
+
+    function addMessage(message) {
+        $('#messages').append('<div>' + message + '</div>');
+    }
+
+    function joinRoom(room) {
+        rooms.push(room);
+        $('#currentRooms').append('<div>' + room + '</div>');
+    }
+</script>
         <script>
             var switcher = 500;
             function generateFlexibleControl(html, tabElementName, flexControlId, flexPinButtonId, flexHoldButtonId) {
@@ -96,6 +128,8 @@
             generateFlexibleControl($("#message-details-box"), 'Message', 'message-flex', 'message-flex-pin-button', 'message-flex-hold-button');
 
             generateFlexibleControl($("#squads-details-box"), 'Squad', 'squad-flex', 'squad-flex-pin-button', 'squad-flex-hold-button');
+
+            generateFlexibleControl($("#chat-box"), 'Chat', 'chat-flex', 'chat-flex-pin-button', 'chat-flex-hold-button');
 
 
         </script>

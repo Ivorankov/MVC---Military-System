@@ -27,9 +27,5 @@
             configuration.CreateMap<Platoon, PlatoonDetailsViewModel>()
                         .ForMember(x => x.PlatoonCommanderName, opt => opt.MapFrom(x => x.PlatoonCommander.FirstName + " " + x.PlatoonCommander.LastName));
         }
-
-        //public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
-
-        //public virtual ICollection<Squad> Squads { get { return this.squads; } set { this.squads = value; } }
     }
 }

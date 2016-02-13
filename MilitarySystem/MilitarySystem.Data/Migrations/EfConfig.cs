@@ -201,7 +201,12 @@
                 Name = "1st Brigade"
             };
 
+            var messageToPlatoon = new Message() { Content = "Ellooooo", User = squadLeader };
+
+            context.SaveChanges();
+
             platoon.Squads.Add(squad);
+            platoon.Messages.Add(messageToPlatoon);
             platoon.PlatoonCommander = plattonLeader;
             context.Platoons.AddOrUpdate(platoon);
 
