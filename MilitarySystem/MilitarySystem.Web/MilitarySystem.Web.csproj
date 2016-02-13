@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -264,6 +266,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Troops\Views\web.config" />
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -315,22 +319,23 @@
     <Content Include="Views\Shared\_UserDetails.cshtml" />
     <Content Include="Views\Shared\_SoldierNavigation.cshtml" />
     <Content Include="Views\Shared\_BaseNavigation.cshtml" />
-    <Content Include="Views\Shared\_PlattonNavigation.cshtml" />
+    <Content Include="Areas\Troops\Views\_PlattonNavigation.cshtml" />
     <Content Include="Views\Shared\_SquadDetails.cshtml" />
     <Content Include="Views\Shared\_MissionDetails.cshtml" />
     <Content Include="Views\Shared\_SendMessage.cshtml" />
     <Content Include="Views\Shared\_ChatWindow.cshtml" />
     <Content Include="Views\Shared\_PlatoonDetails.cshtml" />
-    <Content Include="Views\Shared\_MessageBoxDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\_MessageBoxDetails.cshtml" />
     <Content Include="Views\Shared\_AdministrationLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\" />
-    <Folder Include="Areas\Troops\Controllers\ViewModels\" />
-    <Folder Include="Areas\Troops\Views\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Troops\Controllers\" />
+    <Folder Include="Areas\Troops\Models\" />
+    <Folder Include="Areas\Troops\Views\Shared\" />
     <Folder Include="Views\Shared\MilitaryTroopSystem\" />
   </ItemGroup>
   <ItemGroup>
