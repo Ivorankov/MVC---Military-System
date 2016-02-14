@@ -198,8 +198,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
-    <Compile Include="Areas\Tea\Controllers\TeaController.cs" />
-    <Compile Include="Areas\Tea\TeaAreaRegistration.cs" />
     <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
     <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
@@ -274,10 +272,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Troops\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Tea\Views\web.config" />
-    <Content Include="Areas\Tea\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Tea\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Tea\Views\Tea\Index.cshtml" />
     <Content Include="Areas\Troops\Views\web.config" />
     <Content Include="Areas\Troops\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
@@ -349,7 +343,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Tea\Models\" />
     <Folder Include="Areas\Troops\Views\Platoon\" />
     <Folder Include="Areas\Troops\Views\Squads\" />
   </ItemGroup>
@@ -426,7 +419,7 @@
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
-    <PropertyGroup>
+  <PropertyGroup>
     <PostBuildEvent>
       if not exist "$(WebProjectOutputDir)\bin\Roslyn" md "$(WebProjectOutputDir)\bin\Roslyn"
       start /MIN xcopy /s /y /R "$(OutDir)roslyn\*.*" "$(WebProjectOutputDir)\bin\Roslyn"
