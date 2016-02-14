@@ -26,6 +26,10 @@
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Administration/Content/css").Include(
+           "~/Areas/Administration/Content/bootstrap.css",
+           "~/Areas/Administration/Content/site.css"));
         }
     }
 }
