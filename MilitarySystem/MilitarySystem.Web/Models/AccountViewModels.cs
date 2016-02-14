@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MilitarySystem.Web.Models
 {
+    public class IndexViewModel
+    {
+
+    }
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
