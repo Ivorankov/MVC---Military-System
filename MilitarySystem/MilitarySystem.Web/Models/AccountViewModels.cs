@@ -1,11 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MilitarySystem.Web.Models
 {
     public class IndexViewModel
     {
+        public string FullName { get; set; }
 
+        public int Rank { get; set; }
+
+        public DateTime EnrollmentDate { get; set; }
     }
     public class ExternalLoginConfirmationViewModel
     {
