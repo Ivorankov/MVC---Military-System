@@ -1,0 +1,164 @@
+﻿@model MilitarySystem.Web.Areas.Troops.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Tea";
+}
+<nav class="light-blue darken-3 nav-text" id="tab-container">
+    <div class="nav-wrapper valign-wrapper">
+        <ul id="tab-bar">
+            <li id="test"></li>
+        </ul>
+    </div>
+</nav>
+@if (Request.IsAuthenticated)
+{
+    @Html.Partial("_UserDetails", Model.User)
+    @Html.Partial("_SquadDetails", Model.Squad)
+    @Html.Partial("_MissionDetails", Model.Mission)
+    @Html.Partial("_SendMessage", Model.Message)
+    @Html.Partial("_PlatoonDetails", Model.Platoon)
+    @Html.Partial("_ChatWindow")
+
+    @section Scripts{
+        <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+        <script src="~/signalr/hubs" type="text/javascript"></script>
+<script>
+    var rooms = [];
+
+    $(document).ready(function () {
+
+        $.connection.hub.start();
+
+        var chat = $.connection.chat;
+
+        $('#send-message').click(function () {
+
+            var msg = $('#message').val();
+
+            chat.server.sendMessage(msg);
+        });
+
+        chat.client.addMessage = addMessage;
+        chat.client.joinRoom = joinRoom;
+    });
+
+    function addMessage(message) {
+        $('#messages').append('<div>' + message + '</div>');
+    }
+
+    function joinRoom(room) {
+        rooms.push(room);
+        $('#currentRooms').append('<div>' + room + '</div>');
+    }
+</script>
+        <script>
+            var switcher = 500;
+            function generateFlexibleControl(html, tabElementName, flexControlId, flexPinButtonId, flexHoldButtonId) {
+
+                //Create the pin button
+                var pinToTabButton = $("<button />")
+                    .addClass('btn-floating btn-small red')
+                    .text('Pin')
+                    .attr("id", flexPinButtonId);
+
+                var holdButton = $("<button />")
+                    .addClass('btn-floating btn-small green')
+                    .text('Hold')
+                    .attr("id", flexHoldButtonId);
+
+                //Container for button + content
+                var borderElement = $("<div />").addClass("flexible-box")
+                    .attr("id", flexControlId);
+
+                //Append button + content
+                borderElement.append(pinToTabButton);
+                borderElement.append(holdButton);
+                borderElement.append(html);
+
+                //Fancyyy
+                $(borderElement).draggable({
+                    zIndex: switcher++
+                });
+
+                //Append entire thing to the body
+                $("#content").append(borderElement);
+
+                //Pin to tab button click event
+                $("#" + flexPinButtonId).on('click', function (ev) {
+                    $("#" + flexControlId).hide();
+
+                    var tabItemContainer = $("<li/>");
+
+                    var tabItemElement = $("<div />")
+                        .addClass('chip')
+                        .addClass('light-blue')
+                        .addClass('white-text')
+                        .addClass('tab-item')
+                        .text(tabElementName);
+
+                    tabItemContainer.html(tabItemElement);
+                    $("#test").append(tabItemContainer);
+
+                    tabItemContainer.on('click', function () {
+                        $("#" + flexControlId).show();
+                        tabItemContainer.remove();
+                    })
+                })
+
+                $("#" + flexHoldButtonId).on('click', function (ev) {
+                    var $button = $("#" + flexHoldButtonId);
+                    var $flexContainer = $("#" + flexControlId);
+                    if ($button.hasClass("green")) {
+                        $flexContainer.draggable("disable");
+                        $button.removeClass("green")
+                               .addClass("red");
+                    } else {
+                        $flexContainer.draggable("enable");
+                        $button.removeClass("red")
+                               .addClass("green");
+                    }
+
+                    })
+            }
+
+            generateFlexibleControl($("#soldier-details-box"), 'User', 'user-flex', 'user-flex-pin-button', 'user-flex-hold-button');
+
+            generateFlexibleControl($("#mission-details-box"), 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
+
+            generateFlexibleControl($("#message-details-box"), 'Message', 'message-flex', 'message-flex-pin-button', 'message-flex-hold-button');
+
+            generateFlexibleControl($("#squads-details-box"), 'Squad', 'squad-flex', 'squad-flex-pin-button', 'squad-flex-hold-button');
+
+            generateFlexibleControl($("#chat-box"), 'Chat', 'chat-flex', 'chat-flex-pin-button', 'chat-flex-hold-button');
+
+
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+                var lat = $("#Lat").attr("data-lat");
+                var lgn = $("#Lgn").attr("data-lgn");
+                var myLatlng = new google.maps.LatLng(lat, lgn);
+                var mapOptions = {
+                    zoom: 8,
+                    center: myLatlng,
+                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                };
+                var map = new google.maps.Map(document.getElementById("map"),
+                    mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+
+                marker.SetMap(map);
+
+            }
+
+
+            initialize();
+
+
+        </script>
+    }
+}

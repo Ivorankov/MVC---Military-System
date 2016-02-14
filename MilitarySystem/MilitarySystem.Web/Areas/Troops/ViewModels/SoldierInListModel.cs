@@ -1,4 +1,4 @@
-﻿namespace MilitarySystem.Web.Models
+﻿namespace MilitarySystem.Web.Areas.Troops.ViewModels
 {
     public class SoldierInListModel
     {

@@ -1,6 +1,5 @@
-﻿namespace MilitarySystem.Web.Models
+﻿namespace MilitarySystem.Web.Areas.Troops.ViewModels
 {
-    using System;
 
     using AutoMapper;
 

@@ -1,8 +1,9 @@
-﻿namespace MilitarySystem.Web.Models
+﻿namespace MilitarySystem.Web.Areas.Troops.ViewModels
 {
+    using AutoMapper;
+
     using MilitarySystem.Models;
     using Infrastructure.Mapping;
-    using AutoMapper;
 
     public class MissionDetailsViewModel : IMapFrom<Mission>, IHaveCustomMappings
     {
