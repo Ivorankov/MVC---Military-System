@@ -43,11 +43,11 @@
 
         public int? SquadId { get; set; }
 
-        public virtual Squad Squad { get; }
+        public virtual Squad Squad { get; set; }
 
         public int? PlatoonId { get; set; }
 
-        public virtual Platoon Platoon { get; }
+        public virtual Platoon Platoon { get; set; }
 
         public int? ImageId { get; set; }
 
