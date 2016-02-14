@@ -3,12 +3,13 @@
     using Common;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Platoon
     {
         private ICollection<Message> messages;
 
-        private ICollection<Squad> squads; 
+        private ICollection<Squad> squads;       
 
         public Platoon()
         {

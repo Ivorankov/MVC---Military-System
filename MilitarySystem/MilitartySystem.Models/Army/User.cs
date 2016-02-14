@@ -10,6 +10,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using Common;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class User : IdentityUser
     {
@@ -41,13 +42,10 @@
         [Range(0,56)]
         public int Rank { get; set; }
 
+
         public int? SquadId { get; set; }
 
         public virtual Squad Squad { get; set; }
-
-        public int? PlatoonId { get; set; }
-
-        public virtual Platoon Platoon { get; set; }
 
         public int? ImageId { get; set; }
 
