@@ -200,6 +200,8 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Tea\Controllers\TeaController.cs" />
     <Compile Include="Areas\Tea\TeaAreaRegistration.cs" />
+    <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
+    <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -336,7 +338,7 @@
     <Content Include="Areas\Troops\Views\Shared\_SquadDetails.cshtml" />
     <Content Include="Areas\Troops\Views\Shared\_MissionDetails.cshtml" />
     <Content Include="Areas\Troops\Views\Shared\_SendMessage.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_ChatWindow.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_Chat.cshtml" />
     <Content Include="Areas\Troops\Views\Shared\_PlatoonDetails.cshtml" />
     <Content Include="Areas\Troops\Views\Shared\_MessageBoxDetails.cshtml" />
     <Content Include="Views\Shared\_AdministrationLayout.cshtml" />
@@ -347,6 +349,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Tea\Models\" />
+    <Folder Include="Areas\Troops\Views\Platoon\" />
+    <Folder Include="Areas\Troops\Views\Squads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
