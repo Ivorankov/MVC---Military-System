@@ -71,6 +71,8 @@
             {
                 UserName = "Admin",
                 Email = "Admin@system.death",
+                FirstName = "Josh",
+                LastName = "TJ",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -188,6 +190,8 @@
             {
                 UserName = "John",
                 Email = "John@site.com",
+                FirstName = "John",
+                LastName = "Tiberian",
                 EnrollmentDate = DateTime.UtcNow
             };
 

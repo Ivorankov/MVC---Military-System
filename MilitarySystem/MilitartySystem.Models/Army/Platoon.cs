@@ -1,6 +1,8 @@
 ﻿namespace MilitarySystem.Models
 {
+    using Common;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Platoon
     {
@@ -14,8 +16,11 @@
             this.squads = new HashSet<Squad>();
         }
 
+        [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(ModelsConstraints.NameMaxLength)]
         public string Name { get; set; }
 
         public string PlatoonCommanderId { get; set; }

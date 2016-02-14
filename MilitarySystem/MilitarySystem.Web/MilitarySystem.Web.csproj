@@ -197,6 +197,12 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Tea\Controllers\TeaController.cs" />
+    <Compile Include="Areas\Tea\TeaAreaRegistration.cs" />
+    <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
+    <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
+    <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -207,15 +213,15 @@
     </Compile>
     <Compile Include="Hubs\Chat.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IndexViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\IndexViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MessageBoxViewModel.cs" />
-    <Compile Include="Models\MissionDetailsViewModel.cs" />
-    <Compile Include="Models\PlatoonDetailsViewModel.cs" />
-    <Compile Include="Models\SendMessageViewModel.cs" />
-    <Compile Include="Models\SoldierInListModel.cs" />
-    <Compile Include="Models\SquadDetailsViewModel.cs" />
-    <Compile Include="Models\UserDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\MessageBoxViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\MissionDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\PlatoonDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\SendMessageViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\SoldierInListModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\SquadDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\UserDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -266,8 +272,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Troops\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Tea\Views\web.config" />
+    <Content Include="Areas\Tea\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Tea\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Tea\Views\Tea\Index.cshtml" />
     <Content Include="Areas\Troops\Views\web.config" />
+    <Content Include="Areas\Troops\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration\Views\Administration\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -294,8 +309,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_TroopsLayout.cshtml" />
+    <Content Include="Areas\Troops\Views\Troops\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -316,27 +331,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_UserDetails.cshtml" />
-    <Content Include="Views\Shared\_SoldierNavigation.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_UserDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_SoldierNavigation.cshtml" />
     <Content Include="Views\Shared\_BaseNavigation.cshtml" />
-    <Content Include="Areas\Troops\Views\_PlattonNavigation.cshtml" />
-    <Content Include="Views\Shared\_SquadDetails.cshtml" />
-    <Content Include="Views\Shared\_MissionDetails.cshtml" />
-    <Content Include="Views\Shared\_SendMessage.cshtml" />
-    <Content Include="Views\Shared\_ChatWindow.cshtml" />
-    <Content Include="Views\Shared\_PlatoonDetails.cshtml" />
-    <Content Include="Areas\Troops\Views\_MessageBoxDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_PlattonNavigation.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_SquadDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_MissionDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_SendMessage.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_Chat.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_PlatoonDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\_MessageBoxDetails.cshtml" />
     <Content Include="Views\Shared\_AdministrationLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Troops\Controllers\" />
-    <Folder Include="Areas\Troops\Models\" />
-    <Folder Include="Areas\Troops\Views\Shared\" />
-    <Folder Include="Views\Shared\MilitaryTroopSystem\" />
+    <Folder Include="Areas\Tea\Models\" />
+    <Folder Include="Areas\Troops\Views\Platoon\" />
+    <Folder Include="Areas\Troops\Views\Squads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
