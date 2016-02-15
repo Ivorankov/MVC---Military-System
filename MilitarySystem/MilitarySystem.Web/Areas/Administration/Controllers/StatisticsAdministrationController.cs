@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
-    public class StatisticsController : Controller
+    public class StatisticsAdministrationController : Controller
     {
         // GET: Administration/Statistics
         public ActionResult Index()

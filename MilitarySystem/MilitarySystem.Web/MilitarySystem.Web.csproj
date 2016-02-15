@@ -203,7 +203,7 @@
     <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
     <Compile Include="Areas\Administration\Controllers\SquadAdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\StatisticsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\StatisticsAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
     <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
@@ -303,7 +303,16 @@
     <Content Include="Areas\Administration\Views\VehicleAdministration\_VehicleBlank.cshtml" />
     <Content Include="Areas\Administration\Views\GearAdministration\_GearBlank.cshtml" />
     <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\StatisticsAdministration\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Charts\Chart.Bar.js" />
+    <Content Include="Scripts\Charts\Chart.Core.js" />
+    <Content Include="Scripts\Charts\Chart.Doughnut.js" />
+    <Content Include="Scripts\Charts\Chart.js" />
+    <Content Include="Scripts\Charts\Chart.Line.js" />
+    <Content Include="Scripts\Charts\Chart.min.js" />
+    <Content Include="Scripts\Charts\Chart.PolarArea.js" />
+    <Content Include="Scripts\Charts\Chart.Radar.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -368,7 +377,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Statistics\" />
     <Folder Include="Areas\Troops\Content\" />
     <Folder Include="Areas\Troops\Views\Platoon\" />
     <Folder Include="Areas\Troops\Views\Squads\" />
