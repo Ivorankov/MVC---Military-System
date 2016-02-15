@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace MilitarySystem.Web.Areas.Administration.ViewModels
+﻿namespace MilitarySystem.Web.Areas.Administration.ViewModels
 {
-    public class UserViewModel
+    using MilitarySystem.Models;
+    using MilitarySystem.Web.Infrastructure.Mapping;
+
+    public class UserViewModel : IMapFrom<User>
     {
     }
 }

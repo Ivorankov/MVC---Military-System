@@ -206,6 +206,12 @@
     <Compile Include="Areas\Administration\Controllers\StatisticsAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\GearViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\PlatoonViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\SquadViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\VehicleViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\WeaponViewModel.cs" />
     <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
     <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
@@ -376,7 +382,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Troops\Content\" />
     <Folder Include="Areas\Troops\Views\Platoon\" />
     <Folder Include="Areas\Troops\Views\Squads\" />
