@@ -85,6 +85,8 @@ The above provide a more flexible administration - different divisions of admini
  + Can create new squads/platoons and manage them.
  + Can receive messages from platoon leaders.
  + Can promote soldiers.
+. 
+
 # TODO
 ##Troops
 1. Init chat with channel switcher "Alpha , Bravo etc
@@ -93,7 +95,7 @@ The above provide a more flexible administration - different divisions of admini
 4. Mark mission as successfull ability for commander
 5. Add escaping role access validation 
 6. Extract actions in controllers
-7. Savable View*
+7. Savable View*@@@@
 
 ## ADMIN
 1. List all Models with kendo grid Page Filter etc,
