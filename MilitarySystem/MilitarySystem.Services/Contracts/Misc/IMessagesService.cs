@@ -10,7 +10,7 @@
 
         Message GetById(int id);
 
-        int Add(Message message);
+        void Add(Message message);
 
         int Delete(int id);
 

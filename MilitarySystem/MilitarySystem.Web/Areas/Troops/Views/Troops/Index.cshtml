@@ -12,7 +12,7 @@
 
 @section Scripts{
     <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
-    <script src="~/signalr/hubs" type="text/javascript"></script>
+    <script src="/signalr/hubs" type="text/javascript"></script>
     <script>
         function generateFlexibleControl(html, tabElementName, flexControlId, flexPinButtonId, flexHoldButtonId) {
 
@@ -103,12 +103,13 @@
             marker.SetMap(map);
 
         }
-
-        function initChat () {
+        var chat;
+        function initChat() {
+            var rooms = [];
 
             $.connection.hub.start();
 
-            var chat = $.connection.chat;
+            chat = $.connection.chat;
 
             $('#send-message').click(function () {
 
@@ -117,26 +118,42 @@
                 chat.server.sendMessage(msg);
             });
 
+            $("#join-room").click(function () {
+
+                var room = $('#room').val();
+
+                chat.server.joinRoom(room)
+            });
+
+
+
+            $('#send-message-to-room').click(function () {
+
+                var msg = $('#room-message').val();
+
+                chat.server.sendMessageToRoom(msg, rooms);
+            });
             chat.client.addMessage = addMessage;
             chat.client.joinRoom = joinRoom;
-        };
 
+        }
         function addMessage(message) {
             $('#messages').append('<div>' + message + '</div>');
         }
 
         function joinRoom(room) {
-            rooms.push(room);
             $('#currentRooms').append('<div>' + room + '</div>');
         }
 
+        //Click events for flext controls
         var $user = $("#user");
         var $squad = $("#squad");
         var $chat = $("#chat");
         var $message = $("#message");
         var $mission = $("#mission");
+
         $mission.click(function () {
-            $.get('/Troops/Squad/Mission').then(function (html) {
+            $.get('/Troops/Mission/Mission').then(function (html) {
                 generateFlexibleControl(html, 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
                 initialize();
             })
@@ -144,7 +161,7 @@
         })
 
         $user.click(function () {
-            $.get('/Troops/Squad/UserDetails').then(function (html) {
+            $.get('/Troops/User/UserDetails').then(function (html) {
                 generateFlexibleControl(html, 'User', 'user-flex', 'user-flex-pin-button', 'user-flex-hold-button');
                 $user.off();
             })
@@ -158,15 +175,16 @@
         })
 
         $chat.click(function () {
-            $.get('/Troops/Squad/Chat').then(function (html) {
+            $.get('/Troops/Chat/Chat').then(function (html) {
                 generateFlexibleControl(html, 'Chat', 'chat-flex', 'chat-flex-pin-button', 'chat-flex-hold-button');
                 initChat();
+                chat.joinRoom("test");
                 $chat.off();
             })
         })
 
         $message.click(function () {
-            $.get('/Troops/Squad/Message').then(function (html) {
+            $.get('/Troops/Message/Message').then(function (html) {
                 generateFlexibleControl(html, 'Message', 'message-flex', 'message-flex-pin-button', 'message-flex-hold-button');
                 $message.off();
             })

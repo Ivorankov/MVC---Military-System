@@ -20,16 +20,29 @@
 
         protected override void Seed(MilitarySystemContext context)
         {
-            //Kill if these been a seed
             if (context.Users.Any())
             {
                 return;
             }
+            //Seed users with roles
+            SeedUsers(context);
+            //Seed vehicles with manufacturers
+            SeedVehicles(context);
+            //Seed squads
+            SeedSquads(context);
+            //Seed platoons
+            SeedPlatoons(context);
+            //Seed missions
+            SeedMissions(context);
+            SeedSoldiersInSquads(context);
+            SeedMessagesInSquads(context);
 
+        }
+
+        private void SeedUsers(MilitarySystemContext context)
+        {
             var store = new RoleStore<IdentityRole>(context);
             var manager = new RoleManager<IdentityRole>(store);
-
-            //Seed roles TODO split Admin into 3 sub roles - Users/ Communication / Weapons/Gear/Vehciles
             if (!context.Roles.Any(r => r.Name == "SquadLeader"))
             {
                 var roleAdmin = new IdentityRole
@@ -63,10 +76,6 @@
             var userStore = new UserStore<User>(context);
             var userManager = new UserManager<User>(userStore);
 
-            userManager.PasswordValidator = new MinimumLengthValidator(5);
-
-            //SEED ADMIN USERS
-
             var adminUser = new User()
             {
                 UserName = "Admin",
@@ -76,26 +85,8 @@
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Admin"))
-            {
-                userManager.Create(adminUser, "2admin1");
-                userManager.AddToRole(adminUser.Id, "Admin");
-            }
-
-            //SEED SQUADS WITH TEAM MEMEBERS
-
-            var manufacturer = new Manufacturer() { Name = "D&D" };
-
-            var veh = new Vehicle() { Manufacturer = manufacturer, Model = "Raptor", Price = 89000.564M };
-            context.SaveChanges();
-            var location = new Location() { Lat=-34.397M, Lgn= 150.6442M };
-            
-            var squad = new Squad()
-            {
-                Name = "Alpha",
-            };
-
-            squad.Vehicles.Add(veh);
+            userManager.Create(adminUser, "2admin1");
+            userManager.AddToRole(adminUser.Id, "Admin");
 
             var squadLeader = new User()
             {
@@ -103,14 +94,13 @@
                 FirstName = "Robin",
                 LastName = "Tillson",
                 Email = "Robin@system.death",
-                SquadId = 1,
+                Rank = 2,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Robin"))
-            {
-                userManager.Create(squadLeader, "asdasd");
-            }
+
+            userManager.Create(squadLeader, "asdasd");
+
 
             var squadMemeber1 = new User()
             {
@@ -118,14 +108,12 @@
                 Email = "Derrik@system.death",
                 FirstName = "Derrik",
                 LastName = "Johnson",
-                SquadId = 1,
+                Rank = 1,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Derrik"))
-            {
-                userManager.Create(squadMemeber1, "asdasd");
-            }
+
+            userManager.Create(squadMemeber1, "asdasd");
 
             var squadMemeber2 = new User()
             {
@@ -133,14 +121,11 @@
                 Email = "Tommy@system.death",
                 FirstName = "Tommy",
                 LastName = "Williams",
-                SquadId = 1,
+                Rank = 3,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Tommy"))
-            {
-                userManager.Create(squadMemeber2, "asdasd");
-            }
+            userManager.Create(squadMemeber2, "asdasd");
 
             var squadMemeber3 = new User()
             {
@@ -148,14 +133,11 @@
                 Email = "Alfred@system.death",
                 FirstName = "Alfred",
                 LastName = "Garrison",
-                SquadId = 1,
+                Rank = 1,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Alfred"))
-            {
-                userManager.Create(squadMemeber3, "asdasd");
-            }
+            userManager.Create(squadMemeber3, "asdasd");
 
             var squadMemeber4 = new User()
             {
@@ -163,56 +145,122 @@
                 Email = "Paul@system.death",
                 FirstName = "Paul",
                 LastName = "Gladstone",
-                SquadId = 1,
+                Rank = 2,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "Paul"))
-            {
-                userManager.Create(squadMemeber4, "asdasd");
-            }
-            squad.SquadLeader = squadLeader;
-            squad.Soldiers.Add(squadMemeber1);
-            squad.Soldiers.Add(squadMemeber2);
-            squad.Soldiers.Add(squadMemeber3);
-            squad.Soldiers.Add(squadMemeber4);
-            context.Squads.Add(squad);
-            context.SaveChanges();
+            userManager.Create(squadMemeber4, "asdasd");
 
-            var mission = new Mission() { Info = "Traning in the mountains", TargetLocation = location, SquadId = 1 };
-            context.Missions.AddOrUpdate(mission);
-            squad.ActiveMission = mission;
-
-            context.SaveChanges();
-
-            // SEED PLATOONS WITH PLATOON LEADERS
+            //PLATOON LEADERS
             var plattonLeader = new User()
             {
                 UserName = "John",
                 Email = "John@site.com",
                 FirstName = "John",
                 LastName = "Tiberian",
+                Rank = 3,
                 EnrollmentDate = DateTime.UtcNow
             };
 
-            if (!context.Users.Any(u => u.UserName == "John"))
-            {
-                userManager.Create(plattonLeader, "asdasd");
-            }
+            userManager.Create(plattonLeader, "asdasd");
+        }
 
-            var platoon = new Platoon()
-            {
-                Name = "1st Brigade"
-            };
+        private void SeedVehicles(MilitarySystemContext context)
+        {
+            var manufacturer = new Manufacturer() { Name = "D&D" };
+            var vehicle1 = new Vehicle() { Manufacturer = manufacturer, Price = 87000M, Model = "Raptor" };
+            var vehicle2 = new Vehicle() { Manufacturer = manufacturer, Price = 37000.547M, Model = "Thunder" };
+            var vehicle3 = new Vehicle() { Manufacturer = manufacturer, Price = 18200M, Model = "Spiral" };
+            var vehicle4 = new Vehicle() { Manufacturer = manufacturer, Price = 687000M, Model = "Destoryer" };
+            var vehicle5 = new Vehicle() { Manufacturer = manufacturer, Price = 27000000.99M, Model = "F32" };
 
-            var messageToPlatoon = new Message() { Content = "Ellooooo", User = squadLeader };
+            context.Manufacturers.Add(manufacturer);
+            context.Vehicles.Add(vehicle1);
+            context.Vehicles.Add(vehicle2);
+            context.Vehicles.Add(vehicle3);
+            context.Vehicles.Add(vehicle4);
+            context.Vehicles.Add(vehicle5);
 
             context.SaveChanges();
+        }
 
-            platoon.Squads.Add(squad);
-            platoon.Messages.Add(messageToPlatoon);
-            platoon.PlatoonCommander = plattonLeader;
-            context.Platoons.AddOrUpdate(platoon);
+        private void SeedSquads(MilitarySystemContext context)
+        {
+            var squad1 = new Squad() { Name = "Alpha" };
+            var squad2 = new Squad() { Name = "Bravo" };
+            var squad3 = new Squad() { Name = "Charlie" };
+            var squad4 = new Squad() { Name = "Delta" };
+
+            context.Squads.Add(squad1);
+            context.Squads.Add(squad2);
+            context.Squads.Add(squad3);
+            context.Squads.Add(squad4);
+
+            context.SaveChanges();
+        }
+
+        private void SeedPlatoons(MilitarySystemContext context)
+        {
+            var platoon1 = new Platoon() { Name = "Delta Force" };
+            var platoon2 = new Platoon() { Name = "Seals" };
+            var platoon3 = new Platoon() { Name = "Barrets" };
+            var platoon4 = new Platoon() { Name = "Spetsnaz" };
+
+            context.Platoons.Add(platoon1);
+            context.Platoons.Add(platoon2);
+            context.Platoons.Add(platoon3);
+            context.Platoons.Add(platoon4);
+
+            context.SaveChanges();
+        }
+
+        private void SeedMissions(MilitarySystemContext context)
+        {
+            var location = new Location() { Lat = -34.397M, Lgn = 150.6442M };
+
+            var mission1 = new Mission() { Info = "Training in the mountains", TargetLocation = location };
+            //var mission2 = new Mission() { Info = "Seals" };
+            //var mission3 = new Mission() { Info = "Barrets" };
+            //var mission4 = new Mission() { Info = "Spetsnaz" };
+
+            context.Missions.Add(mission1);
+            //context.Missions.Add(mission2);
+            //context.Missions.Add(mission3);
+            //context.Missions.Add(mission4);
+
+            context.SaveChanges();
+        }
+        private void SeedSoldiersInSquads(MilitarySystemContext context)
+        {
+            var squad = context.Squads.FirstOrDefault();
+            var squadLeader = context.Users.FirstOrDefault(x => x.FirstName == "Derrik");
+            squadLeader.Squad = squad;
+            var squadMember1 = context.Users.FirstOrDefault(x => x.FirstName == "Robin");
+            squadMember1.Squad = squad;
+            var squadMember2 = context.Users.FirstOrDefault(x => x.FirstName == "Tommy");
+            squadMember2.Squad = squad;
+            var squadMember3 = context.Users.FirstOrDefault(x => x.FirstName == "Alfred");
+            squadMember3.Squad = squad;
+            squad.SquadLeader = squadLeader;
+            squad.Soldiers.Add(squadMember1);
+            squad.Soldiers.Add(squadMember2);
+            squad.Soldiers.Add(squadMember3);
+
+            squad.ActiveMission = context.Missions.FirstOrDefault();
+            squad.Messages.Add(context.Messages.FirstOrDefault());
+            context.SaveChanges();
+        }
+
+        private void SeedMessagesInSquads(MilitarySystemContext context)
+        {
+            var squad = context.Squads.FirstOrDefault();
+            var squadLeader = context.Users.FirstOrDefault(x => x.FirstName == "Derrik");
+
+            for (int i = 0; i < 10; i++)
+            {
+                var message = new Message() { User = squadLeader, Content = "Field testing " + i };
+                squad.Messages.Add(message);
+            }
 
             context.SaveChanges();
         }

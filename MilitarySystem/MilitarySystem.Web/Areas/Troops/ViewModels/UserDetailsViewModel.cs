@@ -29,9 +29,9 @@
         {
             switch (rank)
             {
-                case 1: return "Content/CorporalBadge.png";
-                case 2: return "Content/SergeantBadge.png";
-                case 3: return "Content/LieutenantBadge.png";
+                case 1: return "/Content/CorporalBadge.png";
+                case 2: return "/Content/SergeantBadge.png";
+                case 3: return "/Content/LieutenantBadge.png";
                 default: return "/";
             }
         }

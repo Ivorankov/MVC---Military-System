@@ -18,8 +18,7 @@
 
         public virtual Location TargetLocation { get; set; }
 
-        [Required]
-        public int SquadId { get; set; }
+        public int? SquadId { get; set; }
 
         public virtual Squad Squad { get; set; }
 

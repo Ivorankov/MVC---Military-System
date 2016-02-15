@@ -212,10 +212,15 @@
     <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\VehicleViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\WeaponViewModel.cs" />
+    <Compile Include="Areas\Troops\Controllers\ChatController.cs" />
+    <Compile Include="Areas\Troops\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Troops\Controllers\MissionController.cs" />
     <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
     <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
+    <Compile Include="Areas\Troops\Controllers\UserController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
+    <Compile Include="Areas\Troops\ViewModels\MessageIndexViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -223,7 +228,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Hubs\Chat.cs" />
+    <Compile Include="Areas\Troops\Hubs\Chat.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Areas\Troops\ViewModels\IndexViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -366,16 +371,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_UserDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\User\_UserDetails.cshtml" />
     <Content Include="Areas\Troops\Views\Shared\_SoldierNavigation.cshtml" />
     <Content Include="Views\Shared\_BaseNavigation.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_PlattonNavigation.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_SquadDetails.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_MissionDetails.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_SendMessage.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_Chat.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_PlatoonDetails.cshtml" />
-    <Content Include="Areas\Troops\Views\Shared\_MessageBoxDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Squad\_SquadDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Mission\_MissionDetails.cshtml" />
+    <Content Include="Areas\Troops\Views\Message\_SendMessage.cshtml" />
+    <Content Include="Areas\Troops\Views\Chat\_Chat.cshtml" />
+    <Content Include="Areas\Troops\Views\Platoon\_PlatoonDetails.cshtml" />
     <Content Include="Views\Shared\_AdministrationLayout.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -383,8 +386,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Troops\Content\" />
-    <Folder Include="Areas\Troops\Views\Platoon\" />
-    <Folder Include="Areas\Troops\Views\Squads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

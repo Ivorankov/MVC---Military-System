@@ -71,6 +71,10 @@ input[type=text]{
     font-size:18px;
 }
 
+input[type=textarea]{
+    height: 80px;
+}
+
 input[type=password]{
     font-size:18px;
     
@@ -95,10 +99,22 @@ label{
         
 }
 
+#message-grid {
+    max-height: 500px;
+        overflow:scroll;
+}
+#message-details-box {
+       max-height: 500px;
+}
 .tab-item{
     margin-right:5px;
 }
 
 .floating-box {
     min-height: 100px !important;
+}
+
+.text-area-messanger{
+    height: 100px;
+    min-height: 100px;
 }

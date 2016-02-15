@@ -16,9 +16,10 @@
             this.messages = messages;
         }
 
-        public int Add(Message message)
+        public void Add(Message message)
         {
-            throw new NotImplementedException();
+            this.messages.Add(message);
+            this.messages.SaveChanges();
         }
 
         public int Delete(int id)
@@ -28,12 +29,12 @@
 
         public IQueryable GetAll()
         {
-            throw new NotImplementedException();
+            return this.messages.All();
         }
 
         public Message GetById(int id)
         {
-            throw new NotImplementedException();
+            return this.messages.GetById(id);
         }
 
         public int Update(Message message)
