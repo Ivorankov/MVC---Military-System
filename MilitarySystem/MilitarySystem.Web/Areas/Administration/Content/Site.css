@@ -1,0 +1,32 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size:24px !important;
+}
+
+a{
+    text-decoration : none !important;
+    font-size: 24px !important;
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.main-content{
+    margin: 20px;
+    min-height:800px;
+    max-height:800px;
+    max-width:1980px;
+}

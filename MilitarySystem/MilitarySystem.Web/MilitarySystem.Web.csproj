@@ -198,6 +198,20 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ArmoryAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\GearAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
+    <Compile Include="Areas\Administration\Controllers\SquadAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\StatisticsAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\GearViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\PlatoonViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\SquadViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\VehicleViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\WeaponViewModel.cs" />
     <Compile Include="Areas\Troops\Controllers\PlatoonController.cs" />
     <Compile Include="Areas\Troops\Controllers\SquadController.cs" />
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
@@ -224,6 +238,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Administration\Content\bootstrap.css" />
+    <Content Include="Areas\Administration\Content\bootstrap.min.css" />
+    <Content Include="Areas\Administration\Content\site.css" />
     <Content Include="Content\background1.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -278,7 +295,30 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\Administration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_AdminNavigation.cshtml" />
+    <Content Include="Areas\Administration\Views\ArmoryAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\GearAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\PlatoonAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\SoldierAdministraton\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\SquadAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\WeaponAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\SoldierAdministraton\_UserBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\SquadAdministration\_SquadBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\PlatoonAdministration\_PlatoonBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\WeaponAdministration\_WeaponBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\VehicleAdministration\_VehicleBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\GearAdministration\_GearBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\StatisticsAdministration\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Charts\Chart.Bar.js" />
+    <Content Include="Scripts\Charts\Chart.Core.js" />
+    <Content Include="Scripts\Charts\Chart.Doughnut.js" />
+    <Content Include="Scripts\Charts\Chart.js" />
+    <Content Include="Scripts\Charts\Chart.Line.js" />
+    <Content Include="Scripts\Charts\Chart.min.js" />
+    <Content Include="Scripts\Charts\Chart.PolarArea.js" />
+    <Content Include="Scripts\Charts\Chart.Radar.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -342,7 +382,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Troops\Content\" />
     <Folder Include="Areas\Troops\Views\Platoon\" />
     <Folder Include="Areas\Troops\Views\Squads\" />
   </ItemGroup>
