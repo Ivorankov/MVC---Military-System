@@ -11,11 +11,8 @@
 
     public class BaseController : Controller
     {
-        private IUsersService users;
-
-        public BaseController(IUsersService users)
+        public BaseController()
         {
-            this.users = users;
 
         }
         protected IMapper Mapper
@@ -25,10 +22,5 @@
                 return AutoMapperConfig.Configuration.CreateMapper();
             }
         }
-
-
-        protected IUsersService Users { get { return this.users; } private set { this.users = value; } }
-
-        protected User CurrentUser { get; set; }
     }
 }

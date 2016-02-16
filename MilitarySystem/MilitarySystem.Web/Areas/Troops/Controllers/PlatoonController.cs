@@ -15,17 +15,19 @@
 
         private ISquadsService squads;
 
+        private IUsersService users;
+
         public PlatoonController(IPlatoonsService platoons, ISquadsService squads,  IUsersService users)
-            : base(users)
         {
             this.platoons = platoons;
             this.squads = squads;
+            this.users = users;
         }
         [HttpGet]
         public ActionResult PlatoonDetails()
         {
             var userId = User.Identity.GetUserId();
-            var user = this.Users.GetById(userId);
+            var user = this.users.GetById(userId);
 
             var platoon = this.platoons
                 .GetAll()

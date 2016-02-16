@@ -16,11 +16,14 @@
 
         private IPlatoonsService platoons;
 
-        public MessageController(IMessagesService messages, ISquadsService squads, IUsersService users, IPlatoonsService platoons) : base(users)
+        private IUsersService users;
+
+        public MessageController(IMessagesService messages, ISquadsService squads, IUsersService users, IPlatoonsService platoons)
         {
             this.messages = messages;
             this.squads = squads;
             this.platoons = platoons;
+            this.users = users;
         }
 
         public ActionResult Message()
@@ -39,7 +42,7 @@
         {
             if (ModelState.IsValid)
             {
-                var user = this.Users.GetById(User.Identity.GetUserId());
+                var user = this.users.GetById(User.Identity.GetUserId());
                 var message = new Message() { Content = model.SendInput.Content };
                 message.UserId = user.Id;
                 this.messages.Add(message);

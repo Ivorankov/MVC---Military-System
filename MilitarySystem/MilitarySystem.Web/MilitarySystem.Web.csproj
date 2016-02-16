@@ -200,6 +200,7 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ArmoryAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\GearAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ManufacturerAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
     <Compile Include="Areas\Administration\Controllers\SquadAdministrationController.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
     <Compile Include="Areas\Administration\Models\IndexWeaponModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\ManufacturerInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\WeaponInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\GearViewModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\PlatoonViewModel.cs" />
@@ -317,6 +319,8 @@
     <Content Include="Areas\Administration\Views\GearAdministration\_GearBlank.cshtml" />
     <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />
     <Content Include="Areas\Administration\Views\StatisticsAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ManufacturerAdministration\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\ManufacturerAdministration\AddManufacturer.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Charts\Chart.Bar.js" />
     <Content Include="Scripts\Charts\Chart.Core.js" />

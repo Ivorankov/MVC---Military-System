@@ -14,8 +14,9 @@
 
         private IPlatoonsService platoons;
 
-        public TroopsController(IUsersService users, ISquadsService squads, IMissionsService missions, IPlatoonsService platoons)
-            : base(users)
+        private IUsersService users;
+
+        public TroopsController(ISquadsService squads, IMissionsService missions, IPlatoonsService platoons, IUsersService users)
         {
             this.squads = squads;
             this.missions = missions;
@@ -26,7 +27,7 @@
             var userId = User.Identity.GetUserId();
             if (userId != null)
             {
-                var user = this.Users.GetById(userId);
+                var user = this.users.GetById(userId);
 
                 var squad = this.squads.GetById(1);
                 var missions = this.missions.GetById(1);

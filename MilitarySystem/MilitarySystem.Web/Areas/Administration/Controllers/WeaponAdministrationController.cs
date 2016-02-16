@@ -16,8 +16,7 @@
 
         private IWeaponsService weapons;
 
-        public WeaponAdministrationController(IManufacturersService manufacturers, IWeaponsService weapons, IUsersService users)
-            : base(users)
+        public WeaponAdministrationController(IManufacturersService manufacturers, IWeaponsService weapons)
         {
             this.manufacturers = manufacturers;
             this.weapons = weapons;

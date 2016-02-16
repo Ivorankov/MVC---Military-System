@@ -13,17 +13,18 @@
     {
         private IMissionsService missions;
 
-        public MissionController(IMissionsService missions, IUsersService users)
-            :base(users)
-        {
+        private IUsersService users;
 
+        public MissionController(IMissionsService missions, IUsersService users)
+        {
             this.missions = missions;
+            this.users = users;
         }
 
         public ActionResult Mission()
         {
             var userId = User.Identity.GetUserId();
-            var user = this.Users.GetById(userId);
+            var user = this.users.GetById(userId);
             var mission = this.missions.GetById(user.SquadId.GetValueOrDefault());
             if (mission != null)
             {
