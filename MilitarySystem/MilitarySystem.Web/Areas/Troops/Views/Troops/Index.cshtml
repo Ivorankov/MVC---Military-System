@@ -148,6 +148,7 @@
         //Click events for flext controls
         var $user = $("#user");
         var $squad = $("#squad");
+        var $platoon = $("#platoon");
         var $chat = $("#chat");
         var $message = $("#message");
         var $mission = $("#mission");
@@ -171,6 +172,13 @@
             $.get('/Troops/Squad/SquadDetails').then(function (html) {
                 generateFlexibleControl(html, 'Squad', 'squad-flex', 'squad-flex-pin-button', 'squad-flex-hold-button');
                 $squad.off();
+            })
+        })
+
+        $platoon.click(function () {
+            $.get('/Troops/Platoon/PlatoonDetails').then(function (html) {
+                generateFlexibleControl(html, 'Platoon', 'platoon-flex', 'platoon-flex-pin-button', 'platoon-flex-hold-button');
+                $platoon.off();
             })
         })
 

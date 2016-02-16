@@ -6,7 +6,7 @@
 
     public interface IManufacturersService
     {
-        IQueryable GetAll(int skip, int take);
+        IQueryable<Manufacturer> GetAll();
 
         Manufacturer GetById(int id);
 

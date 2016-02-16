@@ -30,12 +30,9 @@
             return this.platoons.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable<Platoon> GetAll()
         {
-            return this.platoons
-                .All()
-                .Skip(skip)
-                .Take(take);
+            return this.platoons.All();
         }
 
         public Platoon GetById(int id)

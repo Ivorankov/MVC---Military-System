@@ -6,7 +6,7 @@
 
     public interface IWeaponsService
     {
-        IQueryable GetAll(int skip, int take);
+        IQueryable<Weapon> GetAll();
 
         Weapon GetById(int id);
 

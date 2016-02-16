@@ -1,17 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MilitarySystem.Web.Areas.Troops.Controllers
+﻿namespace MilitarySystem.Web.Areas.Troops.Controllers
 {
-    public class PlatoonController : Controller
+    using System.Web.Mvc;
+    using System.Linq;
+
+    using Microsoft.AspNet.Identity;
+
+    using MilitarySystem.Services.Contracts;
+    using Web.Controllers;
+    using ViewModels;
+
+    public class PlatoonController : BaseController
     {
-        // GET: Troops/Platoon
-        public ActionResult Index()
+        private IPlatoonsService platoons;
+
+        private ISquadsService squads;
+
+        public PlatoonController(IPlatoonsService platoons, ISquadsService squads,  IUsersService users)
+            : base(users)
         {
-            return View();
+            this.platoons = platoons;
+            this.squads = squads;
         }
+        [HttpGet]
+        public ActionResult PlatoonDetails()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = this.Users.GetById(userId);
+
+            var platoon = this.platoons
+                .GetAll()
+                .FirstOrDefault(x => x.PlatoonCommanderId == user.Id);
+
+            if(platoon != null)
+            {
+                var platoonModel = this.Mapper.Map<PlatoonDetailsViewModel>(platoon);
+                return this.PartialView("_PlatoonDetails", platoonModel);
+            }
+
+            return Json(null);
+        }
+
+        //[HttpPost]
+        //public ActionResult AssignMission(int id)
+        //{
+        //    var squad = this.squads.GetById(id);
+
+        //}
     }
 }

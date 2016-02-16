@@ -20,23 +20,29 @@
 
         protected override void Seed(MilitarySystemContext context)
         {
-            if (context.Users.Any())
+            if (!context.Users.Any())
             {
-                return;
+                SeedUsers(context);
             }
-            //Seed users with roles
-            SeedUsers(context);
-            //Seed vehicles with manufacturers
-            SeedVehicles(context);
-            //Seed squads
-            SeedSquads(context);
-            //Seed platoons
-            SeedPlatoons(context);
-            //Seed missions
-            SeedMissions(context);
-            SeedSoldiersInSquads(context);
-            SeedMessagesInSquads(context);
 
+            if (!context.Manufacturers.Any())
+            {
+                SeedVehicles(context);
+            }
+
+            if (!context.Squads.Any())
+            {
+                SeedSquads(context);
+                SeedMissions(context);
+                SeedSoldiersInSquads(context);
+                SeedMessagesInSquads(context);
+            }
+
+            if (!context.Platoons.Any())
+            {
+                SeedPlatoons(context);
+                SeedSquadsInPlatoons(context);
+            }
         }
 
         private void SeedUsers(MilitarySystemContext context)
@@ -168,6 +174,9 @@
         private void SeedVehicles(MilitarySystemContext context)
         {
             var manufacturer = new Manufacturer() { Name = "D&D" };
+            var manufacturer2 = new Manufacturer() { Name = "ZTech" };
+            var manufacturer3 = new Manufacturer() { Name = "AlphaOrigin" };
+            var manufacturer4 = new Manufacturer() { Name = "GearsRUs" };
             var vehicle1 = new Vehicle() { Manufacturer = manufacturer, Price = 87000M, Model = "Raptor" };
             var vehicle2 = new Vehicle() { Manufacturer = manufacturer, Price = 37000.547M, Model = "Thunder" };
             var vehicle3 = new Vehicle() { Manufacturer = manufacturer, Price = 18200M, Model = "Spiral" };
@@ -175,6 +184,9 @@
             var vehicle5 = new Vehicle() { Manufacturer = manufacturer, Price = 27000000.99M, Model = "F32" };
 
             context.Manufacturers.Add(manufacturer);
+            context.Manufacturers.Add(manufacturer2);
+            context.Manufacturers.Add(manufacturer3);
+            context.Manufacturers.Add(manufacturer4);
             context.Vehicles.Add(vehicle1);
             context.Vehicles.Add(vehicle2);
             context.Vehicles.Add(vehicle3);
@@ -262,6 +274,19 @@
                 squad.Messages.Add(message);
             }
 
+            context.SaveChanges();
+        }
+
+        private void SeedSquadsInPlatoons(MilitarySystemContext context)
+        {
+            var platoon = context.Platoons.FirstOrDefault();
+            var squads = context.Squads;
+            foreach (var squad in squads)
+            {
+                platoon.Squads.Add(squad);
+                squad.Platton = platoon;
+            }
+            platoon.PlatoonCommander = context.Users.First(x => x.FirstName == "John");
             context.SaveChanges();
         }
     }

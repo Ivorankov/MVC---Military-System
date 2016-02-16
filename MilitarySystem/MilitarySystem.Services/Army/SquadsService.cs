@@ -30,10 +30,9 @@
             return this.squads.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable<Squad> GetAll()
         {
-            return this.squads
-                .All();
+            return this.squads.All();
         }
 
         public Squad GetById(int id)

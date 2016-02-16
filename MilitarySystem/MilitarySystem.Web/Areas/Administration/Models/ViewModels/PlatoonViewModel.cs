@@ -1,4 +1,4 @@
-﻿namespace MilitarySystem.Web.Areas.Administration.ViewModels
+﻿namespace MilitarySystem.Web.Areas.Administration.Models
 {
     using MilitarySystem.Models;
     using MilitarySystem.Web.Infrastructure.Mapping;

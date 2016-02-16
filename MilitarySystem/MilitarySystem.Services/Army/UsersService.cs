@@ -30,12 +30,9 @@
             return this.users.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip = 0, int take = 10)
+        public IQueryable<User> GetAll()
         {
-            return this.users
-                .All()
-                .Skip(skip)
-                .Take(take);
+            return this.users.All();
         }
 
         public User GetById(string id)

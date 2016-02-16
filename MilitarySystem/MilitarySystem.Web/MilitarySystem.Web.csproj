@@ -206,12 +206,13 @@
     <Compile Include="Areas\Administration\Controllers\StatisticsAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
-    <Compile Include="Areas\Administration\ViewModels\GearViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\PlatoonViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\SquadViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\UserViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\VehicleViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\WeaponViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\IndexWeaponModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\WeaponInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\GearViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\PlatoonViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\SquadViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\UserViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\ViewModels\VehicleViewModel.cs" />
     <Compile Include="Areas\Troops\Controllers\ChatController.cs" />
     <Compile Include="Areas\Troops\Controllers\MessageController.cs" />
     <Compile Include="Areas\Troops\Controllers\MissionController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
     <Compile Include="Areas\Troops\Controllers\UserController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
+    <Compile Include="Areas\Troops\ViewModels\AddMIssionInputModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\MessageIndexViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -310,7 +312,7 @@
     <Content Include="Areas\Administration\Views\SoldierAdministraton\_UserBlank.cshtml" />
     <Content Include="Areas\Administration\Views\SquadAdministration\_SquadBlank.cshtml" />
     <Content Include="Areas\Administration\Views\PlatoonAdministration\_PlatoonBlank.cshtml" />
-    <Content Include="Areas\Administration\Views\WeaponAdministration\_WeaponBlank.cshtml" />
+    <Content Include="Areas\Administration\Views\WeaponAdministration\AddWeapon.cshtml" />
     <Content Include="Areas\Administration\Views\VehicleAdministration\_VehicleBlank.cshtml" />
     <Content Include="Areas\Administration\Views\GearAdministration\_GearBlank.cshtml" />
     <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />

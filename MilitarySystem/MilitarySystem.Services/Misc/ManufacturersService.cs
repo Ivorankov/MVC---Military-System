@@ -30,12 +30,9 @@
             return this.manufacturers.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable<Manufacturer> GetAll()
         {
-            return this.manufacturers
-                    .All()
-                    .Skip(skip)
-                    .Take(take);
+            return this.manufacturers.All();
         }
 
         public Manufacturer GetById(int id)

@@ -30,12 +30,9 @@
             return this.weapons.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable<Weapon> GetAll()
         {
-            return this.weapons
-                .All()
-                .Skip(skip)
-                .Take(take);
+            return this.weapons.All();
         }
 
         public Weapon GetById(int id)
