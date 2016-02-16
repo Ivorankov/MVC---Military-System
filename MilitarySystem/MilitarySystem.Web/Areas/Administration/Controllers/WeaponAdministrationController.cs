@@ -1,9 +1,8 @@
 ﻿namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
     using System.Web.Mvc;
-    using System.Collections.Generic;
-
     using System.Linq;
+
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Models;
     using Models.InputModels;
@@ -52,14 +51,7 @@
                 return View(model);
             }
 
-            var newWeapon = new Weapon()
-            {
-                Price = model.SendData.Price,
-                ManufacturerId = model.SendData.ManufacturerId,
-                Model = model.SendData.Model
-            };
-
-            this.weapons.Add(newWeapon);
+            this.weapons.Add(this.Mapper.Map<Weapon>(model.SendData));
             return View();
         }
 

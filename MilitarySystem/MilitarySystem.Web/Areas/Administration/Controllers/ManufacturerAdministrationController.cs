@@ -2,11 +2,35 @@
 {
     using System.Web.Mvc;
 
-    public class ManufacturerAdministrationController : Controller
+    using Services.Contracts;
+    using Web.Controllers;
+    using Models.InputModels;
+    using MilitarySystem.Models;
+
+    public class ManufacturerAdministrationController : BaseController
     {
+        private IManufacturersService manufacturers;
+
+        public ManufacturerAdministrationController(IManufacturersService manufacturers)
+        {
+            this.manufacturers = manufacturers;
+        }
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult AddManufacturer(ManufacturerInputModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            this.manufacturers.Add(this.Mapper.Map<Manufacturer>(model));
+
+            return Json(null);
         }
     }
 }

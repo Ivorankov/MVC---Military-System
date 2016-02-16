@@ -3,7 +3,7 @@
     using MilitarySystem.Models;
     using MilitarySystem.Web.Infrastructure.Mapping;
 
-    public class VehicleViewModel : IMapFrom<Vehicle>
+    public class VehicleViewModel
     {
     }
 }
