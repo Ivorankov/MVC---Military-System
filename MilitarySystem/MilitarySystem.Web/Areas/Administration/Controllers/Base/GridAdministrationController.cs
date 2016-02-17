@@ -12,11 +12,11 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
     public abstract class GridAdministrationController<TDbModel, TViewModel> : BaseController
     {
-        private IDataService<TDbModel> weapons;
+        private IDataService<TDbModel> test;
 
         public GridAdministrationController(IDataService<TDbModel> weapons)
         {
-            this.weapons = weapons;
+            this.test = weapons;
         }
 
         //[HttpPost]

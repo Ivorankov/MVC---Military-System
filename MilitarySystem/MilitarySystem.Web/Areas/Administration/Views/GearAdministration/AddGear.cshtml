@@ -1,10 +1,9 @@
-﻿@model MilitarySystem.Web.Areas.Administration.Models.IndexWeaponModel
+﻿@model MilitarySystem.Web.Areas.Administration.Models.IndexGearModel
 
-@using (Html.BeginForm("AddWeapon", "WeaponAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("AddGear", "GearAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <hr />
-    <h2>@ViewBag.Head</h2>
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.SendData.Model, new { @class = "col-md-2 control-label" })
@@ -19,6 +18,7 @@
         </div>
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.Manufacturers, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             <select id="ManufacturerId" name="SendData.ManufacturerId">
                 @foreach(var a in Model.Manufacturers)

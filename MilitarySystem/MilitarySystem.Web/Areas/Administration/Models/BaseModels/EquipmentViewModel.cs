@@ -4,7 +4,7 @@
 
     using MilitarySystem.Models;
 
-    public abstract class EquipmentModel
+    public abstract class EquipmentViewModel
     {
         public List<Manufacturer> Manufacturers { get; set; }
     }

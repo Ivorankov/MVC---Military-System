@@ -1,10 +1,10 @@
 ﻿namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
 {
     using MilitarySystem.Models;
-    using BaseModels;
     using MilitarySystem.Web.Infrastructure.Mapping;
+    using BaseModels;
 
-    public class WeaponInputModel : EquipmentInputModel, IMapTo<Weapon>
+    public class GearInputModel : EquipmentInputModel, IMapTo<Gear>
     {
 
     }

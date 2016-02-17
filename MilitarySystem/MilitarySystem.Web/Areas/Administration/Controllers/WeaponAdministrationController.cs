@@ -28,7 +28,6 @@
         // GET: Administration/WeaponAdministration
         public ActionResult Index()
         {
-
             return View();
         }
 
