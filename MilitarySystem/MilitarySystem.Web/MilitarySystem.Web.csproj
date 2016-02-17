@@ -56,6 +56,10 @@
       <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Kendo.Mvc, Version=2013.2.918.340, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Kendo.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -205,7 +209,6 @@
     <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
     <Compile Include="Areas\Administration\Controllers\SquadAdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\StatisticsAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
     <Compile Include="Areas\Administration\Models\BaseModels\EquipmentInputModel.cs" />
@@ -317,6 +320,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Libs\Kendo.Mvc.dll" />
     <Content Include="MilitarySystem.Web.csproj.user" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -340,7 +344,6 @@
     <Content Include="Areas\Administration\Views\WeaponAdministration\AddWeapon.cshtml" />
     <Content Include="Areas\Administration\Views\VehicleAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />
-    <Content Include="Areas\Administration\Views\StatisticsAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ManufacturerAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ManufacturerAdministration\AddManufacturer.cshtml" />
     <Content Include="Areas\Administration\Views\VehicleAdministration\AddVehicle.cshtml" />

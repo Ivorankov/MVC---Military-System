@@ -21,6 +21,7 @@
             this.squads = squads;
             this.missions = missions;
             this.platoons = platoons;
+            this.users = users;
         }
         public ActionResult Index()
         {
