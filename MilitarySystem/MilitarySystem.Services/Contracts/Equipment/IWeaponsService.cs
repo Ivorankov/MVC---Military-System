@@ -4,16 +4,8 @@
 
     using MilitarySystem.Models;
 
-    public interface IWeaponsService
+    public interface IWeaponsService : IDataService<Weapon>
     {
-        IQueryable<Weapon> GetAll();
 
-        Weapon GetById(int id);
-
-        int Add(Weapon weapon);
-
-        int Delete(int id);
-
-        int Update(Weapon weapon);
     }
 }

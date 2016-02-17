@@ -9,21 +9,26 @@
     using Web.Controllers;
     using Models;
 
-    public class WeaponAdministrationController : BaseController
+    public class WeaponAdministrationController : GridAdministrationController<Weapon, IndexWeaponModel>
     {
         private IManufacturersService manufacturers;
 
         private IWeaponsService weapons;
 
-        public WeaponAdministrationController(IManufacturersService manufacturers, IWeaponsService weapons)
+        public WeaponAdministrationController(
+            IManufacturersService manufacturers,
+            IWeaponsService weapons,
+            IDataService<Weapon> weapon
+            ) :base(weapon)
         {
-            this.manufacturers = manufacturers;
             this.weapons = weapons;
+            this.manufacturers = manufacturers;
         }
 
         // GET: Administration/WeaponAdministration
         public ActionResult Index()
         {
+
             return View();
         }
 

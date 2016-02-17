@@ -200,6 +200,7 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ArmoryAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\GearAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\GridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManufacturerAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
@@ -257,6 +258,22 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CorporalBadge.png" />
+    <Content Include="Content\Kendo\kendo.common-office365.min.css" />
+    <Content Include="Content\Kendo\kendo.office365.min.css" />
+    <Content Include="Content\Kendo\Office365\editor.png" />
+    <Content Include="Content\Kendo\Office365\imagebrowser.png" />
+    <Content Include="Content\Kendo\Office365\indeterminate.gif" />
+    <Content Include="Content\Kendo\Office365\loading-image.gif" />
+    <Content Include="Content\Kendo\Office365\loading.gif" />
+    <Content Include="Content\Kendo\Office365\loading_2x.gif" />
+    <Content Include="Content\Kendo\Office365\markers.png" />
+    <Content Include="Content\Kendo\Office365\markers_2x.png" />
+    <Content Include="Content\Kendo\Office365\slider-h.gif" />
+    <Content Include="Content\Kendo\Office365\slider-v.gif" />
+    <Content Include="Content\Kendo\Office365\sprite.png" />
+    <Content Include="Content\Kendo\Office365\sprite_2x.png" />
+    <Content Include="Content\Kendo\Office365\sprite_kpi.png" />
+    <Content Include="Content\Kendo\Office365\sprite_kpi_2x.png" />
     <Content Include="Content\LieutenantBadge.png" />
     <Content Include="Content\Logo.png" />
     <Content Include="Content\SergeantBadge.png" />
@@ -345,6 +362,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js" />
+    <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -392,6 +411,8 @@
     <Content Include="Views\Shared\_AdministrationLayout.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js.map" />
+    <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

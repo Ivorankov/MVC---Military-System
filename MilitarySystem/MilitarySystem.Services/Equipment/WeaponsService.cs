@@ -23,7 +23,7 @@
             return this.weapons.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(object id)
         {
             this.weapons.Delete(id);
 
