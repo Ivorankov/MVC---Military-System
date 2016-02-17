@@ -38,8 +38,13 @@
            "~/Areas/Administration/Content/bootstrap.css",
            "~/Areas/Administration/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/KendoUI").Include(
+                "~/Content/KendoUI/kendo-common-office356.min.css"));
+
             bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                "~/Content/Kendo/kendo-common-office356.min.css"));
+            "~/Content/kendo/kendo.common.min.css",
+            "~/Content/kendo/kendo.common-bootstrap.min.css",
+            "~/Content/kendo/kendo.silver.min.css"));
         }
     }
 }
