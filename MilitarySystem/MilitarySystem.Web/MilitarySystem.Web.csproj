@@ -381,6 +381,7 @@
     <Content Include="Areas\Administration\Views\ManufacturerAdministration\AddManufacturer.cshtml" />
     <Content Include="Areas\Administration\Views\VehicleAdministration\AddVehicle.cshtml" />
     <Content Include="Areas\Administration\Views\GearAdministration\AddGear.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\WeaponInputModel.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Charts\Chart.Bar.js" />
     <Content Include="Scripts\Charts\Chart.Core.js" />
@@ -403,6 +404,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Kendo\kendo.all.min.js" />
     <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\Kendo\kendo.web.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -452,6 +454,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\Kendo\kendo.all.min.js.map" />
     <Content Include="Scripts\Kendo\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Scripts\Kendo\kendo.web.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,7 +12,7 @@
     using System;
     using Kendo.Mvc.Extensions;
 
-    public class WeaponAdministrationController : GridAdministrationController<Weapon, IndexWeaponModel>
+    public class WeaponAdministrationController : GridAdministrationController<Weapon, WeaponInputModel>
     {
         private IManufacturersService manufacturers;
 

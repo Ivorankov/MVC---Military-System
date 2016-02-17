@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
+using MilitarySystem.Models;
+using AutoMapper.QueryableExtensions;
+using MilitarySystem.Web.Areas.Administration.Models.InputModels;
 
 namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
@@ -23,36 +26,35 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
         public virtual ActionResult Read([DataSourceRequest]DataSourceRequest request, Guid? id = null)
         {
             var data = this.test
-                .GetAll()
+                .GetAll().ProjectTo<WeaponInputModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
         }
 
-        [NonAction]
-        protected virtual void Update(TViewModel model)
+        [HttpPost]
+        public virtual void Update([DataSourceRequest]DataSourceRequest request, TViewModel model)
         {
-            //if (model != null && ModelState.IsValid)
-            //{
-            //    var dbModel = this.test.GetById(model.Id);
-            //    Mapper.Map<TViewModel, TDbModel>(model, dbModel);
-            //    this.administrationService.Update(dbModel);
-            //}
+            if (model != null && ModelState.IsValid)
+            {
+                var dbModel = this.Mapper.Map<TDbModel>(model);
+                this.test.Update(dbModel);
+            }
         }
 
-        [NonAction]
-        protected virtual void Destroy(object id)
+        [HttpPost]
+        public virtual void Destroy(object id)
         {
             this.test.Delete(id);
         }
 
-        [NonAction]
-        protected virtual void Destroy(TViewModel model)
+        [HttpPost]
+        public virtual void Destroy(TViewModel model)
         {
 
         }
 
-        protected JsonResult GridOperation(TViewModel model, [DataSourceRequest]DataSourceRequest request)
+        public JsonResult GridOperation(TViewModel model, [DataSourceRequest]DataSourceRequest request)
         {
             return Json(new[] { model }.ToDataSourceResult(request, ModelState));
         }
