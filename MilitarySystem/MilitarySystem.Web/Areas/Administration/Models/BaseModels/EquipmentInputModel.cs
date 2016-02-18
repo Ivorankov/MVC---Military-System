@@ -1,4 +1,6 @@
-﻿namespace MilitarySystem.Web.Areas.Administration.Models.BaseModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MilitarySystem.Web.Areas.Administration.Models.BaseModels
 {
     public class EquipmentInputModel
     {

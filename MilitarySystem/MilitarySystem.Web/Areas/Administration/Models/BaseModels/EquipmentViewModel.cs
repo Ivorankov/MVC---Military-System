@@ -3,9 +3,10 @@
     using System.Collections.Generic;
 
     using MilitarySystem.Models;
+    using InputModels;
 
     public abstract class EquipmentViewModel
     {
-        public List<Manufacturer> Manufacturers { get; set; }
+        public List<ManufacturerInputModel> Manufacturers { get; set; }
     }
 }

@@ -11,6 +11,10 @@
     using Kendo.Mvc.UI;
     using System;
     using Kendo.Mvc.Extensions;
+    using AutoMapper.Mappers;
+    using AutoMapper.QueryableExtensions;
+    using Infrastructure.Mapping;
+    using System.Web;
 
     public class WeaponAdministrationController : GridAdministrationController<Weapon, WeaponInputModel>
     {
@@ -34,11 +38,24 @@
             return View();
         }
 
+        public override void Update([DataSourceRequest] DataSourceRequest request, WeaponInputModel model)
+        {
+            HttpRequestBase requestData = HttpContext.Request;
+            var test = new WeaponInputModel()
+            {
+                Id = int.Parse(requestData.Form.Get("Id")),
+                ManufacturerId = int.Parse(requestData.Form.Get("ManufacturerId")),
+                Model = requestData.Form.Get("Model")               
+            };
+            base.Update(request, test);
+        }
+
         [HttpGet]
         public ActionResult AddWeapon()
         {
             var manufacturers = this.manufacturers
                 .GetAll()
+                .To<ManufacturerInputModel>()
                 .ToList();
 
             var weaponIndexModel = new IndexWeaponModel()
@@ -61,7 +78,6 @@
             this.weapons.Add(this.Mapper.Map<Weapon>(model.SendData));
             return View();
         }
-
 
     }
 }

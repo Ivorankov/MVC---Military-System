@@ -8,8 +8,12 @@ using System.Web.Mvc;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using MilitarySystem.Models;
+using AutoMapper.Mappers;
 using AutoMapper.QueryableExtensions;
+
 using MilitarySystem.Web.Areas.Administration.Models.InputModels;
+using MilitarySystem.Web.Infrastructure.Mapping;
+using MilitarySystem.Web.Areas.Administration.Models.BaseModels;
 
 namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
@@ -26,7 +30,8 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
         public virtual ActionResult Read([DataSourceRequest]DataSourceRequest request, Guid? id = null)
         {
             var data = this.test
-                .GetAll().ProjectTo<WeaponInputModel>()
+                .GetAll()
+                .To<TViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
@@ -48,11 +53,6 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
             this.test.Delete(id);
         }
 
-        [HttpPost]
-        public virtual void Destroy(TViewModel model)
-        {
-
-        }
 
         public JsonResult GridOperation(TViewModel model, [DataSourceRequest]DataSourceRequest request)
         {

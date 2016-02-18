@@ -26,21 +26,21 @@
             return View();
         }
 
-        [HttpGet]
-        public ActionResult AddVehicle()
-        {
-            var manufacturers = this.manufacturers
-                                    .GetAll()
-                                    .ToList();
+        //[HttpGet]
+        //public ActionResult AddVehicle()
+        //{
+        //    var manufacturers = this.manufacturers
+        //                            .GetAll()
+        //                            .ToList();
 
-            var weaponIndexModel = new IndexVehicleModel()
-            {
-                Manufacturers = manufacturers,
-                SendData = new VehicleInputModel()
-            };
+        //    var weaponIndexModel = new IndexVehicleModel()
+        //    {
+        //        Manufacturers = manufacturers,
+        //        SendData = new VehicleInputModel()
+        //    };
 
-            return View(weaponIndexModel);
-        }
+        //    return View(weaponIndexModel);
+        //}
 
         [HttpPost]
         public ActionResult AddVehicle(IndexVehicleModel model)
