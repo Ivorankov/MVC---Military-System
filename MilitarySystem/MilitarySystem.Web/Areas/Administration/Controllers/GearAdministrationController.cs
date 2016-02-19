@@ -9,14 +9,15 @@
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
     using MilitarySystem.Web.Controllers;
 
-    public class GearAdministrationController : BaseController
+    public class GearAdministrationController : GridAdministrationController<Gear, GearInputModel>
     {
         // GET: Administration/GearAdministration
         private IManufacturersService manufacturers;
 
         private IGearService gear;
 
-        public GearAdministrationController(IManufacturersService manufacturers,IGearService gear) 
+        public GearAdministrationController(IManufacturersService manufacturers, IGearService gear, IDataService<Gear> test)
+            : base(test) 
         {
             this.gear = gear;
             this.manufacturers = manufacturers;

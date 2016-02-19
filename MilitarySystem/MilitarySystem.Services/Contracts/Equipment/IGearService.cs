@@ -4,16 +4,16 @@
 
     using MilitarySystem.Models;
 
-    public interface IGearService
+    public interface IGearService : IDataService<Gear>
     {
-        IQueryable GetAll(int skip, int take);
+        //IQueryable GetAll(int skip, int take);
 
-        Gear GetById(int id);
+        //Gear GetById(int id);
 
-        int Add(Gear gear);
+        //int Add(Gear gear);
 
-        int Delete(int id);
+        //int Delete(int id);
 
-        int Update(Gear gear);
+        //int Update(Gear gear);
     }
 }

@@ -4,7 +4,7 @@
     using BaseModels;
     using MilitarySystem.Web.Infrastructure.Mapping;
 
-    public class VehicleInputModel : EquipmentInputModel, IMapTo<Vehicle>
+    public class VehicleInputModel : EquipmentInputModel, IMapTo<Vehicle>, IMapFrom<Vehicle>
     {
 
     }

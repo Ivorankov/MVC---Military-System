@@ -4,16 +4,16 @@
 
     using MilitarySystem.Models;
 
-    public interface IVehiclesService
+    public interface IVehiclesService : IDataService<Vehicle>
     {
-        IQueryable GetAll(int skip, int take);
+        //IQueryable GetAll(int skip, int take);
 
-        Vehicle GetById(int id);
+        //Vehicle GetById(int id);
 
-        int Add(Vehicle vehicles);
+        //int Add(Vehicle vehicles);
 
-        int Delete(int id);
+        //int Delete(int id);
 
-        int Update(Vehicle vehicle);
+        //int Update(Vehicle vehicle);
     }
 }

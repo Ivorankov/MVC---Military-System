@@ -1,1 +1,35 @@
-﻿
+﻿@using MilitarySystem.Web.Areas.Administration.Models.InputModels
+@{
+    ViewBag.Title = "Index";
+    const string ControllerName = "VehicleAdministration";
+}
+
+<h2>Weapon</h2>
+@(Html.Kendo()
+    .Grid<VehicleInputModel>()
+    .Name("grid")
+    .Columns(cols =>
+    {
+        cols.Bound(pr => pr.Id);
+        cols.Bound(pr => pr.Model);
+        cols.Bound(pr => pr.Price);
+        cols.Bound(pr => pr.ManufacturerId);
+        cols.Command(com => com.Edit()).Title("Edit");
+        cols.Command(com => com.Destroy()).Title("Delete");
+    })
+    .ColumnMenu()
+    .Pageable(page => page.Refresh(true))
+    .Sortable()
+    .Groupable()
+    .Filterable()
+    .Editable(edit => edit.Mode(GridEditMode.PopUp))
+    .ToolBar(toolbar => toolbar.Create())
+    .DataSource(data =>
+        data
+            .Ajax()
+            .Model(m => m.Id(adv => adv.Id))
+            .Read(read => read.Action("Read", ControllerName))
+            .Create(create => create.Action("Create", ControllerName))
+            .Update(update => update.Action("Update", ControllerName))
+            .Destroy(destroy => destroy.Action("Destroy", ControllerName))
+            ))

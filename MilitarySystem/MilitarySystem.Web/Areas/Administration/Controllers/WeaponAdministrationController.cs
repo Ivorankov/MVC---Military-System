@@ -47,6 +47,7 @@
                 ManufacturerId = int.Parse(requestData.Form.Get("ManufacturerId")),
                 Model = requestData.Form.Get("Model")               
             };
+
             base.Update(request, test);
         }
 

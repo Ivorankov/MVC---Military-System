@@ -9,13 +9,13 @@
     using MilitarySystem.Web.Controllers;
     using Models;
 
-    public class VehicleAdministrationController : BaseController
+    public class VehicleAdministrationController : GridAdministrationController<Vehicle, VehicleInputModel>
     {
         private IVehiclesService vehicles;
 
         private IManufacturersService manufacturers;
 
-        public VehicleAdministrationController(IVehiclesService vehicles, IManufacturersService manufacturers)
+        public VehicleAdministrationController(IVehiclesService vehicles, IManufacturersService manufacturers, IDataService<Vehicle> test) :base(test)
         {
             this.vehicles = vehicles;
             this.manufacturers = manufacturers;

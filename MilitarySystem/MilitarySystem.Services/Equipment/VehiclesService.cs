@@ -23,19 +23,16 @@
             return this.vehicles.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(object id)
         {
             this.vehicles.Delete(id);
 
             return this.vehicles.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable<Vehicle> GetAll()
         {
-            return this.vehicles
-                .All()
-                .Skip(skip)
-                .Take(take);
+            return this.vehicles.All();
         }
 
         public Vehicle GetById(int id)

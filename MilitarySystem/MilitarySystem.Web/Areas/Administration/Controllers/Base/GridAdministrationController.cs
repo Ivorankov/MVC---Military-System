@@ -40,11 +40,8 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
         [HttpPost]
         public virtual void Update([DataSourceRequest]DataSourceRequest request, TViewModel model)
         {
-            if (model != null && ModelState.IsValid)
-            {
                 var dbModel = this.Mapper.Map<TDbModel>(model);
                 this.test.Update(dbModel);
-            }
         }
 
         [HttpPost]

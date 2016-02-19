@@ -23,19 +23,16 @@
             return this.gear.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(object id)
         {
             this.gear.Delete(id);
 
             return this.gear.SaveChanges();
         }
 
-        public IQueryable GetAll(int skip, int take)
+        public IQueryable<Gear> GetAll()
         {
-            return this.gear
-                .All()
-                .Skip(skip)
-                .Take(take);
+            return this.gear.All();
         }
 
         public Gear GetById(int id)
