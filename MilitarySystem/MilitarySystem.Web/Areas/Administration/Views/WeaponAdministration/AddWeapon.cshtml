@@ -4,6 +4,7 @@
 {
     @Html.AntiForgeryToken()
     <hr />
+    <h2>@ViewBag.Head</h2>
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.SendData.Model, new { @class = "col-md-2 control-label" })

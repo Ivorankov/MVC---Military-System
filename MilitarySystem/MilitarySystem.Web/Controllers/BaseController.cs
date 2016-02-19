@@ -15,6 +15,7 @@
         {
 
         }
+
         protected IMapper Mapper
         {
             get

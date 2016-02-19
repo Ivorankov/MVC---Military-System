@@ -87,6 +87,7 @@
     <Compile Include="Contracts\Equipment\IGearService.cs" />
     <Compile Include="Contracts\Equipment\IVehiclesService.cs" />
     <Compile Include="Contracts\Equipment\IWeaponsService.cs" />
+    <Compile Include="Contracts\IDataService.cs" />
     <Compile Include="Contracts\Misc\IManufacturersService.cs" />
     <Compile Include="Contracts\Misc\IMessagesService.cs" />
     <Compile Include="Contracts\Misc\IMissionsService.cs" />

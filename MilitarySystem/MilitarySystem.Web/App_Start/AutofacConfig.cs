@@ -68,6 +68,8 @@
 
             var servicesAssembly = Assembly.Load("MilitarySystem.Services");
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            //builder.RegisterType<ManufacturersService>().As<IDataService<Manufacturer>>();
+            //builder.RegisterType<WeaponsService>().As<IDataService<Weapon>>();
 
             builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                 .AssignableTo<BaseController>().PropertiesAutowired();

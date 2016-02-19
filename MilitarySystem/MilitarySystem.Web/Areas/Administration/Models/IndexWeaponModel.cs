@@ -1,14 +1,10 @@
 ﻿namespace MilitarySystem.Web.Areas.Administration.Models
 {
-    using System.Collections.Generic;
-
-    using MilitarySystem.Models;
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
+    using BaseModels;
 
-    public class IndexWeaponModel
+    public class IndexWeaponModel : EquipmentViewModel
     {
         public WeaponInputModel SendData { get; set; }
-
-        public List<Manufacturer> Manufacturers { get; set; }
     }
 }

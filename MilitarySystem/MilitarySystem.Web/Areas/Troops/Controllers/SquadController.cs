@@ -25,6 +25,7 @@
             return View();
         }
 
+       
         public ActionResult UserDetails()
         {
             var userId = User.Identity.GetUserId();

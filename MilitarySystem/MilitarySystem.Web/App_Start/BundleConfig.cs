@@ -17,6 +17,11 @@
             bundles.Add(new ScriptBundle("~/bundles/chart").Include(
             "~/Scripts/Charts/Chart.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                "~/Scripts/Kendo/kendo.all.min.js",
+                "~/Scripts/Kendo/kendo.aspnetmvc.min.js",
+                "~/Scripts/Kendo/kendo.web.min.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -33,6 +38,11 @@
             bundles.Add(new StyleBundle("~/Administration/Content/css").Include(
            "~/Areas/Administration/Content/bootstrap.css",
            "~/Areas/Administration/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include(
+            "~/Content/kendo/kendo.common.min.css",
+            "~/Content/kendo/kendo.common-bootstrap.min.css",
+            "~/Content/kendo/kendo.silver.min.css"));
         }
     }
 }
