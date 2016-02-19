@@ -20,12 +20,15 @@
             this.users = users;
 
         }
+
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-       
+        //TODO Extract to user controller
+       [HttpGet]
         public ActionResult UserDetails()
         {
             var userId = User.Identity.GetUserId();
@@ -35,6 +38,7 @@
             return PartialView("_UserDetails", userModel);
         }
 
+        [HttpGet]
         public ActionResult SquadDetails()
         {
             var userId = User.Identity.GetUserId();

@@ -26,6 +26,7 @@
             this.users = users;
         }
 
+        [HttpGet]
         public ActionResult Message()
         {
             var allMessages = this.squads.GetById(1).Messages;

@@ -21,6 +21,7 @@
             this.users = users;
         }
 
+        [HttpGet]
         public ActionResult Mission()
         {
             var userId = User.Identity.GetUserId();

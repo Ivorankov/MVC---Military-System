@@ -4,6 +4,7 @@
 
     public class ChatController : Controller
     {
+        [HttpGet]
         public ActionResult Chat()
         {
             return PartialView("_Chat");

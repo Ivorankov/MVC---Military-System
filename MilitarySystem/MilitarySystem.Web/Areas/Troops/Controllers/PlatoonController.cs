@@ -23,6 +23,7 @@
             this.squads = squads;
             this.users = users;
         }
+
         [HttpGet]
         public ActionResult PlatoonDetails()
         {
