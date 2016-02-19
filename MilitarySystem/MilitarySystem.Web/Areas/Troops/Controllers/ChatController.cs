@@ -2,7 +2,7 @@
 {
     using System.Web.Mvc;
 
-    public class ChatController : Controller
+    public class ChatController : TroopsController
     {
         [HttpGet]
         public ActionResult Chat()

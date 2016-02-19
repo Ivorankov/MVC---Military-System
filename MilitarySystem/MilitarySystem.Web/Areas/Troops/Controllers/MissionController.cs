@@ -9,7 +9,7 @@
     using MilitarySystem.Web.Controllers;
 
 
-    public class MissionController : BaseController
+    public class MissionController : TroopsController
     {
         private IMissionsService missions;
 
