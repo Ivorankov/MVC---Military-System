@@ -38,19 +38,6 @@
             return View();
         }
 
-        public override void Update([DataSourceRequest] DataSourceRequest request, WeaponInputModel model)
-        {
-            HttpRequestBase requestData = HttpContext.Request;
-            var test = new WeaponInputModel()
-            {
-                Id = int.Parse(requestData.Form.Get("Id")),
-                ManufacturerId = int.Parse(requestData.Form.Get("ManufacturerId")),
-                Model = requestData.Form.Get("Model")               
-            };
-
-            base.Update(request, test);
-        }
-
         [HttpGet]
         public ActionResult AddWeapon()
         {
