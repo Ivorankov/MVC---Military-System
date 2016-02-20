@@ -9,7 +9,7 @@
     using Web.Controllers;
     using ViewModels;
 
-    public class PlatoonController : BaseController
+    public class PlatoonController : TroopsController
     {
         private IPlatoonsService platoons;
 

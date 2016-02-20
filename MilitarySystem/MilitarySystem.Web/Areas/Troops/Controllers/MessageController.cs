@@ -8,7 +8,7 @@
     using MilitarySystem.Models;
     using Microsoft.AspNet.Identity;
 
-    public class MessageController : BaseController
+    public class MessageController : TroopsController
     {
         private IMessagesService messages;
 

@@ -8,7 +8,7 @@
     using MilitarySystem.Web.Areas.Troops.ViewModels;
     using MilitarySystem.Web.Controllers;
 
-    public class SquadController : BaseController
+    public class SquadController : TroopsController
     {
         private ISquadsService squads;
 

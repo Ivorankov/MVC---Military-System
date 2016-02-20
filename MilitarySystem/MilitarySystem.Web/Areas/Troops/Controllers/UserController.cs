@@ -12,7 +12,7 @@
     using MilitarySystem.Web.Areas.Troops.ViewModels;
     using MilitarySystem.Web.Controllers;
 
-    public class UserController : BaseController
+    public class UserController : TroopsController
     {
         private IUsersService users;
 

@@ -1,5 +1,10 @@
 ﻿@model MilitarySystem.Web.Areas.Troops.ViewModels.MissionDetailsViewModel
-
+@if(Model == null)
+{
+    <h1 class="red-text">No active mission!</h1>
+}
+else
+{
 <div class="row ui-widget-content" id="mission-details-box">
     <div class="col s12 m12">
         <div class="card grey lighten-5">
@@ -15,13 +20,7 @@
                 <p id="Lat" data-lat="@Model.Lat">Lat: @Model.Lat</p>
                 <p id="Lgn" data-lgn="@Model.Lgn">Lgn: @Model.Lgn</p>
             </div>
-
-
-    <div class="card-content black-text human-text">
-        <strong class="red-text">No Active missions</strong>
-    </div>
-
         </div>
     </div>
 </div>
-
+}
