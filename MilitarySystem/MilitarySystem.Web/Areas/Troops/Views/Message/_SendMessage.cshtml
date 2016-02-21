@@ -24,12 +24,22 @@
                 </div>
             }
             <strong>Recived messages</strong>
-            <div id="message-grid">
-                @foreach(var a in Model.MessageView.Content)
-                {
-                    <span>@a.Content : <strong>@a.User.FirstName</strong></span>
-                    <hr/>
-                }
+            <div class="row">
+                <div class="col col-sm-8 m8 test">
+                    <br/>
+                    <div id="message-content" class="message-details black-text">
+
+                    </div>
+                </div>
+                <div class="col col-sm-4 m4  center-align text-center">
+                    <div id="message-grid" class="blue center-align text-center">
+                        @foreach (var a in Model.MessageView.Content)
+                        {
+                            <div data-userId="@a.Content">@a.User.FirstName</div>
+                            <br />
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     </div>

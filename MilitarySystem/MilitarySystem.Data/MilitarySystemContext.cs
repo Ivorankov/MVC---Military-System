@@ -45,7 +45,9 @@
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<OneToOneConstraintIntroductionConvention>();
+
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

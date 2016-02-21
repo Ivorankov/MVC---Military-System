@@ -4,16 +4,8 @@
 
     using MilitarySystem.Models;
 
-    public interface IPlatoonsService
+    public interface IPlatoonsService : IDataService<Platoon>
     {
-        IQueryable<Platoon> GetAll();
 
-        Platoon GetById(int id);
-
-        int Add(Platoon platoon);
-
-        int Delete(int id);
-
-        int Update(Platoon platoon);
     }
 }

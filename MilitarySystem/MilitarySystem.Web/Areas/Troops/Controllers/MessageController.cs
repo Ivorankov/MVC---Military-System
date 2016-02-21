@@ -7,6 +7,7 @@
     using Web.Controllers;
     using MilitarySystem.Models;
     using Microsoft.AspNet.Identity;
+    using System.Collections.Generic;
 
     public class MessageController : TroopsController
     {
@@ -29,8 +30,24 @@
         [HttpGet]
         public ActionResult Message()
         {
-            var allMessages = this.squads.GetById(1).Messages;
+            var user = this.users.GetById(User.Identity.GetUserId());
             var messages = new MessageBoxViewModel();
+            var allMessages = new List<Message>();
+            var squad = this.squads.GetById(user.SquadId.GetValueOrDefault());
+            if (user.Squad != null)
+            {
+                allMessages = squad
+                    .Messages
+                    .ToList();
+            }
+            else
+            {
+                var platoon = this.platoons
+                    .GetAll()
+                    .FirstOrDefault(x => x.PlatoonCommanderId == user.Id);
+                allMessages = platoon.Messages.ToList();
+            }
+
             allMessages.Reverse();
             messages.Content = allMessages.ToList();
             @ViewBag.HeaderText = "Send message to commander";

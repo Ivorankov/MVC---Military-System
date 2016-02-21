@@ -23,7 +23,7 @@
             return this.gear.SaveChanges();
         }
 
-        public int Delete(object id)
+        public int Delete(Gear id)
         {
             this.gear.Delete(id);
 
@@ -35,7 +35,7 @@
             return this.gear.All();
         }
 
-        public Gear GetById(int id)
+        public Gear GetById(object id)
         {
             return this.gear.GetById(id);
         }

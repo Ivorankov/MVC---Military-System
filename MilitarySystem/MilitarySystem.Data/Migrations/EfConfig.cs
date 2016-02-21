@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
 
     using Models;
+    using Common;
 
     public class EfConfig : DbMigrationsConfiguration<MilitarySystemContext>
     {
@@ -49,21 +50,21 @@
         {
             var store = new RoleStore<IdentityRole>(context);
             var manager = new RoleManager<IdentityRole>(store);
-            if (!context.Roles.Any(r => r.Name == "SquadLeader"))
+            if (!context.Roles.Any(r => r.Name == ModelsConstraints.SquadLeaderRoleName))
             {
                 var roleAdmin = new IdentityRole
                 {
-                    Name = "SquadLeader"
+                    Name = ModelsConstraints.SquadLeaderRoleName
                 };
 
                 manager.Create(roleAdmin);
             }
 
-            if (!context.Roles.Any(r => r.Name == "PlatoonLeader"))
+            if (!context.Roles.Any(r => r.Name == ModelsConstraints.PlatoonLeaderRoleName))
             {
                 var roleAdmin = new IdentityRole
                 {
-                    Name = "PlatoonLeader"
+                    Name = ModelsConstraints.PlatoonLeaderRoleName
                 };
 
                 manager.Create(roleAdmin);
@@ -106,7 +107,6 @@
 
 
             userManager.Create(squadLeader, "asdasd");
-
 
             var squadMemeber1 = new User()
             {
@@ -169,6 +169,7 @@
             };
 
             userManager.Create(plattonLeader, "asdasd");
+            userManager.AddToRole(plattonLeader.Id, ModelsConstraints.PlatoonLeaderRoleName);
         }
 
         private void SeedVehicles(MilitarySystemContext context)
@@ -270,6 +271,7 @@
             {
                 var message = new Message() { User = squadLeader, Content = "Field testing " + i };
                 squad.Messages.Add(message);
+                squadLeader.Messages.Add(message);
             }
 
             context.SaveChanges();

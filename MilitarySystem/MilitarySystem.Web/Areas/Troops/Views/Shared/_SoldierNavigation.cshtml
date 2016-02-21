@@ -1,6 +1,16 @@
 ﻿<li><a id="user">User Details</a></li>
-<li><a id="squad">Squad Details</a></li>
-<li><a id="platoon">Platoon Details</a></li>
-<li><a id="mission">Mission Details</a></li>
-<li><a id="chat">Communication Terminal</a></li>
-<li><a id="message">Messanger</a></li>
+@if (HttpContext.Current.User.IsInRole("PlatoonCommander"))
+{
+    <li><a id="platoon">Platoon Details</a></li>
+}
+else
+{
+    <li><a id="squad">Squad Details</a></li>
+    <li><a id="mission">Mission Details</a></li>
+    <li><a id="chat">Communication Terminal</a></li>
+}
+
+@if (HttpContext.Current.User.IsInRole("SquadLeader") || HttpContext.Current.User.IsInRole("PlatoonCommander"))
+{
+    <li><a id="message">Messanger</a></li>
+}

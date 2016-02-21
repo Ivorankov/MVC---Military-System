@@ -20,11 +20,14 @@
 
         private ICollection<Mission> missions;
 
+        private ICollection<Message> messages;
+
         public User()
         {
             this.weapons = new HashSet<Weapon>();
             this.gear = new HashSet<Gear>();
             this.missions = new HashSet<Mission>();
+            this.messages = new HashSet<Message>();
         }
 
         [Required]
@@ -56,6 +59,8 @@
         public virtual ICollection<Gear> Gear { get { return this.gear; } set { this.gear = value; } }
 
         public virtual ICollection<Mission> Missions { get { return this.missions; } set { this.missions = value; } }
+
+        public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

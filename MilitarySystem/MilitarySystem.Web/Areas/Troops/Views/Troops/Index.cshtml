@@ -100,7 +100,7 @@
                 title: 'Hello World!'
             });
 
-            marker.SetMap(map);
+            //marker.SetMap(map);
 
         }
         var chat;
@@ -154,11 +154,19 @@
         var $mission = $("#mission");
 
         $mission.click(function () {
-            $.get('/Troops/Mission/Mission').then(function (html) {
-                generateFlexibleControl(html, 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
-                initialize();
+            $.get('/Troops/Mission/Mission')
+                .then(function (html) {
+                    generateFlexibleControl(html, 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
+                    initialize();
+                    $mission.off();
+                }).then(function () {
+                    alert();
+                    $("#complete-mission-btn").click(function () { // TODO Alert dialog!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        $.post('/Troops/Mission/CompleteMission').then(function () {
+                            $mission.remove();
+                    })
+                })
             })
-            $mission.off();
         })
 
         $user.click(function () {
@@ -200,16 +208,27 @@
                 $chat.off();
             })
         })
-
+        var chached = "NaNaNaNa";
         $message.click(function () {
             $.get('/Troops/Message/Message').then(function (html) {
                 generateFlexibleControl(html, 'Message', 'message-flex', 'message-flex-pin-button', 'message-flex-hold-button');
                 $message.off();
+            }).then(function () {
+                $("div[data-userId]").click(function (ev) {
+                    if (chached !== "NaNaNaNa") {
+                        chached.removeClass("blue white-text");
+                    }
+
+                    var $target = $(ev.target);
+                    $target.addClass("blue white-text");
+                    chached = $target;
+                    var content = $target.attr("data-userId");
+                    $("#message-content").html(content);
+                })
             })
+
+
         })
-
-
-
     </script>
 
 }

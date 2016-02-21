@@ -1,17 +1,20 @@
 ﻿@using MilitarySystem.Web.Areas.Administration.Models.InputModels
 @{
     ViewBag.Title = "Index";
-    const string ControllerName = "PlatoonAdministration";
+    const string ControllerName = "SoldierAdministration";
 }
 
-<h2>Platoons</h2>
+<h2>Soldiers</h2>
 @(Html.Kendo()
-    .Grid<PlatoonInputModel>()
+    .Grid<UserInputModel>()
     .Name("grid")
     .Columns(cols =>
     {
         cols.Bound(pr => pr.Id);
-        cols.Bound(pr => pr.Name);
+        cols.Bound(pr => pr.FirstName);
+        cols.Bound(pr => pr.LastName);
+        cols.Bound(pr => pr.Wage);
+        cols.Bound(pr => pr.Rank);
 
         cols.Command(com => com.Edit()).Title("Edit");
         cols.Command(com => com.Destroy()).Title("Delete");
@@ -32,5 +35,3 @@
             .Update(update => update.Action("Update", ControllerName))
             .Destroy(destroy => destroy.Action("Destroy", ControllerName))
             ))
-
-

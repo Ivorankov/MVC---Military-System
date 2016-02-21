@@ -4,16 +4,8 @@
 
     using MilitarySystem.Models;
 
-    public interface ISquadsService
+    public interface ISquadsService : IDataService<Squad>
     {
-        IQueryable<Squad> GetAll();
 
-        Squad GetById(int id);
-
-        int Add(Squad squad);
-
-        int Delete(int id);
-
-        int Update(Squad squad);
     }
 }

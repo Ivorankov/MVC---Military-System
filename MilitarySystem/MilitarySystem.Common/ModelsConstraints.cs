@@ -12,7 +12,7 @@
 
         public const string SquadLeaderRoleName = "SquadLeader";
 
-        public const string PlatoonLeaderRoleName = "PlatoonLeader";
+        public const string PlatoonLeaderRoleName = "PlatoonCommander";
 
         public const string AdminRoleName = "AdminRoleName";
     }

@@ -4,21 +4,21 @@
     background-image: url("background1.jpg");
 }
 
-a{
-    text-decoration : none !important;
-
+a {
+    text-decoration: none !important;
 }
-.flexible-box{
+
+.flexible-box {
     position: absolute !important;
     width: 400px !important;
-    left:15px;
-    top:190px;
+    left: 15px;
+    top: 190px;
 }
 
 
-.flexible-box>div{
-    width: 400px !important;
-}
+    .flexible-box > div {
+        width: 400px !important;
+    }
 
 
 
@@ -36,90 +36,103 @@ textarea {
     max-width: 280px;
 }
 
-.main-content{
+.main-content {
     margin: 20px;
-    min-height:800px;
-    max-height:800px;
-    max-width:1980px;
+    min-height: 800px;
+    max-height: 800px;
+    max-width: 1980px;
 }
 
-.brand-logo{
-    margin-top:-17px;
+.brand-logo {
+    margin-top: -17px;
 }
 
-#nav-bar>ul>li>a{
+#nav-bar > ul > li > a {
     font-size: 20px;
 }
 
-.nav-text>li>a{
-    font-size:20px;
+.nav-text > li > a {
+    font-size: 20px;
 }
 
-.human-text{
+.human-text {
     font-size: 18px;
 }
 
-.wage-text{
-    color:forestgreen;
+.wage-text {
+    color: forestgreen;
 }
 
-.white-background{
+.white-background {
     background-color: white;
 }
 
-input[type=text]{
-    font-size:18px;
+input[type=text] {
+    font-size: 18px;
 }
 
-input[type=textarea]{
+input[type=textarea] {
     height: 80px;
 }
 
-input[type=password]{
-    font-size:18px;
-    
+input[type=password] {
+    font-size: 18px;
 }
 
 
-label{
-  font-size:18px;
+label {
+    font-size: 18px;
 }
 
-#tab-container{
-    width:400px;
-    height:50px;
+#tab-container {
+    width: 400px;
+    height: 50px;
     margin: -15px;
     border-radius: 10px;
-    border-top: 1px solid white; 
+    border-top: 1px solid white;
 }
 
-#tab-bar{
-    width:400px;
-    height:auto;
-        
+#tab-bar {
+    width: 400px;
+    height: auto;
+}
+
+.test {
+    height: 200px;
+    overflow-y: scroll;
+    font-weight: 800;
 }
 
 #message-grid {
-    max-height: 500px;
-        overflow:scroll;
+    max-height: 200px;
+    overflow-y: scroll;
 }
+
+    #message-grid > div {
+        width: 75px;
+        height: 25px;
+        border: 0.5px solid;
+        color: black;
+        background-color: white;
+    }
+
 #message-details-box {
-       max-height: 500px;
+    max-height: 500px;
 }
 
-#mission-add-box{
-    z-index:20;
+#mission-add-box {
+    z-index: 20;
 }
 
-.tab-item{
-    margin-right:5px;
+.tab-item {
+    margin-right: 5px;
 }
 
 .floating-box {
     min-height: 100px !important;
 }
 
-.text-area-messanger{
+.text-area-messanger {
     height: 100px;
     min-height: 100px;
 }

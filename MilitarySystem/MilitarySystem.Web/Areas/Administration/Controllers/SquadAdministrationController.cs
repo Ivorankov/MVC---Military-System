@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MilitarySystem.Web.Areas.Administration.Controllers
+﻿namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
-    public class SquadAdministrationController : Controller
+    using System.Web.Mvc;
+
+    using MilitarySystem.Models;
+    using MilitarySystem.Services.Contracts;
+    using MilitarySystem.Web.Areas.Administration.Models.InputModels;
+
+    public class SquadAdministrationController : GridAdministrationController<Squad, SquadInputModel>
     {
+        public SquadAdministrationController(IDataService<Squad> squad) 
+            : base(squad)
+        {
+
+        }
         // GET: Administration/SquadAdministration
         public ActionResult Index()
         {

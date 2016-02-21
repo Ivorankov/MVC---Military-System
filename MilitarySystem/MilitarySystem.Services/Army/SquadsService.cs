@@ -23,7 +23,7 @@
             return this.squads.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(Squad id)
         {
             this.squads.Delete(id);
 
@@ -35,7 +35,7 @@
             return this.squads.All();
         }
 
-        public Squad GetById(int id)
+        public Squad GetById(object id)
         {
             return this.squads.GetById(id);
         }

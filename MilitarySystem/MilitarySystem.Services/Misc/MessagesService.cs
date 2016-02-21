@@ -22,12 +22,13 @@
             this.messages.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(Message dbModel)
         {
-            throw new NotImplementedException();
+            this.messages.Delete(dbModel);
+            return this.messages.SaveChanges();
         }
 
-        public IQueryable GetAll()
+        public IQueryable<Message> GetAll()
         {
             return this.messages.All();
         }

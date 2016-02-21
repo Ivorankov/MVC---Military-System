@@ -23,7 +23,7 @@
             return this.platoons.SaveChanges();
         }
 
-        public int Delete(int id)
+        public int Delete(Platoon id)
         {
             this.platoons.Delete(id);
 
@@ -35,7 +35,7 @@
             return this.platoons.All();
         }
 
-        public Platoon GetById(int id)
+        public Platoon GetById(object id)
         {
             return this.platoons.GetById(id);
         }

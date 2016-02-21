@@ -207,7 +207,7 @@
     <Compile Include="Areas\Administration\Controllers\Base\GridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManufacturerAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\PlatoonAdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\SoldierAdministratonController.cs" />
+    <Compile Include="Areas\Administration\Controllers\SoldierAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\SquadAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\VehicleAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\WeaponAdministrationController.cs" />
@@ -218,6 +218,9 @@
     <Compile Include="Areas\Administration\Models\IndexWeaponModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\GearInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\ManufacturerInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\PlatoonInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\SquadInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\InputModels\UserInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\VehicleInputModel.cs" />
     <Compile Include="Areas\Administration\Models\InputModels\WeaponInputModel.cs" />
     <Compile Include="Areas\Administration\Models\ViewModels\GearViewModel.cs" />
@@ -368,10 +371,9 @@
     <Content Include="Areas\Administration\Views\ArmoryAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\GearAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\PlatoonAdministration\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\SoldierAdministraton\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\SoldierAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\SquadAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\WeaponAdministration\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\PlatoonAdministration\_PlatoonBlank.cshtml" />
     <Content Include="Areas\Administration\Views\VehicleAdministration\Index.cshtml" />
     <Content Include="Areas\Administration\Views\ArmoryAdministration\_ArmoryBlank.cshtml" />
     <Content Include="Areas\Administration\Views\ManufacturerAdministration\Index.cshtml" />

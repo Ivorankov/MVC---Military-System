@@ -23,7 +23,7 @@
             return this.users.SaveChanges();
         }
 
-        public int Delete(string id)
+        public int Delete(User id)
         {
             this.users.Delete(id);
 
@@ -35,7 +35,7 @@
             return this.users.All();
         }
 
-        public User GetById(string id)
+        public User GetById(object id)
         {
             return this.users.GetById(id);
         }

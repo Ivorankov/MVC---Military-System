@@ -29,16 +29,16 @@
         {
             var userId = User.Identity.GetUserId();
             var user = this.users.GetById(userId);
-            var mission = this.missions.GetById(user.SquadId.GetValueOrDefault());
-            if (mission != null)
-            {
-                var missions = this.missions.GetById(mission.Id);
-                var missionModel = this.Mapper.Map<MissionDetailsViewModel>(missions);
+            var squad = this.squads.GetById(user.SquadId);
 
+            if (squad.ActiveMissionId != null)
+            {
+                var mission = this.missions.GetById(squad.ActiveMissionId.GetValueOrDefault());
+                var missionModel = this.Mapper.Map<MissionDetailsViewModel>(mission);
                 return PartialView("_MissionDetails", missionModel);
             }
 
-            return Json(null);
+            return PartialView("_MissionDetails", null);
         }
 
         [HttpGet]
@@ -66,6 +66,19 @@
 
             this.squads.Update(squad);
 
+            return Json(null);
+
+        }
+
+        [HttpPost]
+        public ActionResult CompleteMission()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = this.users.GetById(userId);
+            var squad = this.squads.GetById(user.SquadId);
+            squad.ActiveMission = null;
+            squad.ActiveMissionId = null;
+            this.squads.Update(squad);
             return Json(null);
 
         }

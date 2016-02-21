@@ -6,13 +6,13 @@
 
     public interface IMessagesService
     {
-        IQueryable GetAll();
+        IQueryable<Message> GetAll();
 
         Message GetById(int id);
 
         void Add(Message message);
 
-        int Delete(int id);
+        int Delete(Message dbModel);
 
         int Update(Message message);
     }

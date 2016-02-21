@@ -4,16 +4,8 @@
 
     using MilitarySystem.Models;
 
-    public interface IUsersService
+    public interface IUsersService : IDataService<User>
     {
-        IQueryable<User> GetAll();
 
-        User GetById(string id);
-
-        int Add(User user);
-
-        int Delete(string id);
-
-        int Update(User user);
     }
 }

@@ -23,7 +23,7 @@
             return this.vehicles.SaveChanges();
         }
 
-        public int Delete(object id)
+        public int Delete(Vehicle id)
         {
             this.vehicles.Delete(id);
 
@@ -35,7 +35,7 @@
             return this.vehicles.All();
         }
 
-        public Vehicle GetById(int id)
+        public Vehicle GetById(object id)
         {
             return this.vehicles.GetById(id);
         }

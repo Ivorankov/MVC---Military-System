@@ -10,11 +10,11 @@ namespace MilitarySystem.Services.Contracts
     {
         IQueryable<T> GetAll();
 
-        T GetById(int id);
+        T GetById(object id);
 
         int Add(T objectEntity);
 
-        int Delete(object id);
+        int Delete(T dbObject);
 
         int Update(T objectEntity);
     }

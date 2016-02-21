@@ -48,6 +48,16 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
+        public virtual void Create([DataSourceRequest]DataSourceRequest request, TViewModel tea)// Cuz tea fixes all problems...
+        {
+            if (ModelState.IsValid)
+            {
+                var dbModel = this.Mapper.Map<TDbModel>(tea);
+                this.test.Add(dbModel);
+            }
+        }
+
+        [HttpPost]
         public virtual void Destroy(TViewModel tea)
         {
             if (ModelState.IsValid)
