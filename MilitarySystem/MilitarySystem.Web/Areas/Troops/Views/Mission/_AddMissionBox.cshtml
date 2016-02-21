@@ -2,30 +2,27 @@
 <div class="row ui-widget-content" id="mission-add-box">
     <div class="col s12 m12">
         <div class="card grey lighten-5">
-            @using (Html.BeginForm("AssignMission", "Mission", new { Area = "Troops" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.ValidationSummary("", new { @class = "text-danger" })
-                <div class="floating-box">
-                    @Html.LabelFor(m => m.Info)
-                    @Html.TextAreaFor(m => m.Info, new { @cols = "80", @rows = "10", @class = "text-area-messanger black-text" })
+            <div class="floating-box">
+                @Html.LabelFor(m => m.Info)
+                @Html.TextAreaFor(m => m.Info, new { @cols = "80", @rows = "10", @class = "text-area-messanger black-text", @id = "info-value" })
+            </div>
+            <div class="floating-box">
+                @Html.LabelFor(m => m.Lat)
+                @Html.TextBoxFor(m => m.Lat, new { @class = "black-text", @id = "lat-value" })
+            </div>
+            <div class="floating-box">
+                @Html.LabelFor(m => m.Lgn)
+                @Html.TextBoxFor(m => m.Lgn, new { @class = "black-text", @id="lgn-value" })
+            </div>
+            <div>
+                @Html.TextBoxFor(m => m.SquadId, new { @name = "SquadId", @class = "hidden", @id="squadId-value" })
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button id="send-message-btn" class="btn waves-effect waves-light blue">Send</button>
                 </div>
-                <div class="floating-box">
-                    @Html.LabelFor(m => m.Lat)
-                    @Html.TextBoxFor(m => m.Lat, new { @class = "black-text" })
-                </div>
-                <div class="floating-box">
-                    @Html.LabelFor(m => m.Lgn)
-                    @Html.TextBoxFor(m => m.Lgn, new { @class = "black-text" })
-                </div>
-                <div>
-                    @Html.TextBoxFor(m => m.SquadId, new { @name= "SquadId", @class="hidden"})
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" class="btn waves-effect waves-light blue" value="Send" />
-                    </div>
-                </div>
-            }
+            </div>
+
         </div>
     </div>
 </div>

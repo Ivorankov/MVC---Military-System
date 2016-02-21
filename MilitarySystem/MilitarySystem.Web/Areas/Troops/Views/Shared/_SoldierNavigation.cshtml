@@ -10,7 +10,6 @@ else
     <li><a id="chat">Communication Terminal</a></li>
 }
 
-@if (HttpContext.Current.User.IsInRole("SquadLeader") || HttpContext.Current.User.IsInRole("PlatoonCommander"))
-{
+
     <li><a id="message">Messanger</a></li>
-}
+

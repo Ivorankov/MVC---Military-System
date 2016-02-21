@@ -164,9 +164,9 @@
                     $("#complete-mission-btn").click(function () { // TODO Alert dialog!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                         $.post('/Troops/Mission/CompleteMission').then(function () {
                             $mission.remove();
+                        })
                     })
                 })
-            })
         })
 
         $user.click(function () {
@@ -195,6 +195,19 @@
                     $.get("/Troops/Mission/AssignMission", { squadId: id })
                         .then(function (data) {
                             $("#content").append(data);
+
+                            $("#send-message-btn").click(function () {
+                                var data = {};
+                                data.Info = $("#info-value").val();
+                                data.Lgn = $("#lgn-value").val();
+                                data.Lat = $("#lat-value").val();
+                                data.SquadId = $("#squadId-value").val();
+                                $.post("/Troops/Mission/AssignMission", data)
+                                    .then(function () {
+                                        alert("You sent the message!");
+                                    })
+
+                            })
                         })
                 })
             })
