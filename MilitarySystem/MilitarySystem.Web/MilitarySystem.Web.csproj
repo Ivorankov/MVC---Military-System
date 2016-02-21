@@ -237,7 +237,7 @@
     <Compile Include="Areas\Troops\Controllers\UserController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
     <Compile Include="Areas\Troops\ViewModels\Mission\AddMIssionInputModel.cs" />
-    <Compile Include="Areas\Troops\ViewModels\MessageIndexViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\Message\MessageIndexViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -249,7 +249,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Areas\Troops\ViewModels\IndexViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Areas\Troops\ViewModels\MessageBoxViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\Message\MessageBoxViewModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\Mission\MissionDetailsViewModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\Platoon\PlatoonDetailsViewModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\SendMessageViewModel.cs" />

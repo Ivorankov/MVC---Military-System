@@ -196,7 +196,7 @@
                         .then(function (data) {
                             $("#content").append(data);
 
-                            $("#send-message-btn").click(function () {
+                            $("#send-mission-btn").click(function () {
                                 var data = {};
                                 data.Info = $("#info-value").val();
                                 data.Lgn = $("#lgn-value").val();
@@ -237,6 +237,18 @@
                     chached = $target;
                     var content = $target.attr("data-userId");
                     $("#message-content").html(content);
+
+                })
+
+                $("#send-message-btn-test").click(function () {
+                    var data = {};
+                    var SendInput = {};
+                    data.SendInput = SendInput;
+                    data.SendInput.Content = $("#message-to-send-content").val();
+                    $.post("/Troops/Message/SendMessage", data)
+                        .then(function () {
+                            alert("Yey");
+                        })
                 })
             })
 
