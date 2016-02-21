@@ -16,9 +16,9 @@
                 @foreach (var a in Model.Squads)
                 {
                     <p class="red-text">@a.Name</p>
-                    if(@a.ActiveMission != null)
+                    if(@a.ActiveMission == null)
                     {
-                        <button class="btn">Assign Mission</button>
+                        <button data-squadId="@a.Id" class="btn">Assing Mission</button>
                     }
                     else
                     {

@@ -233,7 +233,7 @@
     <Compile Include="Areas\Troops\Controllers\TroopsController.cs" />
     <Compile Include="Areas\Troops\Controllers\UserController.cs" />
     <Compile Include="Areas\Troops\TroopsAreaRegistration.cs" />
-    <Compile Include="Areas\Troops\ViewModels\AddMIssionInputModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\Mission\AddMIssionInputModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\MessageIndexViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -247,8 +247,8 @@
     <Compile Include="Areas\Troops\ViewModels\IndexViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Areas\Troops\ViewModels\MessageBoxViewModel.cs" />
-    <Compile Include="Areas\Troops\ViewModels\MissionDetailsViewModel.cs" />
-    <Compile Include="Areas\Troops\ViewModels\PlatoonDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\Mission\MissionDetailsViewModel.cs" />
+    <Compile Include="Areas\Troops\ViewModels\Platoon\PlatoonDetailsViewModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\SendMessageViewModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\SoldierInListModel.cs" />
     <Compile Include="Areas\Troops\ViewModels\SquadDetailsViewModel.cs" />
@@ -382,6 +382,7 @@
     <Content Include="Areas\Administration\Views\VehicleAdministration\AddVehicle.cshtml" />
     <Content Include="Areas\Administration\Views\GearAdministration\AddGear.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\WeaponInputModel.cshtml" />
+    <Content Include="Areas\Troops\Views\Mission\_AddMissionBox.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Charts\Chart.Bar.js" />
     <Content Include="Scripts\Charts\Chart.Core.js" />

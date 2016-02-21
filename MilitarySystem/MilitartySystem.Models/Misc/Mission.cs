@@ -14,9 +14,12 @@
         public string Info { get; set; }
 
         [Required]
-        public int TargetLocationId { get; set; }
+        [Range(-90, 90)]
+        public decimal Lat { get; set; }
 
-        public virtual Location TargetLocation { get; set; }
+        [Required]
+        [Range(-180, 180)]
+        public decimal Lgn { get; set; }
 
         public int? SquadId { get; set; }
 

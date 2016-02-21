@@ -17,7 +17,7 @@
 
         private IUsersService users;
 
-        public PlatoonController(IPlatoonsService platoons, ISquadsService squads,  IUsersService users)
+        public PlatoonController(IPlatoonsService platoons, ISquadsService squads, IUsersService users)
         {
             this.platoons = platoons;
             this.squads = squads;
@@ -34,20 +34,10 @@
                 .GetAll()
                 .FirstOrDefault(x => x.PlatoonCommanderId == user.Id);
 
-            if(platoon != null)
-            {
-                var platoonModel = this.Mapper.Map<PlatoonDetailsViewModel>(platoon);
-                return this.PartialView("_PlatoonDetails", platoonModel);
-            }
 
-            return Json(null);
+            var platoonModel = this.Mapper.Map<PlatoonDetailsViewModel>(platoon);
+            return this.PartialView("_PlatoonDetails", platoonModel);
+
         }
-
-        //[HttpPost]
-        //public ActionResult AssignMission(int id)
-        //{
-        //    var squad = this.squads.GetById(id);
-
-        //}
     }
 }

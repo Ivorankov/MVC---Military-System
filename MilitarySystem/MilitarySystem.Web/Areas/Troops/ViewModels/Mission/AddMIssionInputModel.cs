@@ -1,9 +1,11 @@
 ﻿using MilitarySystem.Common;
+using MilitarySystem.Models;
+using MilitarySystem.Web.Infrastructure.Mapping;
 using System.ComponentModel.DataAnnotations;
 
 namespace MilitarySystem.Web.Areas.Troops.ViewModels
 {
-    public class AddMIssionInputModel
+    public class AddMIssionInputModel : IMapTo<Mission>
     {
         [Required]
         public int SquadId { get; set; }
@@ -11,9 +13,6 @@ namespace MilitarySystem.Web.Areas.Troops.ViewModels
         [Required]
         [MaxLength(ModelsConstraints.MessageMaxLength)]
         public string Info { get; set; }
-
-        [Required]
-        public int TargetLocationId { get; set; }
 
         [Required]
         [Range(-90, 90)]

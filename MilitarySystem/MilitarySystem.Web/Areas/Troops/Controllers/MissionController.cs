@@ -7,7 +7,7 @@
     using ViewModels;
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Web.Controllers;
-
+    using MilitarySystem.Models;
 
     public class MissionController : TroopsController
     {
@@ -15,10 +15,13 @@
 
         private IUsersService users;
 
-        public MissionController(IMissionsService missions, IUsersService users)
+        private ISquadsService squads;
+
+        public MissionController(IMissionsService missions, IUsersService users, ISquadsService squads)
         {
             this.missions = missions;
             this.users = users;
+            this.squads = squads;
         }
 
         [HttpGet]
@@ -36,6 +39,35 @@
             }
 
             return Json(null);
+        }
+
+        [HttpGet]
+        public ActionResult AssignMission(int squadId)
+        {
+            var viewModel = new AddMIssionInputModel() { SquadId = squadId };
+            return PartialView("_AddMissionBox", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AssignMission(AddMIssionInputModel missionModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(missionModel);
+            }
+
+            var squad = this.squads.GetById(missionModel.SquadId);
+            var mission = this.Mapper.Map<Mission>(missionModel);
+
+            if (squad != null)
+            {
+                squad.ActiveMission = mission;
+            }
+
+            this.squads.Update(squad);
+
+            return Json(null);
+
         }
     }
 }

@@ -228,9 +228,7 @@
 
         private void SeedMissions(MilitarySystemContext context)
         {
-            var location = new Location() { Lat = -34.397M, Lgn = 150.6442M };
-
-            var mission1 = new Mission() { Info = "Training in the mountains", TargetLocation = location };
+            var mission1 = new Mission() { Info = "Training in the mountains", Lat = -34.397M, Lgn = 150.6442M };
             //var mission2 = new Mission() { Info = "Seals" };
             //var mission3 = new Mission() { Info = "Barrets" };
             //var mission4 = new Mission() { Info = "Spetsnaz" };
