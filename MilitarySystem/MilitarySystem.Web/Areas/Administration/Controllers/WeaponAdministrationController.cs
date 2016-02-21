@@ -26,7 +26,7 @@
             IManufacturersService manufacturers,
             IWeaponsService weapons,
             IDataService<Weapon> weapon
-            ) :base(weapon)
+            ) : base(weapon)
         {
             this.weapons = weapons;
             this.manufacturers = manufacturers;
@@ -35,37 +35,14 @@
         // GET: Administration/WeaponAdministration
         public ActionResult Index()
         {
-            return View();
-        }
-
-        [HttpGet]
-        public ActionResult AddWeapon()
-        {
             var manufacturers = this.manufacturers
-                .GetAll()
-                .To<ManufacturerInputModel>()
-                .ToList();
+                                .GetAll()
+                                .To<ManufacturerInputModel>()
+                                .ToList();
 
-            var weaponIndexModel = new IndexWeaponModel()
-            {
-                Manufacturers = manufacturers,
-                SendData = new WeaponInputModel()
-            };
+            ViewBag.Manufacturers = manufacturers;
 
-            return View(weaponIndexModel);
-        }
-
-        [HttpPost]
-        public ActionResult AddWeapon(IndexWeaponModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            this.weapons.Add(this.Mapper.Map<Weapon>(model.SendData));
             return View();
         }
-
     }
 }

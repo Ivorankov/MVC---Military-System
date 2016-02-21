@@ -39,8 +39,8 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
 
         [HttpPost]
         public virtual void Update([DataSourceRequest]DataSourceRequest request, TViewModel tea)// Cuz tea fixes all problems...
-        {                                                                     
-            if (!ModelState.IsValid)
+        {
+            if (ModelState.IsValid)
             {
                 var dbModel = this.Mapper.Map<TDbModel>(tea);
                 this.test.Update(dbModel);
@@ -48,9 +48,13 @@ namespace MilitarySystem.Web.Areas.Administration.Controllers
         }
 
         [HttpPost]
-        public virtual void Destroy(object id)
+        public virtual void Destroy(TViewModel tea)
         {
-            this.test.Delete(id);
+            if (ModelState.IsValid)
+            {
+                var dbModel = this.Mapper.Map<TDbModel>(tea);
+                this.test.Delete(dbModel);
+            }
         }
 
 

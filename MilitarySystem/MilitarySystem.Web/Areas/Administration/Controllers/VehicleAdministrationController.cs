@@ -8,6 +8,7 @@
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
     using MilitarySystem.Web.Controllers;
     using Models;
+    using Infrastructure.Mapping;
 
     public class VehicleAdministrationController : GridAdministrationController<Vehicle, VehicleInputModel>
     {
@@ -23,36 +24,15 @@
         // GET: Administration/VehicleAdministration
         public ActionResult Index()
         {
-            return View();
-        }
+            var manufacturers = this.manufacturers
+                    .GetAll()
+                    .To<ManufacturerInputModel>()
+                    .ToList();
 
-        //[HttpGet]
-        //public ActionResult AddVehicle()
-        //{
-        //    var manufacturers = this.manufacturers
-        //                            .GetAll()
-        //                            .ToList();
-
-        //    var weaponIndexModel = new IndexVehicleModel()
-        //    {
-        //        Manufacturers = manufacturers,
-        //        SendData = new VehicleInputModel()
-        //    };
-
-        //    return View(weaponIndexModel);
-        //}
-
-        [HttpPost]
-        public ActionResult AddVehicle(IndexVehicleModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            this.vehicles.Add(this.Mapper.Map<Vehicle>(model.SendData));
+            ViewBag.Manufacturers = manufacturers;
 
             return View();
         }
+
     }
 }

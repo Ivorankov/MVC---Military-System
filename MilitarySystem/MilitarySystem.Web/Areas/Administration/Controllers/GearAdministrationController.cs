@@ -7,7 +7,7 @@
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Web.Areas.Administration.Models;
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
-    using MilitarySystem.Web.Controllers;
+    using Infrastructure.Mapping;
 
     public class GearAdministrationController : GridAdministrationController<Gear, GearInputModel>
     {
@@ -16,7 +16,10 @@
 
         private IGearService gear;
 
-        public GearAdministrationController(IManufacturersService manufacturers, IGearService gear, IDataService<Gear> test)
+        public GearAdministrationController(
+            IManufacturersService manufacturers,
+            IGearService gear,
+            IDataService<Gear> test)
             : base(test) 
         {
             this.gear = gear;
@@ -26,34 +29,13 @@
         // GET: Administration/WeaponAdministration
         public ActionResult Index()
         {
-            return View();
-        }
+            var manufacturers = this.manufacturers
+                    .GetAll()
+                    .To<ManufacturerInputModel>()
+                    .ToList();
 
-        //[HttpGet]
-        //public ActionResult AddGear()
-        //{
-        //    var manufacturers = this.manufacturers
-        //        .GetAll()
-        //        .ToList();
+            ViewBag.Manufacturers = manufacturers;
 
-        //    var weaponIndexModel = new IndexGearModel()
-        //    {
-        //        Manufacturers = manufacturers,
-        //        SendData = new GearInputModel()
-        //    };
-
-        //    return View(weaponIndexModel);
-        //}
-
-        [HttpPost]
-        public ActionResult AddGear(IndexGearModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-            this.gear.Add(this.Mapper.Map<Gear>(model.SendData));
             return View();
         }
     }

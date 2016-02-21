@@ -1,4 +1,4 @@
-﻿@model MilitarySystem.Web.Areas.Administration.Models.InputModels.WeaponInputModel
+﻿@model MilitarySystem.Web.Areas.Administration.Models.InputModels.GearInputModel
 
 @Html.ValidationSummary("", new { @class = "text-danger" })
 <div class="form-group">
@@ -18,12 +18,6 @@
         @Html.EditorFor(m => m.Price, new { @class = "form-control" })
     </div>
 </div>
-<div class="form-group">
-    @Html.LabelFor(m => m.ManufacturerId, new { @class = "col-md-2 control-label" })
-    <div class="col-md-10">
-        @Html.EditorFor(m => m.ManufacturerId, new { @class = "form-control" })
-    </div>
-</div>
 
 <div class="form-group">
     <div class="col-md-10">
@@ -35,4 +29,3 @@
         </select>
     </div>
 </div>
-
