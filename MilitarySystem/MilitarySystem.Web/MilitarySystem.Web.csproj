@@ -382,6 +382,7 @@
     <Content Include="Areas\Troops\Views\Mission\_AddMissionBox.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GearInputModel.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\VehicleInputModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\UserInputModel.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Charts\Chart.Bar.js" />
     <Content Include="Scripts\Charts\Chart.Core.js" />

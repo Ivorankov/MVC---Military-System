@@ -107,6 +107,10 @@
       <Project>{a8d1eae6-823d-43a6-8810-30629f98d67b}</Project>
       <Name>MilitarySystem.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MilitarySystem.Common\MilitarySystem.Common.csproj">
+      <Project>{51033fee-854d-470f-b18a-583f07d6858e}</Project>
+      <Name>MilitarySystem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MilitarySystem.Data\MilitarySystem.Data.csproj">
       <Project>{8d7fed53-254b-45f8-a64a-4da91c092301}</Project>
       <Name>MilitarySystem.Data</Name>

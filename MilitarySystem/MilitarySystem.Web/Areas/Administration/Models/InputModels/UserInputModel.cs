@@ -12,9 +12,13 @@ namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
 {
     public class UserInputModel : IMapFrom<User>, IMapTo<User>
     {
-        [Required]
+
         [HiddenInput(DisplayValue = false)]
         public string Id { get; set; }
+
+        [Required]
+        [EmailAddress]
+        public string UserName { get; set; }
 
         [Required]
         [MaxLength(ModelsConstraints.NameMaxLength)]
@@ -28,6 +32,10 @@ namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
 
         [Range(0, 56)]
         public int Rank { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string PasswordHash { get; set; }
 
     }
 }

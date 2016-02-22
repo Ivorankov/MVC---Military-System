@@ -19,7 +19,7 @@
                 <p><strong>Missions count: </strong><strong class="blue-text">@Model.MissionsCount</strong></p>
             </div>
             <div class="card-action">
-                <a href="#">@Html.ActionLink("Change your password", "ChangePassword", "Manage")</a>
+                <a href="#">@Html.ActionLink("Change your password", "ChangePassword", "Manage", new { Area = string.Empty }, new { })</a>
             </div>
         </div>
     </div>

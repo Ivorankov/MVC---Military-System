@@ -4,6 +4,7 @@
 
     using Microsoft.AspNet.Identity;
 
+    using MilitarySystem.Common;
     using Areas.Troops.ViewModels;
     using Services.Contracts;
 
@@ -16,6 +17,17 @@
         }
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+            {
+                var url = "/Troops/Troops";
+
+                if (HttpContext.User.IsInRole(ModelsConstraints.AdminRoleName))
+                {
+                    url = "/Administration/Administration";
+                }
+
+                return this.Redirect(url);
+            }
 
             return View();
         }

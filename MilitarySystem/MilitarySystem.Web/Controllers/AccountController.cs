@@ -1,5 +1,6 @@
 ﻿namespace MilitarySystem.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
@@ -9,9 +10,9 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
+    using MilitarySystem.Common;
     using MilitarySystem.Web.Models;
     using MilitarySystem.Models;
-    using System;
 
     [Authorize]
     public class AccountController : Controller
@@ -80,7 +81,7 @@
             switch (result)
             {
                 case SignInStatus.Success:
-                    return Redirect("/Troops/Troops");
+                    return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

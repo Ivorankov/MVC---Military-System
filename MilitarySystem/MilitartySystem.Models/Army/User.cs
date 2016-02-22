@@ -38,6 +38,7 @@
         [MaxLength(ModelsConstraints.NameMaxLength)]
         public string LastName { get; set; }
 
+        [Column(TypeName = "datetime2")]
         public DateTime EnrollmentDate { get; set; }
 
         public decimal Wage { get; set; }

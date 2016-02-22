@@ -70,11 +70,11 @@
                 manager.Create(roleAdmin);
             }
 
-            if (!context.Roles.Any(r => r.Name == "Admin"))
+            if (!context.Roles.Any(r => r.Name == ModelsConstraints.AdminRoleName))
             {
                 var roleAdmin = new IdentityRole
                 {
-                    Name = "Admin"
+                    Name = ModelsConstraints.AdminRoleName
                 };
 
                 manager.Create(roleAdmin);
@@ -93,7 +93,7 @@
             };
 
             userManager.Create(adminUser, "2admin1");
-            userManager.AddToRole(adminUser.Id, "Admin");
+            userManager.AddToRole(adminUser.Id, ModelsConstraints.AdminRoleName);
 
             var squadLeader = new User()
             {
