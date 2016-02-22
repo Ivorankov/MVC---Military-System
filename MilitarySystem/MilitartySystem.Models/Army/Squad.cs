@@ -30,6 +30,8 @@
         [MaxLength(ModelsConstraints.NameMaxLength)]
         public string Name { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public string SquadLeaderId { get; set; }
 
         public virtual User SquadLeader { get; set; }

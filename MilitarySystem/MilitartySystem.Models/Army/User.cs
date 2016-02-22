@@ -43,6 +43,8 @@
 
         public decimal Wage { get; set; }
 
+        public string ImgUrl { get; set; }
+
         [Range(0,56)]
         public int Rank { get; set; }
 

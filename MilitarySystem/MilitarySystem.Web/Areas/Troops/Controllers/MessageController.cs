@@ -1,13 +1,14 @@
 ﻿namespace MilitarySystem.Web.Areas.Troops.Controllers
 {
-    using Services.Contracts;
-    using System.Web.Mvc;
     using System.Linq;
-    using ViewModels;
-    using Web.Controllers;
-    using MilitarySystem.Models;
-    using Microsoft.AspNet.Identity;
     using System.Collections.Generic;
+    using System.Web.Mvc;
+
+    using Microsoft.AspNet.Identity;
+
+    using ViewModels;
+    using MilitarySystem.Models;
+    using Services.Contracts;
 
     public class MessageController : TroopsController
     {
@@ -81,6 +82,7 @@
                 }
 
             }
+
             object a = "yey";
             return Json(a);
         }

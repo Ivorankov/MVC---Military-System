@@ -1,9 +1,11 @@
 ﻿namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
+
     using AutoMapper;
+
     using Common;
+
     using MilitarySystem.Models;
     using MilitarySystem.Web.Infrastructure.Mapping;
 

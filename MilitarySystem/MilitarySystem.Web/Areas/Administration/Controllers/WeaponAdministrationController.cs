@@ -1,20 +1,12 @@
 ﻿namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
-    using System.Web.Mvc;
     using System.Linq;
+    using System.Web.Mvc;
 
-    using MilitarySystem.Services.Contracts;
+    using Infrastructure.Mapping;
+    using Services.Contracts;
     using MilitarySystem.Models;
     using Models.InputModels;
-    using Web.Controllers;
-    using Models;
-    using Kendo.Mvc.UI;
-    using System;
-    using Kendo.Mvc.Extensions;
-    using AutoMapper.Mappers;
-    using AutoMapper.QueryableExtensions;
-    using Infrastructure.Mapping;
-    using System.Web;
 
     public class WeaponAdministrationController : GridAdministrationController<Weapon, WeaponInputModel>
     {

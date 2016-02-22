@@ -28,6 +28,8 @@
 
         public virtual User PlatoonCommander { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public virtual ICollection<Message> Messages { get { return this.messages; } set { this.messages = value; } }
 
         public virtual ICollection<Squad> Squads { get {return this.squads; } set {this.squads = value; } }

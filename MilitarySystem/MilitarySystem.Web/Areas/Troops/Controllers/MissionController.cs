@@ -6,7 +6,6 @@
 
     using ViewModels;
     using MilitarySystem.Services.Contracts;
-    using MilitarySystem.Web.Controllers;
     using MilitarySystem.Models;
 
     public class MissionController : TroopsController

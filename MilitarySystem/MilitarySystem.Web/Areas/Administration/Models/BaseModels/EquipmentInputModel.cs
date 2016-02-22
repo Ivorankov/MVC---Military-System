@@ -1,8 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
-
-namespace MilitarySystem.Web.Areas.Administration.Models.BaseModels
+﻿namespace MilitarySystem.Web.Areas.Administration.Models.BaseModels
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public class EquipmentInputModel
     {
         [Required]

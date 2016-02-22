@@ -1,36 +1,31 @@
-﻿@using MilitarySystem.Web.Areas.Administration.Models.InputModels
+﻿@model MilitarySystem.Web.Areas.Administration.Models.PlatoonIndexModel
 @{
     ViewBag.Title = "Index";
-    const string ControllerName = "PlatoonAdministration";
 }
 
 <h2>Platoons</h2>
-@(Html.Kendo()
-    .Grid<PlatoonInputModel>()
-    .Name("grid")
-    .Columns(cols =>
-    {
-        cols.Bound(pr => pr.Id);
-        cols.Bound(pr => pr.Name);
 
-        cols.Command(com => com.Edit()).Title("Edit");
-        cols.Command(com => com.Destroy()).Title("Delete");
-    })
-    .ColumnMenu()
-    .Pageable(page => page.Refresh(true))
-    .Sortable()
-    .Groupable()
-    .Filterable()
-    .Editable(edit => edit.Mode(GridEditMode.PopUp))
-    .ToolBar(toolbar => toolbar.Create())
-    .DataSource(data =>
-        data
-            .Ajax()
-            .Model(m => m.Id(adv => adv.Id))
-            .Read(read => read.Action("Read", ControllerName))
-            .Create(create => create.Action("Create", ControllerName))
-            .Update(update => update.Action("Update", ControllerName))
-            .Destroy(destroy => destroy.Action("Destroy", ControllerName))
-            ))
+@foreach (var a in Model.Platoons)
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h1>
+                @Html.ActionLink(@a.Name, "PlatoonDetails", "PlatoonAdministration", new { id = @a.Id }, new { })
+            </h1>
 
+            <img src="@a.ImgUrl" width="250" height="250" />
+        </div>
+        <div class="col-md-3">
+            @foreach (var squad in a.Squads)
+            {
+                @Html.ActionLink(squad.Name, "SquadDetails", "SquadAdministration", new { id = @squad.Id }, new { })
+                <br />
+                <img src="@squad.ImgUrl" width="50" height="50" />
+                <br />
+            }
+        </div>
+        <div class="col-md-1">
 
+        </div>
+    </div>
+}

@@ -3,11 +3,10 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using Infrastructure.Mapping;
     using MilitarySystem.Models;
     using MilitarySystem.Services.Contracts;
-    using MilitarySystem.Web.Areas.Administration.Models;
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
-    using Infrastructure.Mapping;
 
     public class GearAdministrationController : GridAdministrationController<Gear, GearInputModel>
     {

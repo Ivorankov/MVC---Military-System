@@ -1,22 +1,15 @@
-﻿using MilitarySystem.Services.Contracts;
-using MilitarySystem.Web.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Kendo.Mvc.UI;
-using Kendo.Mvc.Extensions;
-using MilitarySystem.Models;
-using AutoMapper.Mappers;
-using AutoMapper.QueryableExtensions;
-
-using MilitarySystem.Web.Areas.Administration.Models.InputModels;
-using MilitarySystem.Web.Infrastructure.Mapping;
-using MilitarySystem.Web.Areas.Administration.Models.BaseModels;
-
-namespace MilitarySystem.Web.Areas.Administration.Controllers
+﻿namespace MilitarySystem.Web.Areas.Administration.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+
+    using Kendo.Mvc.UI;
+    using Kendo.Mvc.Extensions;
+
+    using MilitarySystem.Services.Contracts;
+    using MilitarySystem.Web.Controllers;
+    using MilitarySystem.Web.Infrastructure.Mapping;
+
     public abstract class GridAdministrationController<TDbModel, TViewModel> : BaseController
     {
         private IDataService<TDbModel> test;

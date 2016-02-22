@@ -2,6 +2,7 @@
 {
     using MilitarySystem.Models;
     using MilitarySystem.Web.Infrastructure.Mapping;
+
     using BaseModels;
 
     public class GearInputModel : EquipmentInputModel, IMapTo<Gear>, IMapFrom<Gear>

@@ -1,0 +1,101 @@
+﻿@model MilitarySystem.Web.Areas.Administration.Models.ViewModels.SquadViewModel
+@{
+    ViewBag.Title = "SquadDetails";
+}
+
+<h2>SquadDetails</h2>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1>@Model.Name</h1>
+        <br />
+        <img src="@Model.ImgUrl" width="500" height="500" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        @if (Model.SquadLeaderName != null)
+        {
+            <strong>Leader - @Model.SquadLeaderName</strong>
+
+            using (Html.BeginForm("RemoveLeader", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="text" class="hidden" name="squadLeaderId" value="@Model.SquadLeaderId" />
+                        <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                    </div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Remove" class="btn btn-danger" />
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            using (Html.BeginForm("AssignLeader", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                        <select name="soldierId" class="form-control">
+                            @foreach (var a in ViewBag.UnassignedSoldiers)
+                            {
+                                <option value="@a.Id">@a.FirstName @a.LastName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Assign" class="btn btn-warning" />
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<hr />
+<div class="row">
+    @foreach (var soldier in ViewBag.SoldiersInSquad)
+    {
+        <div class="col-md-12">
+            <img src="@soldier.ImgUrl" width="50" height="50" />
+            <strong>@soldier.FirstName @soldier.LastName</strong>
+            @using (Html.BeginForm("RemoveSoldier", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="text" class="hidden" name="soldierId" value="@soldier.Id" />
+                        <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                    </div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Remove" class="btn btn-danger" />
+                    </div>
+                </div>
+            }
+            <br />
+        </div>
+        <hr />
+    }
+    <hr />
+    @using (Html.BeginForm("AddSoldier", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                <select name="soldierId" class="form-control">
+                    @foreach (var a in ViewBag.UnassignedSoldiers)
+                    {
+                        <option value="@a.Id">@a.FirstName + @a.LastName</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-10">
+                <input type="submit" value="Add" class="btn btn-success" />
+            </div>
+        </div>
+    }
+</div>

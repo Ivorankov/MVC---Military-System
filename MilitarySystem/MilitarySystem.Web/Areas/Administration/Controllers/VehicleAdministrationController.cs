@@ -3,12 +3,11 @@
     using System.Web.Mvc;
     using System.Linq;
 
+    using Infrastructure.Mapping;
     using MilitarySystem.Models;
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Web.Areas.Administration.Models.InputModels;
     using MilitarySystem.Web.Controllers;
-    using Models;
-    using Infrastructure.Mapping;
 
     public class VehicleAdministrationController : GridAdministrationController<Vehicle, VehicleInputModel>
     {

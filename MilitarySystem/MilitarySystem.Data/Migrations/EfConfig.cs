@@ -199,10 +199,10 @@
 
         private void SeedSquads(MilitarySystemContext context)
         {
-            var squad1 = new Squad() { Name = "Alpha" };
-            var squad2 = new Squad() { Name = "Bravo" };
-            var squad3 = new Squad() { Name = "Charlie" };
-            var squad4 = new Squad() { Name = "Delta" };
+            var squad1 = new Squad() { Name = "Alpha", ImgUrl = "http://t1.rbxcdn.com/6f8dbef964c1e481df7c54b6de6b7f7b" };
+            var squad2 = new Squad() { Name = "Bravo", ImgUrl = "http://orig07.deviantart.net/e530/f/2007/120/c/f/bravo_team_logo_by_benjo_kun.jpg" };
+            var squad3 = new Squad() { Name = "Charlie", ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/6/6b/ArmyWestPointAthenaShield.png" };
+            var squad4 = new Squad() { Name = "Delta", ImgUrl = "http://www.groundzeroairsoft.com/nae/booking/images/delta_team_logo.png" };
 
             context.Squads.Add(squad1);
             context.Squads.Add(squad2);
@@ -214,10 +214,10 @@
 
         private void SeedPlatoons(MilitarySystemContext context)
         {
-            var platoon1 = new Platoon() { Name = "Delta Force" };
-            var platoon2 = new Platoon() { Name = "Seals" };
-            var platoon3 = new Platoon() { Name = "Barrets" };
-            var platoon4 = new Platoon() { Name = "Spetsnaz" };
+            var platoon1 = new Platoon() { Name = "Delta Force", ImgUrl= "http://i629.photobucket.com/albums/uu17/rj_castro/Delta-Force-1-256x256.png" };
+            var platoon2 = new Platoon() { Name = "Seals", ImgUrl = "http://patriotden.com/fotki/usnavy/USN-SEALS.png" };
+            var platoon3 = new Platoon() { Name = "Barrets", ImgUrl = "http://drrichswier.com/wp-content/uploads/green-beret-logo.jpg" };
+            var platoon4 = new Platoon() { Name = "Spetsnaz", ImgUrl = "http://img1.goodfon.su/wallpaper/big/6/4c/specnaz-simvol-vv-mvd-deviz.jpg" };
 
             context.Platoons.Add(platoon1);
             context.Platoons.Add(platoon2);

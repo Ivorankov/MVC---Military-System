@@ -1,15 +1,11 @@
-﻿using MilitarySystem.Common;
-using MilitarySystem.Models;
-using MilitarySystem.Web.Infrastructure.Mapping;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
+﻿namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
+    using MilitarySystem.Common;
+    using MilitarySystem.Models;
+    using MilitarySystem.Web.Infrastructure.Mapping;
     public class SquadInputModel : IMapFrom<Squad>, IMapTo<Squad>
     {
         [Key]
@@ -19,5 +15,6 @@ namespace MilitarySystem.Web.Areas.Administration.Models.InputModels
         [Required]
         [MaxLength(ModelsConstraints.NameMaxLength)]
         public string Name { get; set; }
+
     }
 }

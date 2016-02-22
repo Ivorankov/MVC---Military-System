@@ -3,9 +3,9 @@
     using System.Web.Mvc;
 
     using Services.Contracts;
-    using Web.Controllers;
     using Models.InputModels;
     using MilitarySystem.Models;
+    using Web.Controllers;
 
     public class ManufacturerAdministrationController : BaseController
     {

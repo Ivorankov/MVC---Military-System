@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
 
-    using MilitarySystem.Models;
     using InputModels;
 
     public abstract class EquipmentViewModel
