@@ -4,5 +4,9 @@
     {
         public int Id { get; set; }
 
+        public int? SquadId { get; set; }
+
+        public virtual Squad Squad { get; set; }
+
     }
 }

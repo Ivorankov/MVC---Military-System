@@ -13,6 +13,7 @@
 
     public class PlatoonAdministrationController : BaseController
     {
+        private const string BaseUrl = "/Administration/PlatoonAdministration/PlatoonDetails/";
         private IPlatoonsService platoons;
 
         private ISquadsService squads;
@@ -78,7 +79,7 @@
             squad.PlatoonId = null;
             this.squads.Update(squad);
 
-            return this.Redirect("/Administration/PlatoonAdministration//PlatoonDetails/" + platoonId);
+            return this.Redirect(BaseUrl + platoonId);
         }
 
         [HttpPost]
@@ -88,7 +89,7 @@
             squad.PlatoonId = platoonId;
             this.squads.Update(squad);
 
-            return this.Redirect("/Administration/PlatoonAdministration/PlatoonDetails/" + platoonId);
+            return this.Redirect(BaseUrl + platoonId);
         }
 
         [HttpPost]
@@ -101,7 +102,7 @@
 
             this.users.AddToRole(userId, ModelsConstraints.PlatoonLeaderRoleName);
 
-            return this.Redirect("/Administration/PlatoonAdministration/PlatoonDetails/" + platoonId);
+            return this.Redirect(BaseUrl + platoonId);
         }
 
         [HttpPost]
@@ -114,7 +115,7 @@
 
             this.users.RemoveFromRole(platoonCommanderId, ModelsConstraints.PlatoonLeaderRoleName);
 
-            return this.Redirect("/Administration/PlatoonAdministration/PlatoonDetails/" + platoonId);
+            return this.Redirect(BaseUrl + platoonId);
         }
     }
 }

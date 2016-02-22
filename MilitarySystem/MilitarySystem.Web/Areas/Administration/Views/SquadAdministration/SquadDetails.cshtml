@@ -56,6 +56,7 @@
     </div>
 </div>
 <hr />
+<h3>Soldiers</h3>
 <div class="row">
     @foreach (var soldier in ViewBag.SoldiersInSquad)
     {
@@ -98,4 +99,53 @@
             </div>
         </div>
     }
+</div>
+<hr/>
+<h3>Vehciles</h3>
+<div class="row">
+    @foreach (var vehicle in Model.Vehicles)
+    {
+        <div class="col-md-12">
+            <strong>@vehicle.Model</strong>
+            @using (Html.BeginForm("RemoveVehicle", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                        <input type="text" class="hidden" name="id" value="@vehicle.Id" />
+                    </div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Remove" class="btn btn-danger" />
+                    </div>
+                </div>
+            }
+            <br />
+        </div>
+        <hr />
+    }
+</div>
+<div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("AddVehicle", "SquadAdministration", new { Area = "Administration" }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="text" class="hidden" name="squadId" value="@Model.Id" />
+                        <select name="id" class="form-control">
+                            @foreach (var a in ViewBag.Vehicles)
+                            {
+                                <option value="@a.Id">@a.Model</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Add" class="btn btn-success" />
+                    </div>
+                </div>
+            }
+            <br />
+        </div>
+        <hr />
 </div>

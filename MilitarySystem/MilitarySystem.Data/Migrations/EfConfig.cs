@@ -37,6 +37,7 @@
                 SeedMissions(context);
                 SeedSoldiersInSquads(context);
                 SeedMessagesInSquads(context);
+                SeedVehiclesInSquads(context);
             }
 
             if (!context.Platoons.Any())
@@ -44,6 +45,18 @@
                 SeedPlatoons(context);
                 SeedSquadsInPlatoons(context);
             }
+        }
+
+        private void SeedVehiclesInSquads(MilitarySystemContext context)
+        {
+            var squad = context.Squads.First();
+            var vehciles = context.Vehicles.OrderBy(x => x.Price).Take(5).ToList();
+            foreach (var item in vehciles)
+            {
+                squad.Vehicles.Add(item);
+            }
+
+            context.SaveChanges();
         }
 
         private void SeedUsers(MilitarySystemContext context)
@@ -214,7 +227,7 @@
 
         private void SeedPlatoons(MilitarySystemContext context)
         {
-            var platoon1 = new Platoon() { Name = "Delta Force", ImgUrl= "http://i629.photobucket.com/albums/uu17/rj_castro/Delta-Force-1-256x256.png" };
+            var platoon1 = new Platoon() { Name = "Delta Force", ImgUrl = "http://i629.photobucket.com/albums/uu17/rj_castro/Delta-Force-1-256x256.png" };
             var platoon2 = new Platoon() { Name = "Seals", ImgUrl = "http://patriotden.com/fotki/usnavy/USN-SEALS.png" };
             var platoon3 = new Platoon() { Name = "Barrets", ImgUrl = "http://drrichswier.com/wp-content/uploads/green-beret-logo.jpg" };
             var platoon4 = new Platoon() { Name = "Spetsnaz", ImgUrl = "http://img1.goodfon.su/wallpaper/big/6/4c/specnaz-simvol-vv-mvd-deviz.jpg" };

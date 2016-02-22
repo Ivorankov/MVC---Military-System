@@ -27,7 +27,7 @@
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Squad, SquadViewModel>()
-        .ForMember(x => x.SquadLeaderName, opt => opt.MapFrom(x => x.SquadLeader.FirstName + x.SquadLeader.LastName));
+        .ForMember(x => x.SquadLeaderName, opt => opt.MapFrom(x => x.SquadLeader.FirstName + " " + x.SquadLeader.LastName));
         }
     }
 }

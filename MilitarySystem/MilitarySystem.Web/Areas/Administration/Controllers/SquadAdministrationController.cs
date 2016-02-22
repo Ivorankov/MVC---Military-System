@@ -19,11 +19,14 @@
 
         private ISquadsService squads;
 
+        private IVehiclesService vehicles;
 
-        public SquadAdministrationController(IUsersService users, ISquadsService squads)
+
+        public SquadAdministrationController(IUsersService users, ISquadsService squads, IVehiclesService vehicles)
         {
             this.users = users;
             this.squads = squads;
+            this.vehicles = vehicles;
         }
 
         // GET: Administration/SquadAdministration
@@ -38,6 +41,10 @@
             var squad = this.squads.GetById(id);
             var squadModel = this.Mapper.Map<SquadViewModel>(squad);
 
+            ViewBag.Vehicles = this.vehicles
+                .GetAll()
+                .Where(x => x.SquadId == null)
+                .ToList();
 
             ViewBag.UnassignedSoldiers = this.users
                 .GetAll()
@@ -98,6 +105,30 @@
             this.squads.Update(squad);
 
             this.users.RemoveFromRole(squadLeaderId, ModelsConstraints.SquadLeaderRoleName);
+
+            return this.Redirect(BaseUrl + squadId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveVehicle(int? squadId, int? id)
+        {
+            var vehicle = this.vehicles.GetById(id);
+
+
+            vehicle.SquadId = null;
+            this.vehicles.Update(vehicle);
+
+            return this.Redirect(BaseUrl + squadId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddVehicle(int? squadId, int? id)
+        {
+            var vehicle = this.vehicles.GetById(id);
+            vehicle.SquadId = squadId;
+            this.vehicles.Update(vehicle);
 
             return this.Redirect(BaseUrl + squadId);
         }
