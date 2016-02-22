@@ -51,9 +51,11 @@
         [HttpPost]
         public ActionResult AssignMission(AddMIssionInputModel missionModel)
         {
+            object response;
             if (!ModelState.IsValid)
             {
-                return View(missionModel);
+                response = "Invalid data!";
+                return Json(response);
             }
 
             var squad = this.squads.GetById(missionModel.SquadId);
@@ -66,7 +68,8 @@
 
             this.squads.Update(squad);
 
-            return Json(null);
+            response = "Mission assigned!";
+            return Json(response);
 
         }
 
@@ -79,7 +82,10 @@
             squad.ActiveMission = null;
             squad.ActiveMissionId = null;
             this.squads.Update(squad);
-            return Json(null);
+
+            object response = "Marked as completed!";
+            return Json(response);
+            
 
         }
     }

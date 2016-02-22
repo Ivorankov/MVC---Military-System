@@ -2,11 +2,7 @@
 {
     using System.Web.Mvc;
 
-    using Microsoft.AspNet.Identity;
-
     using MilitarySystem.Common;
-    using Areas.Troops.ViewModels;
-    using Services.Contracts;
 
     public class HomeController : Controller
     {

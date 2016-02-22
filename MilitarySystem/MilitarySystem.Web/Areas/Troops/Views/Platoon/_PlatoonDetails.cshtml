@@ -26,13 +26,6 @@
                     }
                     <hr/>
                 }
-                <button class="btn">Show messages</button>
-                @foreach (var a in Model.Messages)
-                {
-                    <p class="blue-text">@a.Content</p>
-                    <strong>From: @a.User.FirstName</strong>
-                    <hr/>
-                }
             </div>
         </div>
     </div>

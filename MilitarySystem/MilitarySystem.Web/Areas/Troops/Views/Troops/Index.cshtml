@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Tea";
+
 }
 <nav class="light-blue darken-3 nav-text" id="tab-container">
     <div class="nav-wrapper valign-wrapper">
@@ -203,8 +203,10 @@
                                 data.Lat = $("#lat-value").val();
                                 data.SquadId = $("#squadId-value").val();
                                 $.post("/Troops/Mission/AssignMission", data)
-                                    .then(function () {
-                                        alert("You sent the message!");
+                                    .then(function (response) {
+                                        alert(response);
+                                        $("#mission-add-box").remove();
+                                        $("#squads-details-box").find("[data-squadId='" + 4 + "']").remove();
                                     })
 
                             })
@@ -246,8 +248,8 @@
                     data.SendInput = SendInput;
                     data.SendInput.Content = $("#message-to-send-content").val();
                     $.post("/Troops/Message/SendMessage", data)
-                        .then(function () {
-                            alert("Yey");
+                        .then(function (response) {
+                            alert(response);
                         })
                 })
             })

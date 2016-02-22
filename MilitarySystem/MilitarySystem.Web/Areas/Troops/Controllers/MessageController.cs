@@ -81,8 +81,8 @@
                 }
 
             }
-
-            return Json(null);
+            object a = "yey";
+            return Json(a);
         }
 
     }
