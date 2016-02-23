@@ -1,11 +1,13 @@
 ﻿namespace MilitarySystem.Web.Hubs
 {
     using Microsoft.AspNet.SignalR;
+    using System.Web;
 
     public class Chat : Hub
     {
         public void SendMessage(string message)
         {
+            message = HttpContext.Current.Server.HtmlEncode(message);
             var msg = string.Format("{0}: {1}", Context.User.Identity.Name, message);
             Clients.All.addMessage(msg);
         }

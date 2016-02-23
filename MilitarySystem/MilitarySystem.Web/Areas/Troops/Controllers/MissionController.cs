@@ -24,9 +24,9 @@
         }
 
         [HttpGet]
-        public ActionResult Mission()
+        public ActionResult Mission(string userId)
         {
-            var userId = User.Identity.GetUserId();
+            //var userId = User.Identity.GetUserId();
             var user = this.users.GetById(userId);
             var squad = this.squads.GetById(user.SquadId);
 
@@ -48,6 +48,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AssignMission(AddMIssionInputModel missionModel)
         {
             object response;

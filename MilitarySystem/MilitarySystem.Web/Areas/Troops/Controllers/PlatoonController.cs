@@ -25,9 +25,9 @@
         }
 
         [HttpGet]
-        public ActionResult PlatoonDetails()
+        public ActionResult PlatoonDetails(string userId)
         {
-            var userId = User.Identity.GetUserId();
+            //var userId = User.Identity.GetUserId();
             var user = this.users.GetById(userId);
 
             var platoon = this.platoons

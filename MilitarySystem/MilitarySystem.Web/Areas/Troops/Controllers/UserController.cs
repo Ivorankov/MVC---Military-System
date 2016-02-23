@@ -22,9 +22,9 @@
         }
 
         [HttpGet]
-        public ActionResult UserDetails()
+        public ActionResult UserDetails(string userId)
         {
-            var userId = User.Identity.GetUserId();
+           // var userId = User.Identity.GetUserId();
             var user = this.users.GetById(userId);
             var userModel = this.Mapper.Map<UserDetailsViewModel>(user);
 

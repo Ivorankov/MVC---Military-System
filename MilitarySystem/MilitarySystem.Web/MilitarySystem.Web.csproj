@@ -354,6 +354,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Libs\Kendo.Mvc.dll" />
     <Content Include="MilitarySystem.Web.csproj.user" />
+    <Content Include="Scripts\app\troops.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Troops\Views\Shared\_Layout.cshtml" />
@@ -459,6 +460,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Troops\Content\" />
+    <Folder Include="Scripts\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

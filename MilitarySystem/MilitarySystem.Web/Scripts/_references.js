@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app/troops.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="charts/chart.bar.js" />
 /// <reference path="charts/chart.core.js" />

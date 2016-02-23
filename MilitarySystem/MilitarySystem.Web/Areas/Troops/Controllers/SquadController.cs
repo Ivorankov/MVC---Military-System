@@ -22,26 +22,9 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult SquadDetails(string userId)
         {
-            return View();
-        }
-
-        //TODO Extract to user controller
-       [HttpGet]
-        public ActionResult UserDetails()
-        {
-            var userId = User.Identity.GetUserId();
-            var user = this.users.GetById(userId);
-            var userModel = this.Mapper.Map<UserDetailsViewModel>(user);
-
-            return PartialView("_UserDetails", userModel);
-        }
-
-        [HttpGet]
-        public ActionResult SquadDetails()
-        {
-            var userId = User.Identity.GetUserId();
+            //var userId = User.Identity.GetUserId();
             var user = this.users.GetById(userId);
             var squad = this.squads.GetById(user.SquadId.GetValueOrDefault());
             var squadModel = this.Mapper.Map<SquadDetailsViewModel>(squad);
