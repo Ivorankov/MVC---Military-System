@@ -10,7 +10,9 @@
     using MilitarySystem.Web.Controllers;
     using MilitarySystem.Web.Infrastructure.Mapping;
 
-    public abstract class GridAdministrationController<TDbModel, TViewModel> : BaseController
+    using Base;
+
+    public abstract class GridAdministrationController<TDbModel, TViewModel> : AuthController
     {
         private IDataService<TDbModel> test;
 

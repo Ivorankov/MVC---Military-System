@@ -10,6 +10,7 @@
     using MilitarySystem.Models;
     using Services.Contracts;
 
+    [Authorize(Roles = Common.ModelsConstraints.SquadLeaderRoleName + ", " + Common.ModelsConstraints.PlatoonLeaderRoleName)]
     public class MessageController : TroopsController
     {
         private IMessagesService messages;
@@ -57,6 +58,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SendMessage(MessageIndexViewModel model)
         {
             if (ModelState.IsValid)

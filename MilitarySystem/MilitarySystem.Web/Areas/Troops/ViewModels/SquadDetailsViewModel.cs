@@ -16,6 +16,8 @@
 
         public ICollection<Vehicle> Vehicles { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public string SquadLeaderName { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)

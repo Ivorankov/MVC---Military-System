@@ -203,6 +203,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ArmoryAdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Base\AuthController.cs" />
     <Compile Include="Areas\Administration\Controllers\GearAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\Base\GridAdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ManufacturerAdministrationController.cs" />
@@ -354,6 +355,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Libs\Kendo.Mvc.dll" />
     <Content Include="MilitarySystem.Web.csproj.user" />
+    <Content Include="Scripts\app\chat.js" />
+    <Content Include="Scripts\app\flexControlGenerator.js" />
+    <Content Include="Scripts\app\googleMapsInitor.js" />
     <Content Include="Scripts\app\troops.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -459,6 +463,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Views\Auth\" />
+    <Folder Include="Areas\Troops\Base\" />
     <Folder Include="Areas\Troops\Content\" />
     <Folder Include="Scripts\NewFolder1\" />
   </ItemGroup>

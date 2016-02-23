@@ -3,12 +3,11 @@
     using System.Web.Mvc;
     using System.Linq;
 
-    using Microsoft.AspNet.Identity;
-
-    using MilitarySystem.Services.Contracts;
-    using Web.Controllers;
+    using Common;
     using ViewModels;
+    using MilitarySystem.Services.Contracts;
 
+    [Authorize(Roles = ModelsConstraints.PlatoonLeaderRoleName)]
     public class PlatoonController : TroopsController
     {
         private IPlatoonsService platoons;

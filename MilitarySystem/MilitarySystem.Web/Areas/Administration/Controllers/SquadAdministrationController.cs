@@ -5,13 +5,13 @@
 
     using Common;
 
+    using Base;
+
     using Infrastructure.Mapping;
     using MilitarySystem.Services.Contracts;
     using Models.ViewModels;
-    using Web.Controllers;
 
-
-    public class SquadAdministrationController : BaseController
+    public class SquadAdministrationController : AuthController
     {
         private const string BaseUrl = "/Administration/SquadAdministration/SquadDetails/";
 

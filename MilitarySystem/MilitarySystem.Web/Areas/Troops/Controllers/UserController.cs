@@ -1,16 +1,9 @@
 ﻿namespace MilitarySystem.Web.Areas.Troops.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
-
-    using Microsoft.AspNet.Identity;
 
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Web.Areas.Troops.ViewModels;
-    using MilitarySystem.Web.Controllers;
 
     public class UserController : TroopsController
     {

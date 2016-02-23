@@ -115,11 +115,13 @@
                 LastName = "Tillson",
                 Email = "Robin@system.death",
                 Rank = 2,
+                ImgUrl = "http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png",
                 EnrollmentDate = DateTime.UtcNow
             };
 
 
             userManager.Create(squadLeader, "asdasd");
+            userManager.AddToRole(squadLeader.Id, ModelsConstraints.SquadLeaderRoleName);
 
             var squadMemeber1 = new User()
             {
@@ -128,6 +130,7 @@
                 FirstName = "Derrik",
                 LastName = "Johnson",
                 Rank = 1,
+                ImgUrl = "http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -141,6 +144,7 @@
                 FirstName = "Tommy",
                 LastName = "Williams",
                 Rank = 3,
+                ImgUrl = "http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -153,6 +157,7 @@
                 FirstName = "Alfred",
                 LastName = "Garrison",
                 Rank = 1,
+                ImgUrl = "http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -165,6 +170,7 @@
                 FirstName = "Paul",
                 LastName = "Gladstone",
                 Rank = 2,
+                ImgUrl = "http://www.download-free-wallpaper.com/img86/pwhcwpombrjbpnuotuza.png",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -178,6 +184,7 @@
                 FirstName = "John",
                 LastName = "Tiberian",
                 Rank = 3,
+                ImgUrl = "http://images.techtimes.com/data/images/full/4131/army-soldier.jpg?w=600",
                 EnrollmentDate = DateTime.UtcNow
             };
 
@@ -212,7 +219,7 @@
 
         private void SeedSquads(MilitarySystemContext context)
         {
-            var squad1 = new Squad() { Name = "Alpha", ImgUrl = "http://t1.rbxcdn.com/6f8dbef964c1e481df7c54b6de6b7f7b" };
+            var squad1 = new Squad() { Name = "Alpha", ImgUrl = "http://emblemsbf.com/img/30268.jpg" };
             var squad2 = new Squad() { Name = "Bravo", ImgUrl = "http://orig07.deviantart.net/e530/f/2007/120/c/f/bravo_team_logo_by_benjo_kun.jpg" };
             var squad3 = new Squad() { Name = "Charlie", ImgUrl = "https://upload.wikimedia.org/wikipedia/commons/6/6b/ArmyWestPointAthenaShield.png" };
             var squad4 = new Squad() { Name = "Delta", ImgUrl = "http://www.groundzeroairsoft.com/nae/booking/images/delta_team_logo.png" };

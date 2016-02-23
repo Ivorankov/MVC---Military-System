@@ -1,4 +1,7 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app/chat.js" />
+/// <reference path="app/flexcontrolgenerator.js" />
+/// <reference path="app/googlemapsinitor.js" />
 /// <reference path="app/troops.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="charts/chart.bar.js" />

@@ -13,6 +13,8 @@
 
         public string RankImgUrl { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public int MissionsCount { get; set; }
 
         public decimal Wage { get; set; }
@@ -37,7 +39,3 @@
         }
     }
 }
-//wage
-//weapons
-//gear
-//missions

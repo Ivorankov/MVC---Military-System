@@ -3,6 +3,8 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using Base;
+
     using MilitarySystem.Common;
     using MilitarySystem.Services.Contracts;
     using MilitarySystem.Web.Areas.Administration.Models;
@@ -11,7 +13,7 @@
     using MilitarySystem.Web.Controllers;
     using MilitarySystem.Web.Infrastructure.Mapping;
 
-    public class PlatoonAdministrationController : BaseController
+    public class PlatoonAdministrationController : AuthController
     {
         private const string BaseUrl = "/Administration/PlatoonAdministration/PlatoonDetails/";
         private IPlatoonsService platoons;

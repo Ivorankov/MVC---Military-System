@@ -41,6 +41,7 @@
         }
 
         [HttpGet]
+        [Authorize(Roles = Common.ModelsConstraints.PlatoonLeaderRoleName)]
         public ActionResult AssignMission(int squadId)
         {
             var viewModel = new AddMIssionInputModel() { SquadId = squadId };
@@ -49,6 +50,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Common.ModelsConstraints.PlatoonLeaderRoleName)]
         public ActionResult AssignMission(AddMIssionInputModel missionModel)
         {
             object response;
@@ -74,6 +76,7 @@
         }
 
         [HttpPost]
+        [Authorize(Roles = Common.ModelsConstraints.SquadLeaderRoleName)]
         public ActionResult CompleteMission()
         {
             var userId = User.Identity.GetUserId();
@@ -85,7 +88,7 @@
 
             object response = "Marked as completed!";
             return Json(response);
-            
+
 
         }
     }

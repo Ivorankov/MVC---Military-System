@@ -48,14 +48,9 @@
         [Range(0,56)]
         public int Rank { get; set; }
 
-
         public int? SquadId { get; set; }
 
         public virtual Squad Squad { get; set; }
-
-        public int? ImageId { get; set; }
-
-        public virtual Image Image { get; set; }
 
         public virtual ICollection<Weapon> Weapons { get { return this.weapons; } set { this.weapons = value; } }
 
