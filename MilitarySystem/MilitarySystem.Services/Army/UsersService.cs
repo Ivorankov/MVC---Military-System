@@ -49,7 +49,7 @@
                 UserName = user.UserName,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                Email = user.UserName,
+                Email = user.UserName + "@site.com",
                 EnrollmentDate = DateTime.Now
             };
 

@@ -14,7 +14,6 @@
         public string Id { get; set; }
 
         [Required]
-        [EmailAddress]
         public string UserName { get; set; }
 
         [Required]

@@ -364,7 +364,9 @@
     <Content Include="Areas\Troops\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Troops\Views\web.config" />
     <Content Include="Areas\Troops\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\Administration\Index.cshtml" />
@@ -380,13 +382,16 @@
     <Content Include="Areas\Administration\Views\ManufacturerAdministration\AddManufacturer.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\WeaponInputModel.cshtml" />
     <Content Include="Areas\Troops\Views\Mission\_AddMissionBox.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\GearInputModel.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\VehicleInputModel.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\UserInputModel.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\PlatoonInputModel.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\SquadInputModel.cshtml" />
     <Content Include="Areas\Administration\Views\PlatoonAdministration\PlatoonDetails.cshtml" />
     <Content Include="Areas\Administration\Views\SquadAdministration\SquadDetails.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Areas\Troops\Views\Shared\DisplayTemplates\Currency.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Charts\Chart.Bar.js" />
     <Content Include="Scripts\Charts\Chart.Core.js" />

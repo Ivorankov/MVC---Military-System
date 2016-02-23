@@ -15,12 +15,12 @@
                     @Html.LabelFor(m => m.SendInput.Content)
                     @Html.TextAreaFor(m => m.SendInput.Content, new { @cols = "80", @rows = "10", @class = "text-area-messanger", @id = "message-to-send-content" })
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <button class="btn waves-effect waves-light blue" id="send-message-btn-test">Send</button>
-                    </div>
-                </div>
             </form>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button class="btn waves-effect waves-light blue" id="send-message-btn-test">Send</button>
+                </div>
+            </div>
 
             <strong>Recived messages</strong>
             <div class="row">
