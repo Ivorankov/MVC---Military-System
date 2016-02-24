@@ -7,21 +7,24 @@
     var $message = $("#message");
     var $mission = $("#mission");
     var userId = $("#user-id").text();
-    $mission.click(function () {
-        $.get('/Troops/Mission/Mission?userId=' + userId)
-            .then(function (html) {
-                flexGenerator.generateFlexibleControl(html, 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
-                googleMap.initialize();
-                $mission.off();
-            }).then(function () {
-                $("#complete-mission-btn").click(function () {
-                    $.post('/Troops/Mission/CompleteMission').then(function () {
-                        $("#mission-flex").remove();
-                        $mission.on();
+
+    function missionClick() {
+        $mission.click(function () {
+            $.get('/Troops/Mission/Mission?userId=' + userId)
+                .then(function (html) {
+                    flexGenerator.generateFlexibleControl(html, 'Mission', 'mission-flex', 'mission-flex-pin-button', 'mission-flex-hold-button');
+                    $mission.off();
+                    googleMap.initialize();
+                }).then(function () {
+                    $("#complete-mission-btn").click(function () {
+                        $.post('/Troops/Mission/CompleteMission').then(function () {
+                            $("#mission-flex").remove();
+                            $mission.click(missionClick);
+                        })
                     })
                 })
-            })
-    })
+        })
+    }
 
     $user.click(function () {
         $.get('/Troops/User/UserDetails/?userId=' + userId).then(function (html) {
@@ -115,4 +118,6 @@
 
 
     })
+
+    missionClick();
 }())
