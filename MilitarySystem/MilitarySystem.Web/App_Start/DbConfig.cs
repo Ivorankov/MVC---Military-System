@@ -11,6 +11,8 @@
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MilitarySystemContext, EfConfig>());
             MilitarySystemContext.Create();
+            var config = new EfConfig();
+            config.SeedDb(new MilitarySystemContext());
         }
     }
 }

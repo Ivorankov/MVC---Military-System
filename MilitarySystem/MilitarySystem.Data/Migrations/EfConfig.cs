@@ -19,7 +19,7 @@
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(MilitarySystemContext context)
+        public void SeedDb(MilitarySystemContext context)
         {
             if (!context.Users.Any())
             {
