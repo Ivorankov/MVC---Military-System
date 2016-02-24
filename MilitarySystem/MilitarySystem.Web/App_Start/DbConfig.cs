@@ -10,7 +10,7 @@
         public static void Initialize()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MilitarySystemContext, EfConfig>());
-            MilitarySystemContext.Create().Database.Initialize(true);
+            //MilitarySystemContext.Create().Database.Initialize(true);
         }
     }
 }
