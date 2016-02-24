@@ -13,6 +13,8 @@
 
         public string Name { get; set; }
 
+        public string ImgUrl { get; set; }
+
         public string PlatoonCommanderId { get; set; }
 
         public string PlatoonCommanderName { get; set; }
