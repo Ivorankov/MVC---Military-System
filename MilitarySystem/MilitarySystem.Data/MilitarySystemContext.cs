@@ -12,7 +12,7 @@
     public class MilitarySystemContext : IdentityDbContext<User>, IMilitarySystemContext
     {
         public MilitarySystemContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MilitarySystemDb")
         {
 
         }
