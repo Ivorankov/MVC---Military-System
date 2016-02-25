@@ -11,6 +11,8 @@
 
     public class BaseController : Controller
     {
+        private IMapper mapper;
+
         public BaseController()
         {
 
@@ -20,7 +22,15 @@
         {
             get
             {
-                return AutoMapperConfig.Configuration.CreateMapper();
+                if(mapper != null)
+                {
+                    return this.mapper;
+                }
+                else
+                {
+                    this.mapper = AutoMapperConfig.Configuration.CreateMapper();
+                    return this.mapper;
+                }
             }
         }
     }
