@@ -1,4 +1,5 @@
 # Military system
+[For some sweet screen shots check out this link](http://best.telerikacademy.com/projects/260/MVC)
 ## Database
 ### Users
 1. Admin - Can manage all objects(Add, Delete, Change)
